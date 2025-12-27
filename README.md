@@ -1,16 +1,51 @@
-## Hi there 👋
+# 👋 Hola, soy Nicolas Aguirres
 
-<!--
-**Xenov2030/Xenov2030** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Soy **Desarrollador Frontend Junior** y estudiante de **Desarrollo Full Stack**.  
+Actualmente trabajo en relación de dependencia en un área no IT y me encuentro en transición hacia el sector tecnológico.
 
-Here are some ideas to get you started:
+Me enfoco en construir sitios web funcionales, responsivos y con código limpio, priorizando los fundamentos antes de avanzar a frameworks.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 🛠 Tecnologías y Herramientas
+
+- HTML5, CSS3, JavaScript (Vanilla)
+- Responsive Design & Mobile-First
+- Git & GitHub
+- Introducción a SQL y PHP
+- Deploy en Netlify
+- Uso responsable de herramientas de IA para optimización y aprendizaje
+
+---
+
+## 🚀 Proyectos Destacados
+
+- **Infinity Geeks**  
+  Sitio web orientado a la comunidad tecnológica  
+  🔗 https://infinitygeeks.netlify.app/
+
+- **Fugata's Pizzas**  
+  Landing page para negocio gastronómico  
+  🔗 https://fugataspizzas.netlify.app/
+
+- **Limbo Hamburguesas**  
+  Web comercial con diseño urbano  
+  🔗 https://limbohamburguesas.netlify.app/
+
+---
+
+## 🎯 Objetivo Profesional
+
+Busco mi **primera oportunidad profesional en IT** en roles junior, trainee o freelance, donde pueda aportar compromiso, aprendizaje constante y una base técnica sólida, mientras continúo desarrollándome como profesional.
+
+---
+
+## 📫 Contacto
+
+- Email: nicolas.f.aguirres@gmail.com  
+- LinkedIn: https://www.linkedin.com/in/nicolas-aguirres-a4a586303/  
+- Portfolio: *(cuando lo subas definitivamente)*
+
+---
+
+Gracias por visitar mi perfil 🙌
