@@ -44,7 +44,7 @@ Busco mi **primera oportunidad profesional en IT** en roles junior, trainee o fr
 
 - Email: nicolas.f.aguirres@gmail.com  
 - LinkedIn: https://www.linkedin.com/in/nicolas-aguirres-a4a586303/  
-- Portfolio: *(cuando lo subas definitivamente)*
+- Portfolio: https://portfolionicolasaguirres.netlify.app
 
 ---
 
