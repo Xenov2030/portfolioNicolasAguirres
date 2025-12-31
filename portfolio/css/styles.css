@@ -2,47 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    background-color: #030303;
-}
+html { scroll-behavior: smooth; }
+body { background-color: #030303; }
 
-/* --- Stroke Text (Efecto Patricia) --- */
 .stroke-text {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
     color: transparent;
 }
-
 @media (min-width: 768px) {
-    .stroke-text {
-        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
-    }
+    .stroke-text { -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4); }
 }
 
-/* --- Glassmorphism para el Navbar --- */
 .glass-nav {
-    background: rgba(3, 3, 3, 0.85);
+    background: rgba(3, 3, 3, 0.95);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(0, 240, 255, 0.1);
-    padding: 1rem 1.5rem !important;
 }
 
-/* --- Animaciones de Revelación --- */
 .section-reveal {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
 }
-
 .section-reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- Personalización de Selección de Texto --- */
-::selection {
-    background-color: #00F0FF;
-    color: #000;
+/* Mobile Menu Active State */
+.mobile-menu-active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 2rem;
+    gap: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #00F0FF;
 }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #030303; }
+::-webkit-scrollbar-thumb { background: #00F0FF; border-radius: 10px; }

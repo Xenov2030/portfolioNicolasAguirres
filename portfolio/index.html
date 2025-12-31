@@ -7,19 +7,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-[#030303] text-[#F4F4F9] font-['Montserrat'] overflow-x-hidden">
 
     <header class="fixed w-full z-50 transition-all duration-300 px-6 py-4" id="navbar">
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#home" class="font-['Bebas_Neue'] text-2xl tracking-widest text-white uppercase">
-                NICOLAS<span class="text-[#00F0FF]">.DEV</span>
+            <a href="#home" class="font-['Bebas_Neue'] text-2xl tracking-widest text-white uppercase group">
+                NICOLAS<span class="text-[#00F0FF] group-hover:text-white transition-colors">.AGUIRRES</span>
             </a>
             <ul class="hidden md:flex space-x-8 font-bold uppercase text-[10px] tracking-widest items-center" id="nav-links">
-                <li><a href="#projects" class="hover:text-[#00F0FF] transition">Proyectos</a></li>
-                <li><a href="#skills" class="hover:text-[#00F0FF] transition">Habilidades</a></li>
-                <li><a href="mailto:nicolas.f.aguirres@gmail.com" class="bg-white text-black px-4 py-2 rounded-full hover:bg-[#00F0FF] transition">Contacto</a></li>
+                <li><a href="#about" class="hover:text-[#00F0FF] transition">Perfil</a></li>
+                <li><a href="#projects" class="hover:text-[#00F0FF] transition">Desarrollos</a></li>
+                <li>
+                    <a href="https://wa.me/5492615349682?text=Hola%20Nicolas!%20Vi%20tu%20portfolio%20y%20me%20gustaría%20contactarte." 
+                       target="_blank" 
+                       class="bg-[#25D366] text-white px-5 py-2 rounded-full hover:scale-105 transition transform flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i> WHATSAPP
+                    </a>
+                </li>
             </ul>
             <button class="md:hidden text-white" id="menu-btn"><i class="fas fa-bars text-2xl"></i></button>
         </nav>
@@ -28,65 +34,93 @@
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-[#00F0FF]/10 via-transparent to-black z-0"></div>
         <div class="text-center z-10 hero-content opacity-0 translate-y-10 transition duration-1000">
-            <h1 class="font-['Bebas_Neue'] text-7xl md:text-[12rem] mb-2 text-white leading-none tracking-tighter uppercase">
-                NICOLÁS <span class="text-transparent stroke-text uppercase">AGUIRRES</span>
+            <h1 class="font-['Bebas_Neue'] text-7xl md:text-[11rem] mb-2 text-white leading-none tracking-tighter uppercase">
+                NICOLAS <span class="text-transparent stroke-text uppercase">AGUIRRES</span>
             </h1>
             <p class="text-sm md:text-2xl text-[#00F0FF] mb-10 font-mono tracking-[0.4em] uppercase">
                 <span id="typewriter"></span>
             </p>
-            <div class="flex justify-center space-x-6">
-                <a href="https://github.com/Xenov2030" target="_blank" class="text-2xl hover:text-[#00F0FF] transition"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/nicolas-aguirres-a4a586303/" target="_blank" class="text-2xl hover:text-[#00F0FF] transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-[#030303] section-reveal">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-['Bebas_Neue'] text-5xl text-[#00F0FF] mb-8 tracking-widest uppercase italic">Perfil</h2>
+            <div class="bg-[#0A0A0B] p-8 md:p-12 rounded-[2.5rem] border border-white/5 shadow-2xl">
+                <p class="text-gray-300 leading-relaxed text-lg md:text-xl font-light mb-8">
+                    Soy un Desarrollador Frontend Junior en plena transición al mundo IT. Mi formación me permite construir soluciones digitales funcionales usando <span class="text-white font-bold">JavaScript Vanilla</span>. Me enfoco en el diseño limpio y la optimización mobile-first.
+                </p>
+                <a href="Nicolas_Aguirres_Frontend_Junior.pdf" download class="inline-flex items-center gap-3 border border-[#00F0FF] text-[#00F0FF] px-8 py-3 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-[#00F0FF] hover:text-black transition duration-300">
+                    <i class="fas fa-file-download text-lg"></i> Descargar CV
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-32 px-6 bg-[#030303] section-reveal">
+    <section id="projects" class="py-24 px-6 bg-black section-reveal">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-['Bebas_Neue'] text-6xl mb-16 tracking-widest text-white uppercase italic">Proyectos <span class="text-[#00F0FF]">Seleccionados</span></h2>
-            
+            <h2 class="font-['Bebas_Neue'] text-6xl mb-16 tracking-widest text-white uppercase italic text-center md:text-left">Desarrollos</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-[2rem] bg-[#0A0A0B] border border-white/5">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                    <div class="p-10 relative z-20 h-full flex flex-col justify-end">
-                        <span class="text-[#00F0FF] text-xs font-mono mb-2">2024 • Frontend & Branding</span>
+                
+                <div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-[2.5rem] bg-[#0A0A0B] border border-white/5 min-h-[450px]">
+                    <img src="https://ladybarbershop.netlify.app/logo.png" alt="Lady Barbershop" class="absolute inset-0 w-full h-full object-contain opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700 p-20 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+                    <div class="relative z-20 p-10 h-full flex flex-col justify-end">
                         <h3 class="font-['Bebas_Neue'] text-5xl text-white mb-4">LADY BARBERSHOP</h3>
-                        <p class="text-gray-400 max-w-md mb-6">Optimización Mobile-First y branding digital para negocio de estética. Implementación de WhatsApp dinámico y diseño ultra-responsive.</p>
-                        <div class="flex space-x-3">
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase">JS Vanilla</span>
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase">Tailwind</span>
-                        </div>
+                        <p class="text-gray-400 max-w-sm mb-6">Optimización Mobile-First y branding para negocio de estética. Gestión de turnos vía WhatsApp.</p>
+                        <a href="https://ladybarbershop.netlify.app/" target="_blank" class="text-[#00F0FF] font-bold uppercase text-xs tracking-widest">Ver Proyecto →</a>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-[2rem] bg-[#0A0A0B] border border-white/5 p-8 min-h-[300px]">
-                    <h3 class="font-['Bebas_Neue'] text-3xl text-white mb-2">INFINITY GEEKS</h3>
-                    <p class="text-gray-500 text-sm mb-6">Comunidad tecnológica y blog de noticias.</p>
-                    <a href="https://infinitygeeks.netlify.app/" target="_blank" class="text-[#00F0FF] text-xs font-bold uppercase tracking-widest">Ver Proyecto <i class="fas fa-arrow-right ml-2"></i></a>
+                <div class="group relative overflow-hidden rounded-[2.5rem] bg-[#0A0A0B] border border-white/5 p-8 flex flex-col justify-end hover:border-[#00F0FF]/30 transition h-[250px]">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-5 group-hover:opacity-20 transition-all duration-700" style="background-image: url('https://limbohamburguesas.netlify.app/recursos%20visuales/logotipo-de-instagram.png');"></div>
+                    <div class="relative z-10">
+                        <h3 class="font-['Bebas_Neue'] text-3xl text-white mb-2">LIMBO HAMBURGUESAS</h3>
+                        <a href="https://limbohamburguesas.netlify.app/" target="_blank" class="text-[#00F0FF] font-bold uppercase text-[10px] tracking-widest">Explorar</a>
+                    </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-[2rem] bg-[#0A0A0B] border border-white/5 p-8 min-h-[300px]">
-                    <h3 class="font-['Bebas_Neue'] text-3xl text-white mb-2">FUGATA'S PIZZAS</h3>
-                    <p class="text-gray-500 text-sm mb-6">Landing page comercial con menú interactivo.</p>
-                    <a href="https://fugataspizzas.netlify.app/" target="_blank" class="text-[#00F0FF] text-xs font-bold uppercase tracking-widest">Ver Proyecto <i class="fas fa-arrow-right ml-2"></i></a>
+                <div class="group relative overflow-hidden rounded-[2.5rem] bg-[#0A0A0B] border border-white/5 p-8 flex flex-col justify-end hover:border-[#00F0FF]/30 transition h-[250px]">
+                    <img src="https://infinitygeeks.netlify.app/img/logo.png" alt="Infinity Geek" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-700">
+                    <div class="relative z-10">
+                        <h3 class="font-['Bebas_Neue'] text-3xl text-white mb-2">INFINITY GEEKS</h3>
+                        <a href="https://infinitygeeks.netlify.app/" target="_blank" class="text-[#00F0FF] font-bold uppercase text-[10px] tracking-widest">Explorar</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-black border-t border-white/5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="text-center md:text-left">
-                <h2 class="font-['Bebas_Neue'] text-4xl text-white mb-2 uppercase">Nicolás Aguirres</h2>
-                <p class="text-gray-600 text-[10px] tracking-[0.5em] uppercase italic">Construyendo el futuro del desarrollo web</p>
+    <section id="skills" class="py-24 px-6 bg-[#030303] section-reveal">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="font-['Bebas_Neue'] text-5xl text-white mb-10 tracking-widest uppercase italic text-center md:text-left">Habilidades</h2>
+                <div class="grid grid-cols-2 gap-4 font-mono text-[10px]">
+                    <div class="bg-[#0A0A0B] p-5 rounded-2xl border border-white/5 flex items-center gap-3"><i class="fab fa-js text-[#F7DF1E] text-xl"></i> JAVASCRIPT ES6+</div>
+                    <div class="bg-[#0A0A0B] p-5 rounded-2xl border border-white/5 flex items-center gap-3"><i class="fab fa-html5 text-[#E34F26] text-xl"></i> HTML5 / CSS3</div>
+                    <div class="bg-[#0A0A0B] p-5 rounded-2xl border border-white/5 flex items-center gap-3"><i class="fab fa-git-alt text-[#F05032] text-xl"></i> GIT / GITHUB</div>
+                    <div class="bg-[#0A0A0B] p-5 rounded-2xl border border-white/5 flex items-center gap-3"><i class="fas fa-brain text-[#00F0FF] text-xl"></i> IA PROMPTING</div>
+                </div>
             </div>
-            <div class="flex space-x-8 text-2xl text-gray-400">
-                <a href="https://github.com/Xenov2030" class="hover:text-[#00F0FF] transition"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/nicolas-aguirres-a4a586303/" class="hover:text-[#00F0FF] transition"><i class="fab fa-linkedin"></i></a>
+            <div class="md:text-right">
+                <h2 class="font-['Bebas_Neue'] text-5xl text-white mb-10 tracking-widest uppercase italic text-center md:text-right">Formación</h2>
+                <div class="space-y-6">
+                    <div class="border-r-2 border-[#00F0FF] pr-6"><h4 class="text-white font-bold uppercase">Desarrollo Full Stack</h4><p class="text-gray-500 text-sm italic">Escuela Newton • En curso</p></div>
+                    <div class="border-r-2 border-white/10 pr-6"><h4 class="text-white font-bold uppercase">IA aplicada a Programación</h4><p class="text-gray-500 text-sm italic">Certificación Profesional</p></div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <footer class="py-16 bg-black border-t border-white/5 text-center px-6">
+        <h2 class="font-['Bebas_Neue'] text-4xl text-white mb-6 uppercase tracking-widest">Nicolas Aguirres</h2>
+        <div class="flex justify-center space-x-8 mb-10 text-2xl">
+            <a href="https://github.com/Xenov2030" class="hover:text-[#00F0FF] transition"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/nicolas-aguirres-a4a586303/" class="hover:text-[#00F0FF] transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="text-gray-700 text-[9px] tracking-[0.5em] uppercase">© 2026 Nicolas Aguirres. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
