@@ -21,3 +21,11 @@
 @keyframes accent-pulse{0%,100%{box-shadow:0 0 0 0 #c6afff20}50%{box-shadow:0 0 0 6px #c6afff00}}
 @media(prefers-reduced-motion:no-preference){.entrance-signature{display:block;position:fixed;top:100px;right:24px;z-index:55;pointer-events:none;background:#20182ce8;border:1px solid #c6afff40;border-radius:12px;padding:14px 19px;backdrop-filter:blur(12px);color:#f2eff8;font-size:16px;letter-spacing:-.5px;animation:signature-arrive 2s both}.entrance-dot{color:#c6afff}.cosmic-hero{position:relative;isolation:isolate;overflow:hidden}.cosmic-hero:before{content:'';position:absolute;top:50px;left:20%;right:20%;height:420px;background:radial-gradient(ellipse,#8351bd55,transparent 70%);pointer-events:none;z-index:-1;animation:ambient-breathe 12s ease-in-out infinite}.cosmic-pill{animation:enter-soft .7s both,accent-pulse 5s 1s ease-in-out 3}.recruiter-actions{animation:enter-soft .9s .25s both}.stack-strip i{display:inline-block;transition:transform .6s}.stack-strip:hover i{transform:rotate(180deg)}.skill-card:hover>svg{transform:translateY(-4px) rotate(-8deg)}.skill-card>svg{transition:transform .4s}}
 @media(max-width:540px){.recruiter-actions{gap:8px}.recruiter-actions a{font-size:10px;padding:11px 12px}.entrance-signature{top:82px;right:15px;font-size:12px}}
+/* Touch equivalents for pointer interactions; scrolling and entrance work everywhere. */
+@media(prefers-reduced-motion:no-preference) and (hover:none){
+.cosmic-skill:active .cosmic-icon svg{transform:translateY(-3px) rotate(8deg) scale(1.08)}
+.project-image:active .image-window{transform:rotate(0) scale(1.02)}
+.project-links a:active svg,.inline-link:active svg,.social-links a:active svg:last-child{transform:translate(2px,-2px)}
+.about-portrait:active img{transform:scale(1.035)}
+.recruiter-actions a:active,.contact-arrow:active{transform:scale(.97)}
+}
