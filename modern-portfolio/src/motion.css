@@ -29,3 +29,10 @@
 .about-portrait:active img{transform:scale(1.035)}
 .recruiter-actions a:active,.contact-arrow:active{transform:scale(.97)}
 }
+
+.project-gallery{touch-action:pan-y}.gallery-controls{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;padding:5px;border:1px solid #c6afff50;background:#18121fed;color:#f2eff8;border-radius:30px;box-shadow:0 4px 18px #0005}.gallery-controls button{display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;background:#33263f;color:#f2eff8}.gallery-controls button:hover{background:#60477a}.gallery-controls span{font:11px ui-monospace,monospace;white-space:nowrap}.project-gallery .image-window img{aspect-ratio:1440/820}.project-gallery .image-window{pointer-events:none}
+@keyframes welcome-cinema{0%{opacity:0;transform:translateY(16px) scale(.94)}15%,65%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-24px);visibility:hidden}}
+@media(prefers-reduced-motion:no-preference){.entrance-signature{top:110px;left:50%;right:auto;transform:none;translate:-50% 0;max-width:calc(100% - 32px);width:max-content;padding:19px 28px;font-size:clamp(20px,3vw,38px);box-shadow:0 15px 90px #a175dc40;animation:welcome-cinema 3.4s .15s both}.cosmic-hero h1{animation-duration:1.5s;animation-delay:.3s}.cosmic-intro{animation-delay:.55s}}
+
+.gallery-frames{position:relative;aspect-ratio:1440/820;overflow:hidden;background:#18121f}.gallery-frames .gallery-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:blur(14px);transform:scale(1.035);transition:opacity .95s ease,filter 1.2s ease,transform 1.5s ease}.gallery-frames .gallery-frame.is-current{opacity:1;filter:blur(0);transform:scale(1)}.project-gallery .image-window{transform:none!important;box-shadow:0 14px 30px #0003}.gallery-controls button:disabled{opacity:.5;cursor:default}
+@media(prefers-reduced-motion:reduce){.gallery-frames .gallery-frame{transition:none;filter:none;transform:none}}

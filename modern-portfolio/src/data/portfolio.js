@@ -33,6 +33,20 @@ export const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     repo: "https://github.com/Xenov2030/gentlemanbaber",
     image: "/assets/gentleman-barber.png",
+    gallery: [
+      {
+        src: "/assets/gentleman-barber.png",
+        alt: "Portada de Gentleman Barber Shop",
+      },
+      {
+        src: "/assets/gentleman-detail-1.png",
+        alt: "Servicios de Gentleman Barber Shop",
+      },
+      {
+        src: "/assets/gentleman-detail-2.png",
+        alt: "Testimonios de Gentleman Barber Shop",
+      },
+    ],
     alt: "Captura de Gentleman Barber Shop con diseño negro y dorado y su presentación de servicios",
   },
   {
@@ -46,6 +60,14 @@ export const projects = [
     demo: "https://limbohamburguesas.netlify.app/",
     repo: "https://github.com/Xenov2030/limbohamburguesas",
     image: "/assets/limbo-live.png",
+    gallery: [
+      { src: "/assets/limbo-live.png", alt: "Vista principal del proyecto" },
+      {
+        src: "/assets/limbo-detail-1.png",
+        alt: "Sección interna del proyecto",
+      },
+      { src: "/assets/limbo-detail-2.png", alt: "Más contenido del proyecto" },
+    ],
     alt: "Captura de la página de Limbo Hamburguesas con su identidad visual urbana",
   },
   {
@@ -59,6 +81,20 @@ export const projects = [
     demo: "https://infinitygeeks.netlify.app/",
     repo: "https://github.com/Xenov2030/infinitygeek",
     image: "/assets/infinity-geeks-live.png",
+    gallery: [
+      {
+        src: "/assets/infinity-geeks-live.png",
+        alt: "Vista principal del proyecto",
+      },
+      {
+        src: "/assets/infinity-detail-1.png",
+        alt: "Sección interna del proyecto",
+      },
+      {
+        src: "/assets/infinity-detail-2.png",
+        alt: "Más contenido del proyecto",
+      },
+    ],
     alt: "Captura de Infinity Geeks, un sitio para una comunidad de tecnología y cultura geek",
   },
 ];

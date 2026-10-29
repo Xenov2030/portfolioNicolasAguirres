@@ -1,3 +1,4 @@
+import ProjectGallery from "./ProjectGallery";
 import { Github } from "./SocialIcons";
 import { useState } from "react";
 import { ArrowUpRight, Layers, Dices, Sparkles } from "lucide-react";
@@ -124,31 +125,7 @@ export default function Projects() {
               </article>
             ) : (
               <article className="project-card" key={project.id}>
-                <a
-                  className={`project-image project-image-${project.id}`}
-                  href={project.demo || project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Abrir ${project.demo ? "sitio" : "repositorio"} de ${project.title}`}
-                >
-                  <div className="image-window">
-                    <div className="mini-toolbar">
-                      <i />
-                      <i />
-                      <i />
-                    </div>
-                    <img
-                      src={project.image}
-                      alt={project.alt}
-                      loading="lazy"
-                      width="1343"
-                      height="639"
-                    />
-                  </div>
-                  <span className="image-link">
-                    <ArrowUpRight size={21} />
-                  </span>
-                </a>
+                <ProjectGallery project={project} />
                 <div className="project-card-copy">
                   <span className="project-label">{project.label}</span>
                   <h3>{project.title}</h3>
