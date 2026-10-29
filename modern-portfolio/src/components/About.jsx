@@ -11,16 +11,10 @@ export default function About() {
       <div className="container about-layout">
         <div className="about-identity">
           <span className="eyebrow section-index">02 / DETRÁS DEL CÓDIGO</span>
-          <div className="identity-art" aria-hidden="true">
-            <span className="identity-cross cross-one">+</span>
-            <span className="identity-cross cross-two">+</span>
-            <span className="identity-initials">
-              na<span>.</span>
-            </span>
-            <span className="identity-caption">
-              CURIOSIDAD EN CONSTANTE DESARROLLO
-            </span>
-          </div>
+          <figure className="about-portrait">
+            <img src="/assets/nicolas-aguirres.jpg" alt="Nicolas Aguirres, desarrollador web" width="400" height="400" loading="lazy" />
+            <figcaption>NICOLAS AGUIRRES <span>DESARROLLADOR WEB</span></figcaption>
+          </figure>
           <div className="cv-downloads" aria-label="Descargar currículum">
             <a
               className="cv-link"
