@@ -11,3 +11,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 
 import "./cosmic.css";
+
+import "./motion.css";
