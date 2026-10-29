@@ -1,69 +1,92 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MessageSquare, Mail, Link, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin } from "./SocialIcons";
+import { useState, useRef, useEffect } from "react";
+import { ArrowUpRight, Copy, Check, MessageCircle } from "lucide-react";
+import { profile } from "../data/portfolio";
 
-const Contact = () => {
+export default function Contact() {
+  const [message, setMessage] = useState("");
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  async function copyEmail() {
+    clearTimeout(timer.current);
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setMessage("Correo copiado");
+    } catch {
+      setMessage("Podés seleccionar el correo o abrirlo con el enlace.");
+    }
+    timer.current = setTimeout(() => setMessage(""), 4000);
+  }
   return (
-    <section id="contact" className="py-24 px-6 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 translate-x-1/2"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="bg-white text-black p-12 md:p-20 rounded-[3rem] flex flex-col md:flex-row items-center gap-16">
-          <div className="flex-1">
-            <h2 className="font-display text-6xl md:text-8xl mb-8 tracking-tighter leading-none italic uppercase">
-              ¿Listo para <br /> <span className="text-primary">escalar?</span>
-            </h2>
-            <p className="text-gray-600 text-lg mb-10 max-w-md">
-              Estoy disponible para proyectos freelance, colaboraciones en Vex Studio o nuevas oportunidades profesionales en equipos de alto rendimiento.
+    <section
+      id="contact"
+      className="contact-section"
+      aria-labelledby="contact-title"
+    >
+      <div className="container">
+        <span className="eyebrow">
+          <span className="status-dot" /> CONECTEMOS IDEAS
+        </span>
+        <div className="contact-heading">
+          <h2 id="contact-title">
+            Tu próxima idea
+            <br />
+            puede empezar <span>acá.</span>
+          </h2>
+          <a
+            className="contact-arrow"
+            href={`mailto:${profile.email}`}
+            aria-label="Escribir un correo a Nicolas Aguirres"
+          >
+            <ArrowUpRight strokeWidth={1} />
+          </a>
+        </div>
+        <div className="contact-bottom">
+          <div>
+            <p>
+              ¿Un proyecto, una colaboración o una oportunidad?
+              <br />
+              Me gustaría conocerla.
             </p>
-            
-            <div className="flex flex-col gap-4">
-              <a 
-                href="mailto:nicolas.f.aguirres@gmail.com" 
-                className="flex items-center gap-4 group"
+            <div className="email-row">
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              <button
+                type="button"
+                onClick={copyEmail}
+                aria-label="Copiar correo electrónico"
               >
-                <div className="bg-black text-white p-3 rounded-full group-hover:bg-primary group-hover:text-black transition-colors">
-                  <Mail size={20} />
-                </div>
-                <span className="font-bold text-sm uppercase tracking-widest">nicolas.f.aguirres@gmail.com</span>
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/nicolas-aguirres-a4a586303/" 
-                target="_blank" 
-                className="flex items-center gap-4 group"
-              >
-                <div className="bg-black text-white p-3 rounded-full group-hover:bg-primary group-hover:text-black transition-colors">
-                  <Link size={20} />
-                </div>
-                <span className="font-bold text-sm uppercase tracking-widest">LinkedIn Profile</span>
-              </a>
+                {message === "Correo copiado" ? (
+                  <Check size={18} />
+                ) : (
+                  <Copy size={18} />
+                )}
+              </button>
+            </div>
+            <div className="copy-status" role="status" aria-live="polite">
+              {message}
             </div>
           </div>
-
-          <div className="flex-1 w-full">
-            <a 
-              href="https://wa.me/5492615349682" 
+          <div className="social-links">
+            <a
+              href={profile.whatsapp}
               target="_blank"
-              className="block group relative"
+              rel="noopener noreferrer"
             >
-              <div className="absolute -inset-4 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative bg-black text-white p-12 rounded-[2.5rem] flex flex-col justify-between aspect-square md:aspect-auto md:h-80">
-                <div className="flex justify-between items-start">
-                  <MessageSquare size={40} className="text-primary" />
-                  <ArrowUpRight size={24} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
-                <div>
-                  <h3 className="font-display text-4xl mb-2">WHATSAPP DIRECTO</h3>
-                  <p className="text-gray-500 text-sm uppercase tracking-widest">Respuesta inmediata</p>
-                </div>
-              </div>
+              <MessageCircle size={19} /> WhatsApp <ArrowUpRight size={15} />
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={19} /> LinkedIn <ArrowUpRight size={15} />
+            </a>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer">
+              <Github size={19} /> GitHub <ArrowUpRight size={15} />
             </a>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}

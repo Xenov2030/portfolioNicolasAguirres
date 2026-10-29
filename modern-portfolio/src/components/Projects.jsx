@@ -1,99 +1,183 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Layout, Smartphone, ShoppingBag } from 'lucide-react';
+import { Github } from "./SocialIcons";
+import { useState } from "react";
+import { ArrowUpRight, Layers, Dices, Sparkles } from "lucide-react";
+import { projects, profile } from "../data/portfolio";
 
-const projects = [
-  {
-    title: "Lady Barbershop",
-    description: "Sistema de gestión y booking para salón de estética premium. Optimización 100% Mobile-First.",
-    impact: "Aumento del 40% en reservas digitales vía WhatsApp.",
-    tech: ["HTML5", "Tailwind", "JS ES6+"],
-    link: "https://ladybarbershop.netlify.app/",
-    icon: <Smartphone className="text-primary" />,
-    image: "/assets/Ladybabershop.png"
-  },
-  {
-    title: "Limbo Hamburguesas",
-    description: "Menú digital interactivo con estética urbana y branding agresivo para captación de público joven.",
-    impact: "Reducción de tiempos de espera en pedido mediante interfaz fluida.",
-    tech: ["CSS Moderno", "Responsive Design", "IA Asset Generation"],
-    link: "https://limbohamburguesas.netlify.app/",
-    icon: <ShoppingBag className="text-primary" />,
-    image: "/assets/Limboburgers.png"
-  },
-  {
-    title: "Infinity Geeks",
-    description: "Portal de comunidad tecnológica con enfoque en accesibilidad y performance.",
-    impact: "Consolidación de identidad de marca para comunidad IT.",
-    tech: ["Git Workflow", "SEO Optimization", "Clean Code"],
-    link: "https://infinitygeeks.netlify.app/",
-    icon: <Layout className="text-primary" />,
-    image: "/assets/infinitygeek.png"
-  }
-];
-
-const Projects = () => {
+function ProjectLinks({ project }) {
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <div className="project-links">
+      {project.demo && (
+        <a
+          href={project.demo || project.repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ver sitio de ${project.title}`}
+        >
+          Ver sitio <ArrowUpRight size={16} />
+        </a>
+      )}
+      <a
+        href={project.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Ver código de ${project.title} en GitHub`}
+      >
+        <Github size={16} /> {project.demo ? "Código" : "Explorar el código"}
+        {!project.demo && <ArrowUpRight size={16} />}
+      </a>
+    </div>
+  );
+}
+
+export default function Projects() {
+  const [filter, setFilter] = useState("Todos");
+  const visible = projects.filter(
+    (project) => filter === "Todos" || project.category === filter,
+  );
+  return (
+    <section
+      id="projects"
+      className="section projects-section"
+      aria-labelledby="projects-title"
+    >
+      <div className="container">
+        <div className="section-heading">
           <div>
-            <h2 className="font-display text-6xl text-white tracking-widest uppercase italic mb-4">Desarrollos</h2>
-            <p className="text-gray-400 max-w-md font-light">Proyectos reales con impacto medible en el negocio.</p>
+            <span className="eyebrow section-index">
+              01 / TRABAJO SELECCIONADO
+            </span>
+            <h2 id="projects-title">
+              Menos palabras.
+              <br />
+              <span className="muted">Más proyectos.</span>
+            </h2>
           </div>
-          <div className="text-primary font-mono text-xs tracking-widest uppercase">
-            [ Scroll para explorar ]
-          </div>
+          <p>
+            De sitios para negocios a mundos de rol.
+            <br />
+            Cada proyecto, un desafío distinto.
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative bg-secondary border border-white/5 p-10 rounded-[2.5rem] hover:border-primary/30 transition-all flex flex-col h-full overflow-hidden"
-            >
-              {/* Background Image Overlay */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none"
-                style={{ backgroundImage: `url(${project.image})` }}
-              ></div>
-
-              <div className="relative z-10">
-                <div className="mb-8 p-4 glass rounded-2xl w-fit">
-                  {project.icon}
+        <div className="projects-toolbar">
+          <div
+            className="filter-group"
+            role="group"
+            aria-label="Filtrar proyectos"
+          >
+            {["Todos", "Aplicaciones", "Sitios web"].map((category) => (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={filter === category}
+                onClick={() => setFilter(category)}
+              >
+                {category}
+                <span>
+                  {category === "Todos"
+                    ? projects.length
+                    : projects.filter((p) => p.category === category).length}
+                </span>
+              </button>
+            ))}
+          </div>
+          <span className="project-count" role="status" aria-live="polite">
+            {visible.length} proyectos para explorar
+          </span>
+        </div>
+        <div className="project-grid">
+          {visible.map((project) =>
+            project.featured ? (
+              <article className="featured-project" key={project.id}>
+                <div className="forge-art" aria-hidden="true">
+                  <div className="forge-grid" />
+                  <span className="forge-top">
+                    <Sparkles size={12} /> DONDE EMPIEZA LA AVENTURA
+                  </span>
+                  <div className="forge-emblem">
+                    <Dices size={72} strokeWidth={1} />
+                  </div>
+                  <div className="forge-wordmark">
+                    CAMPAIGN<span>FORGE</span>
+                  </div>
+                  <span className="forge-bottom">
+                    CONSTRUYE MUNDOS. CREA HISTORIAS.
+                  </span>
                 </div>
-                <h3 className="font-display text-3xl mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">{project.description}</p>
-                
-                <div className="bg-white/5 p-4 rounded-xl mb-6 border-l-2 border-primary">
-                  <p className="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Impacto:</p>
-                  <p className="text-xs text-gray-300">{project.impact}</p>
+                <div className="featured-copy">
+                  <div className="project-label">
+                    <Layers size={14} /> {project.label}
+                    <span className="project-badge">DESTACADO</span>
+                  </div>
+                  <h3>
+                    {project.title}
+                    <span>Una aventura full stack.</span>
+                  </h3>
+                  <p>{project.description}</p>
+                  <p className="project-detail">{project.detail}</p>
+                  <div className="tech-tags">
+                    {project.tech.map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
+                  <ProjectLinks project={project} />
                 </div>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tech.map(t => (
-                    <span key={t} className="text-[8px] uppercase tracking-widest bg-white/5 px-2 py-1 rounded text-gray-500">{t}</span>
-                  ))}
-                </div>
-
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  className="flex items-center gap-2 text-white font-bold uppercase text-[10px] tracking-widest group-hover:gap-4 transition-all"
+              </article>
+            ) : (
+              <article className="project-card" key={project.id}>
+                <a
+                  className={`project-image project-image-${project.id}`}
+                  href={project.demo || project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Abrir ${project.demo ? "sitio" : "repositorio"} de ${project.title}`}
                 >
-                  Explorar Proyecto <ExternalLink size={14} className="text-primary" />
+                  <div className="image-window">
+                    <div className="mini-toolbar">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <img
+                      src={project.image}
+                      alt={project.alt}
+                      loading="lazy"
+                      width="1343"
+                      height="639"
+                    />
+                  </div>
+                  <span className="image-link">
+                    <ArrowUpRight size={21} />
+                  </span>
                 </a>
-              </div>
-            </motion.div>
-          ))}
+                <div className="project-card-copy">
+                  <span className="project-label">{project.label}</span>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="tech-tags">
+                    {project.tech.map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
+                  <ProjectLinks project={project} />
+                </div>
+              </article>
+            ),
+          )}
         </div>
+        <a
+          className="github-more"
+          href={`${profile.github}?tab=repositories`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github size={20} />
+          <span>
+            El proceso también se comparte.
+            <b>Más código, ideas y experimentos en GitHub.</b>
+          </span>
+          <ArrowUpRight size={21} />
+        </a>
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

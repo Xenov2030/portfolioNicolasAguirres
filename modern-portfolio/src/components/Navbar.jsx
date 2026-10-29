@@ -1,71 +1,99 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Rocket } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const links = [
+  ["Proyectos", "#projects"],
+  ["Sobre mí", "#about"],
+  ["Stack", "#skills"],
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const toggle = useRef(null);
+  const navigation = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    if (!open) return;
+    const close = (event) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+      if (event.key === "Tab") {
+        const items = [
+          toggle.current,
+          ...navigation.current.querySelectorAll("a"),
+        ];
+        if (event.shiftKey && document.activeElement === items[0]) {
+          event.preventDefault();
+          items.at(-1).focus();
+        } else if (!event.shiftKey && document.activeElement === items.at(-1)) {
+          event.preventDefault();
+          items[0].focus();
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: 'Perfil', href: '#about' },
-    { name: 'Vex Studio', href: '#vex' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Habilidades', href: '#skills' },
-  ];
+    const media = window.matchMedia("(min-width: 801px)");
+    const onResize = () => {
+      if (media.matches) setOpen(false);
+    };
+    document.addEventListener("keydown", close);
+    media.addEventListener("change", onResize);
+    return () => {
+      document.removeEventListener("keydown", close);
+      media.removeEventListener("change", onResize);
+    };
+  }, [open]);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="font-display text-2xl tracking-widest text-white group">
-          NICOLAS<span className="text-primary group-hover:text-white transition-colors">.AGUIRRES</span>
+    <header className="site-header">
+      <div className="container nav-shell">
+        <a
+          href="#home"
+          className="brand"
+          aria-label="Nicolas Aguirres, inicio"
+          onClick={() => setOpen(false)}
+        >
+          <span className="brand-mark" aria-hidden="true">
+            n<span>.</span>a
+          </span>
+          <span className="brand-name">
+            NICOLAS
+            <br />
+            <b>AGUIRRES</b>
+          </span>
         </a>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-[10px] uppercase tracking-widest font-bold hover:text-primary transition-colors">
-              {link.name}
-            </a>
-          ))}
-          <a 
-            href="https://wa.me/5492615349682" 
-            target="_blank" 
-            className="bg-accent text-white px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-2"
-          >
-            WhatsApp
-          </a>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        <button
+          ref={toggle}
+          className="menu-toggle"
+          type="button"
+          aria-expanded={open}
+          aria-controls="main-navigation"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X size={23} /> : <Menu size={23} />}
         </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full glass py-6 flex flex-col items-center space-y-6">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href} 
-              className="text-xs uppercase tracking-widest font-bold"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
+        <nav
+          ref={navigation}
+          id="main-navigation"
+          aria-label="Navegación principal"
+          className={`navigation ${open ? "is-open" : ""}`}
+        >
+          {links.map(([name, href]) => (
+            <a key={href} href={href} onClick={() => setOpen(false)}>
+              {name}
             </a>
           ))}
-        </div>
-      )}
-    </nav>
+          <a
+            className="nav-contact"
+            href="#contact"
+            onClick={() => setOpen(false)}
+          >
+            Hablemos <ArrowUpRight size={16} />
+          </a>
+        </nav>
+      </div>
+    </header>
   );
-};
-
-export default Navbar;
+}

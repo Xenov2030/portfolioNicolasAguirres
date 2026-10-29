@@ -1,62 +1,88 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Download, CheckCircle } from 'lucide-react';
+import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
+import { profile } from "../data/portfolio";
 
-const About = () => {
+export default function About() {
   return (
-    <section id="about" className="py-24 px-6 relative">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-[1fr_2fr] gap-12 items-start"
-        >
-          <div>
-            <h2 className="font-display text-5xl text-primary mb-8 tracking-widest uppercase italic">Perfil</h2>
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-secondary p-8 rounded-[2.5rem] border border-white/5">
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  Mi trayectoria no es convencional, y eso es mi mayor fortaleza. Vengo de sectores donde la resolución de problemas y la eficiencia son críticas, lo que hoy traduzco en código sólido y funcional.
-                </p>
-                <a 
-                  href="/Nicolas_Aguirres_CV.pdf" 
-                  download 
-                  className="flex items-center gap-2 text-primary font-bold uppercase text-[10px] tracking-widest hover:text-white transition-colors"
-                >
-                  <Download size={14} /> Descargar CV
-                </a>
-              </div>
-            </div>
+    <section
+      id="about"
+      className="section about-section"
+      aria-labelledby="about-title"
+    >
+      <div className="container about-layout">
+        <div className="about-identity">
+          <span className="eyebrow section-index">02 / DETRÁS DEL CÓDIGO</span>
+          <div className="identity-art" aria-hidden="true">
+            <span className="identity-cross cross-one">+</span>
+            <span className="identity-cross cross-two">+</span>
+            <span className="identity-initials">
+              na<span>.</span>
+            </span>
+            <span className="identity-caption">
+              CURIOSIDAD EN CONSTANTE DESARROLLO
+            </span>
           </div>
-
-          <div className="space-y-8">
-            <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-              Desarrollador enfocado en el valor comercial y la excelencia técnica.
-            </h3>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              No solo escribo código; diseño soluciones que resuelven cuellos de botella. Mi experiencia como co-fundador en <span className="text-white">Vex Studio</span> me ha dado una visión 360° del ciclo de vida de un producto: desde la concepción del negocio hasta el despliegue técnico.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                "Mentalidad de resolución de problemas",
-                "Desarrollo asistido por IA",
-                "Enfoque en Mobile-First",
-                "Liderazgo técnico en Vex Studio"
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 text-gray-300">
-                  <CheckCircle size={18} className="text-primary" />
-                  <span className="text-sm font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
+          <div className="cv-downloads" aria-label="Descargar currículum">
+            <a
+              className="cv-link"
+              href={profile.cv}
+              download="Nicolas_Aguirres_CV_ES.pdf"
+              hrefLang="es"
+            >
+              CV en español <ArrowDownToLine size={18} />
+            </a>
+            <a
+              className="cv-link"
+              href={profile.cvEn}
+              download="Nicolas_Aguirres_CV_EN.pdf"
+              hrefLang="en"
+              lang="en"
+            >
+              CV in English <ArrowDownToLine size={18} />
+            </a>
           </div>
-        </motion.div>
+        </div>
+        <div className="about-copy">
+          <h2 id="about-title">
+            Siempre curioso.
+            <br />
+            <span className="muted">Siempre construyendo.</span>
+          </h2>
+          <p className="about-lead">
+            Me interesa lo que pasa cuando una buena idea encuentra la forma de
+            convertirse en algo útil.
+          </p>
+          <p>
+            Mi camino hacia el desarrollo viene de la curiosidad y el
+            aprendizaje constante. Empecé por los fundamentos de la web y hoy
+            exploro aplicaciones full stack, sin perder el foco en una interfaz
+            clara y una buena experiencia móvil.
+          </p>
+          <p>
+            Trabajo con HTML, CSS, JavaScript y React. Uso la IA como una
+            herramienta de apoyo para explorar, aprender e iterar, con criterio
+            sobre lo que construyo.
+          </p>
+          <div className="about-principles">
+            <span>
+              <b>01</b> Entender antes de construir
+            </span>
+            <span>
+              <b>02</b> Diseñar para quien lo usa
+            </span>
+            <span>
+              <b>03</b> Aprender en cada entrega
+            </span>
+          </div>
+          <a
+            className="inline-link"
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conoceme en LinkedIn <ArrowUpRight size={16} />
+          </a>
+        </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
