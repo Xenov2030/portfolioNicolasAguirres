@@ -14,7 +14,7 @@ export default function App() {
       <a className="skip-link" href="#main">
         Saltar al contenido
       </a>
-      <Navbar />
+      <div className="entrance-signature" aria-hidden="true"><span>nicolas aguirres<span className="entrance-dot">.</span></span></div><Navbar />
       <main id="main" tabIndex={-1}>
         <Hero />
         <div className="stack-strip" aria-label="Tecnologías principales">
