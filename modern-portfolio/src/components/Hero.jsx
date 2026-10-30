@@ -1,4 +1,102 @@
-import { ArrowDown, ArrowUpRight, Code2, Sparkles, Layers, Accessibility } from 'lucide-react';
-import { profile } from '../data/portfolio';
-const skills=[{Icon:Code2,title:'Interfaces con carácter',text:'React, JavaScript y diseño responsive'},{Icon:Layers,title:'Ideas que se conectan',text:'Aplicaciones full stack y bases de datos'},{Icon:Accessibility,title:'Diseño para las personas',text:'Claridad, navegación y accesibilidad'},{Icon:Sparkles,title:'Curiosidad aumentada',text:'IA como herramienta para crear y aprender'}];
-export default function Hero(){return <section id="home" className="cosmic-hero" aria-labelledby="hero-title"><div className="container"><span className="cosmic-pill">NICOLAS AGUIRRES · FULL STACK WEB DEVELOPER</span><h1 id="hero-title">Ideas que se sienten.<br/><em>Experiencias</em> que funcionan.</h1><p className="cosmic-intro">HTML · CSS · JavaScript · React · PHP · MySQL. Desde Mendoza, Argentina.</p><div className="recruiter-actions" aria-label="Información para selección"><a href={profile.cv} download>Descargar CV · Español <ArrowDown size={15}/></a><a href={profile.cvEn} download lang="en">Download CV · English <ArrowDown size={15}/></a><a href="#contact">Contactar a Nicolas <ArrowUpRight size={15}/></a></div><div className="cosmic-bento"><article className="cosmic-profile"><div className="cosmic-avatar"><img src="/assets/nicolas-aguirres.jpg" alt="Retrato de Nicolas Aguirres" width="400" height="400" fetchPriority="high" /></div><h2>Nicolas Aguirres</h2><p>Desarrollador web full stack</p><span>De la primera idea al último deploy.</span><a href={profile.github} target="_blank" rel="noopener noreferrer">Explorar mi GitHub <ArrowUpRight size={16}/></a></article><div className="cosmic-skills">{skills.map(({Icon,title,text})=><article className="cosmic-skill" key={title}><div><h3>{title}</h3><p>{text}</p></div><span className="cosmic-icon"><Icon size={29} strokeWidth={1.4}/></span></article>)}</div></div><a className="cosmic-scroll" href="#projects">DESCUBRÍ MIS PROYECTOS <ArrowDown size={16}/></a></div></section>}
+import StackExperience from "./StackExperience";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Code2,
+  Sparkles,
+  Layers,
+  Accessibility,
+} from "lucide-react";
+import { profile } from "../data/portfolio";
+const skills = [
+  {
+    Icon: Code2,
+    title: "Interfaces con carácter",
+    text: "React, JavaScript y diseño responsive",
+  },
+  {
+    Icon: Layers,
+    title: "Ideas que se conectan",
+    text: "Aplicaciones full stack y bases de datos",
+  },
+  {
+    Icon: Accessibility,
+    title: "Diseño para las personas",
+    text: "Claridad, navegación y accesibilidad",
+  },
+  {
+    Icon: Sparkles,
+    title: "Curiosidad aumentada",
+    text: "IA como herramienta para crear y aprender",
+  },
+];
+export default function Hero() {
+  return (
+    <section id="home" className="cosmic-hero" aria-labelledby="hero-title">
+      <div className="container">
+        <span className="cosmic-pill">
+          NICOLAS AGUIRRES · FULL STACK WEB DEVELOPER
+        </span>
+        <h1 id="hero-title">
+          Ideas que se sienten.
+          <br />
+          <em>Experiencias</em> que funcionan.
+        </h1>
+        <p className="cosmic-intro">
+          HTML · CSS · JavaScript · React · PHP · MySQL. Desde Mendoza,
+          Argentina.
+        </p>
+        <div
+          className="recruiter-actions"
+          aria-label="Información para selección"
+        >
+          <a href={profile.cv} download>
+            Descargar CV · Español <ArrowDown size={15} />
+          </a>
+          <a href={profile.cvEn} download lang="en">
+            Download CV · English <ArrowDown size={15} />
+          </a>
+          <a href="#contact">
+            Contactar a Nicolas <ArrowUpRight size={15} />
+          </a>
+        </div>
+        <StackExperience />
+        <div className="cosmic-bento">
+          <article className="cosmic-profile">
+            <div className="cosmic-avatar">
+              <img
+                src="/assets/nicolas-aguirres.jpg"
+                alt="Retrato de Nicolas Aguirres"
+                width="400"
+                height="400"
+                fetchPriority="high"
+              />
+            </div>
+            <h2>Nicolas Aguirres</h2>
+            <p>Desarrollador web full stack</p>
+            <span>De la primera idea al último deploy.</span>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer">
+              Explorar mi GitHub <ArrowUpRight size={16} />
+            </a>
+          </article>
+          <div className="cosmic-skills">
+            {skills.map(({ Icon, title, text }) => (
+              <article className="cosmic-skill" key={title}>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+                <span className="cosmic-icon">
+                  <Icon size={29} strokeWidth={1.4} />
+                </span>
+              </article>
+            ))}
+          </div>
+        </div>
+        <a className="cosmic-scroll" href="#projects">
+          DESCUBRÍ MIS PROYECTOS <ArrowDown size={16} />
+        </a>
+      </div>
+    </section>
+  );
+}

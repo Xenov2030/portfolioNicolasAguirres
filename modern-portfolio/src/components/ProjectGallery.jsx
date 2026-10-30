@@ -6,7 +6,6 @@ export default function ProjectGallery({ project }) {
   const start = useRef(null);
   const container = useRef(null);
   const [paused, setPaused] = useState(false);
-  const [interacting, setInteracting] = useState(false);
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(true);
   useEffect(() => {
@@ -25,8 +24,7 @@ export default function ProjectGallery({ project }) {
     };
   }, []);
   useEffect(() => {
-    if (paused || interacting || !visible || reduced || slides.length < 2)
-      return;
+    if (paused || !visible || reduced || slides.length < 2) return;
     let disposed = false;
     const timer = setInterval(async () => {
       if (document.hidden) return;
@@ -42,16 +40,16 @@ export default function ProjectGallery({ project }) {
       disposed = true;
       clearInterval(timer);
     };
-  }, [index, paused, interacting, visible, reduced, slides]);
+  }, [index, paused, visible, reduced, slides]);
   const move = (delta) =>
     setIndex((i) => (i + delta + slides.length) % slides.length);
   return (
     <div
       className={`project-image project-gallery project-image-${project.id}`}
       ref={container}
-      onMouseEnter={() => setInteracting(true)}
-      onMouseLeave={() => setInteracting(false)}
-      onFocusCapture={(event) => { if (!event.target.closest("[data-playback]")) setPaused(true); }}
+      onFocusCapture={(event) => {
+        if (!event.target.closest("[data-playback]")) setPaused(true);
+      }}
       role="region"
       aria-label={`Galería de ${project.title}`}
       aria-roledescription="carrusel"
@@ -100,7 +98,7 @@ export default function ProjectGallery({ project }) {
         </div>
       </div>
       {slides.length > 1 && (
-        <div className="gallery-controls">
+        <div className="gallery-controls keyboard-only-controls">
           <button
             type="button"
             onClick={() => move(-1)}

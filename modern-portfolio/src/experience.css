@@ -1,0 +1,323 @@
+/* Keyboard controls stay available without visible chrome over project images. */
+.gallery-controls.keyboard-only-controls {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.gallery-controls.keyboard-only-controls:has(:focus-visible) {
+  opacity: 1;
+  pointer-events: auto;
+}
+.stack-experience {
+  max-width: 940px;
+  margin: 36px auto;
+  text-align: left;
+  border: 1px solid #bba0e438;
+  background:
+    radial-gradient(ellipse at 80% 0, #63428a25, transparent 60%), #121016;
+  border-radius: 22px;
+  padding: 24px;
+  overflow: hidden;
+}
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #bcb0d0;
+  font:
+    8px/1.6 ui-monospace,
+    monospace;
+  letter-spacing: 1px;
+}
+.experience-route {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 24px 0;
+  gap: 12px;
+}
+.experience-route button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #21182b;
+  color: #c1b3d5;
+  border: 1px solid #ffffff15;
+  border-radius: 12px;
+  padding: 18px 12px;
+  font-size: 12px;
+  transition:
+    background 0.4s,
+    border-color 0.4s,
+    box-shadow 0.4s;
+}
+.experience-route button[aria-pressed="true"] {
+  background: #39254e;
+  color: #f2eafa;
+  border-color: #c6afff;
+  box-shadow: 0 0 25px #a273ce25;
+}
+.experience-route button i {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: #6f5a85;
+  margin-left: auto;
+}
+.experience-route button[aria-pressed="true"] i {
+  background: #e7d7ff;
+  box-shadow: 0 0 10px #c6afff;
+}
+.experience-console {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25px;
+  align-items: center;
+  min-height: 170px;
+}
+.console-copy .eyebrow {
+  font-size: 9px;
+  color: #cfb6ef;
+  letter-spacing: 0.5px;
+}
+.console-copy p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 14px 0;
+  color: #eee8f7;
+  max-width: 340px;
+}
+.console-note {
+  color: #b2a3c4;
+  font-size: 9px;
+  line-height: 1.6;
+  display: block;
+}
+.experience-console pre {
+  margin: 0;
+  padding: 20px;
+  background: #09080d;
+  border: 1px solid #ffffff15;
+  border-radius: 12px;
+  min-height: 140px;
+  color: #cdb5f3;
+  font:
+    12px/1.9 ui-monospace,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  animation: console-in 0.8s both;
+}
+.experience-pause {
+  display: block;
+  margin: 15px 0 0 auto;
+  background: none;
+  border: 0;
+  color: #b7a6cc;
+  font:
+    9px ui-monospace,
+    monospace;
+  padding: 8px;
+}
+.experience-pause:hover {
+  color: #f2eff8;
+}
+@keyframes console-in {
+  from {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+.stack-carousel {
+  border: 1px solid #bba0e438;
+  border-radius: 20px;
+  background: #141018;
+  overflow: hidden;
+}
+.stack-carousel-tabs {
+  display: flex;
+  border-bottom: 1px solid #ffffff15;
+  overflow-x: auto;
+}
+.stack-carousel-tabs button {
+  flex: 1;
+  white-space: nowrap;
+  font:
+    10px ui-monospace,
+    monospace;
+  padding: 20px 18px;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #b9accb;
+}
+.stack-carousel-tabs button[aria-pressed="true"] {
+  border-bottom-color: #c6afff;
+  color: #f1e6ff;
+  background: #c6afff10;
+}
+.stack-slides {
+  display: grid;
+  min-height: 310px;
+}
+.stack-slide {
+  grid-area: 1/1;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 40px;
+  padding: 36px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(25px);
+  transition:
+    opacity 0.6s,
+    transform 0.6s,
+    visibility 0.6s;
+}
+.stack-slide.is-current {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.stack-slide h3 {
+  font-size: clamp(25px, 3vw, 42px);
+  letter-spacing: -1px;
+  margin: 17px 0;
+}
+.stack-slide .eyebrow {
+  color: #c6afff;
+}
+.stack-slide p {
+  color: #b9accb;
+  font-size: 13px;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+.stack-slide-symbol {
+  display: grid;
+  place-items: center;
+  position: relative;
+  min-height: 200px;
+  color: #c6afff;
+  background: radial-gradient(circle, #9d70d325, transparent 65%);
+}
+.stack-slide-symbol > span {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  font:
+    60px ui-monospace,
+    monospace;
+  color: #c6afff15;
+}
+.stack-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 15px 22px;
+  border-top: 1px solid #ffffff15;
+  font:
+    11px ui-monospace,
+    monospace;
+  color: #c9b9df;
+}
+.stack-nav button {
+  background: #30233f;
+  color: #e8dafa;
+  border: 1px solid #c6afff35;
+  border-radius: 8px;
+  min-height: 42px;
+  padding: 8px 12px;
+}
+.stack-nav button:hover {
+  background: #4e3665;
+}
+@media (max-width: 650px) {
+  .stack-experience {
+    padding: 18px;
+    margin-top: 28px;
+  }
+  .experience-heading {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+  }
+  .experience-route {
+    gap: 7px;
+    margin: 20px 0;
+  }
+  .experience-route button {
+    flex-direction: column;
+    padding: 12px 5px;
+    font-size: 9px;
+    gap: 8px;
+  }
+  .experience-route button i {
+    display: none;
+  }
+  .experience-console {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .console-copy p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .experience-console pre {
+    font-size: 10px;
+    padding: 15px;
+    min-height: 130px;
+  }
+  .console-note {
+    font-size: 8px;
+  }
+  .stack-carousel-tabs button {
+    padding: 16px 14px;
+    font-size: 9px;
+  }
+  .stack-slide {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 24px;
+    min-height: 400px;
+  }
+  .stack-slide-symbol {
+    min-height: 110px;
+  }
+  .stack-slide-symbol > svg {
+    width: 55px;
+    height: 55px;
+  }
+  .stack-slide-symbol > span {
+    font-size: 44px;
+  }
+  .stack-slide h3 {
+    font-size: 29px;
+  }
+  .stack-nav {
+    gap: 10px;
+    padding: 12px;
+  }
+  .stack-nav button {
+    min-height: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .experience-console pre {
+    animation: none;
+  }
+  .stack-slide {
+    transition: none;
+    transform: none;
+  }
+  .experience-route button {
+    transition: none;
+  }
+}
