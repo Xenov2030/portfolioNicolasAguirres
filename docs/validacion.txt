@@ -1,0 +1,19 @@
+{"width":320,"overflow":false}
+{"width":390,"overflow":false}
+axe 390 []
+{"width":768,"overflow":false}
+{"width":1440,"overflow":false}
+axe 1440 []
+filters OK
+anchors []
+/Nicolas_Aguirres_CV.pdf 200
+/Nicolas_Aguirres_CV_EN.pdf 200
+/robots.txt 200
+/sitemap.xml 200
+images []
+runtime errors []
+no JS {
+  h1: [ 'Nicolas Aguirres.Desarrollador web full stack.' ],
+  projects: 7
+}
+Mobile menu, Escape focus restoration, clipboard, gallery buttons and keyboard: OK

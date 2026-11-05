@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {readFile,access} from 'node:fs/promises';
+const dist = new URL('../dist/', import.meta.url);
+const html = await readFile(new URL('index.html', dist), 'utf8');
+assert.equal((html.match(/<h1\b/g)||[]).length,1,'Exactly one H1');
+for(const text of ['Nicolas Aguirres','Mendoza','JornadApp','TrabajoClaro','Aetherfall','CampaignForge','id="services"'])assert(html.includes(text),`Initial HTML missing ${text}`);
+assert.equal((html.match(/class="(?:featured-project|project-card)"/g)||[]).length,7,'All project cards in initial HTML');
+assert(!/noindex/i.test(html),'Indexing must not be blocked');
+assert(html.includes('rel="canonical" href="https://nicolasaguirrescode.com/"'));
+const schema=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
+assert.deepEqual(schema['@graph'].map(x=>x['@type']),['Person','ProfilePage']);
+for(const [,href] of html.matchAll(/href="#([^"]+)"/g))assert(html.includes(`id="${href}"`),`Broken anchor: ${href}`);
+const resources=[...html.matchAll(/(?:src|href)="(\/(?!\/)[^"?#]+)(?:[?#][^"]*)?"/g)].map(m=>m[1]);
+for(const resource of new Set(resources))await access(new URL('.'+resource,dist));
+const sitemap=await readFile(new URL('sitemap.xml',dist),'utf8');
+assert.deepEqual([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(x=>x[1]),['https://nicolasaguirrescode.com/']);
+assert((await readFile(new URL('robots.txt',dist),'utf8')).includes('Sitemap: https://nicolasaguirrescode.com/sitemap.xml'));
+console.log('Static SEO checks passed: initial content, H1, canonical, schema JSON, sitemap, anchors and local assets.');

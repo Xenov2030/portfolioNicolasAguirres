@@ -1,0 +1,11 @@
+import { readFile, writeFile, rm } from "node:fs/promises";
+import { render } from "../.ssr/entry-server.js";
+const path = new URL("../dist/index.html", import.meta.url);
+const html = await readFile(path, "utf8");
+const marker = '<div id="root"></div>';
+if (!html.includes(marker)) throw new Error("Missing root placeholder");
+const content = render();
+if (!content.includes('id="hero-title"') || !content.includes("TrabajoClaro")) throw new Error("Incomplete prerender");
+await writeFile(path, html.replace(marker, () => `<div id="root">${content}</div>`));
+await rm(new URL("../.ssr", import.meta.url), { recursive: true, force: true });
+console.log("Static HTML generated from App; React hydrates the same component tree.");

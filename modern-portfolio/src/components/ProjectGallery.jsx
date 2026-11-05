@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function ProjectGallery({ project }) {
   const slides = project.gallery || [{ src: project.image, alt: project.alt }];
   const [index, setIndex] = useState(0);
   const start = useRef(null);
   const container = useRef(null);
-  const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(true);
   useEffect(() => {
@@ -24,7 +23,7 @@ export default function ProjectGallery({ project }) {
     };
   }, []);
   useEffect(() => {
-    if (paused || !visible || reduced || slides.length < 2) return;
+    if (!visible || reduced || slides.length < 2) return;
     let disposed = false;
     const timer = setInterval(async () => {
       if (document.hidden) return;
@@ -40,16 +39,13 @@ export default function ProjectGallery({ project }) {
       disposed = true;
       clearInterval(timer);
     };
-  }, [index, paused, visible, reduced, slides]);
+  }, [index, visible, reduced, slides]);
   const move = (delta) =>
     setIndex((i) => (i + delta + slides.length) % slides.length);
   return (
     <div
       className={`project-image project-gallery project-image-${project.id}`}
       ref={container}
-      onFocusCapture={(event) => {
-        if (!event.target.closest("[data-playback]")) setPaused(true);
-      }}
       role="region"
       aria-label={`Galería de ${project.title}`}
       aria-roledescription="carrusel"
@@ -91,12 +87,13 @@ export default function ProjectGallery({ project }) {
                 i === index ? "gallery-frame is-current" : "gallery-frame"
               }
               loading="lazy"
-              width="1440"
-              height="820"
+              width={slide.width || 1440}
+              height={slide.height || 820}
             />
           ))}
         </div>
       </div>
+      <a className="capture-link" href={slides[index].src} target="_blank" rel="noopener noreferrer">Abrir captura de {project.title} ↗</a>
       {slides.length > 1 && (
         <div className="gallery-controls keyboard-only-controls">
           <button
@@ -106,16 +103,7 @@ export default function ProjectGallery({ project }) {
           >
             <ChevronLeft size={19} />
           </button>
-          <button
-            type="button"
-            data-playback="true"
-            onClick={() => setPaused((p) => !p)}
-            disabled={reduced}
-            aria-label={`${paused ? "Reanudar" : "Pausar"} presentación de ${project.title}`}
-          >
-            {paused || reduced ? <Play size={17} /> : <Pause size={17} />}
-          </button>
-          <span role="status" aria-live={paused || reduced ? "polite" : "off"}>
+          <span role="status" aria-live={reduced ? "polite" : "off"}>
             {index + 1} / {slides.length}
           </span>
           <button

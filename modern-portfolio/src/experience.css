@@ -1,7 +1,7 @@
 /* Keyboard controls stay available without visible chrome over project images. */
 .gallery-controls.keyboard-only-controls {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
   transition: opacity 0.2s;
 }
 .gallery-controls.keyboard-only-controls:has(:focus-visible) {
