@@ -92,16 +92,16 @@ export default function Projects() {
                 <div className="forge-art" aria-hidden="true">
                   <div className="forge-grid" />
                   <span className="forge-top">
-                    <Sparkles size={12} /> DONDE EMPIEZA LA AVENTURA
+                    <Sparkles size={12} /> PROYECTOS DE NICOLAS AGUIRRES
                   </span>
                   <div className="forge-emblem">
                     <Dices size={72} strokeWidth={1} />
                   </div>
                   <div className="forge-wordmark">
-                    CAMPAIGN<span>FORGE</span>
+                    {project.title}
                   </div>
                   <span className="forge-bottom">
-                    CONSTRUYE MUNDOS. CREA HISTORIAS.
+                    {project.tagline || "CONSTRUYE MUNDOS. CREA HISTORIAS."}
                   </span>
                 </div>
                 <div className="featured-copy">
@@ -111,7 +111,7 @@ export default function Projects() {
                   </div>
                   <h3>
                     {project.title}
-                    <span>Una aventura full stack.</span>
+                    <span>{project.tagline || "Una aventura full stack."}</span>
                   </h3>
                   <p>{project.description}</p>
                   <p className="project-detail">{project.detail}</p>

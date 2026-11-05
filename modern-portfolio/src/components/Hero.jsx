@@ -38,13 +38,12 @@ export default function Hero() {
           NICOLAS AGUIRRES · FULL STACK WEB DEVELOPER
         </span>
         <h1 id="hero-title">
-          Ideas que se sienten.
+          Nicolas Aguirres.
           <br />
-          <em>Experiencias</em> que funcionan.
+          <em>Desarrollador web</em> full stack.
         </h1>
         <p className="cosmic-intro">
-          HTML · CSS · JavaScript · React · PHP · MySQL. Desde Mendoza,
-          Argentina.
+          Desarrollo sitios web y aplicaciones para negocios. React, Next.js, JavaScript, PHP y bases de datos. Desde Mendoza, Argentina, para proyectos locales y remotos.
         </p>
         <div
           className="recruiter-actions"
