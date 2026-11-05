@@ -1,0 +1,31 @@
+.contact-section .contact-heading-whatsapp {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 16px 22px;
+  border: 1px solid #241b30;
+  border-radius: 10px;
+  background: #241b30;
+  color: #f2eff8;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.contact-whatsapp:hover { background: #3b2b4d; }
+.contact-whatsapp:focus-visible { outline: 3px solid #241b30; outline-offset: 4px; }
+.contact-whatsapp svg { flex-shrink: 0; }
+
+@media (max-width: 540px) {
+  .contact-whatsapp { width: 100%; font-size: 15px; padding: 15px 16px; }
+}

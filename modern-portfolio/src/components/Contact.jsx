@@ -2,6 +2,7 @@ import { Github, Linkedin } from "./SocialIcons";
 import { useState, useRef, useEffect } from "react";
 import { ArrowUpRight, Copy, Check, MessageCircle } from "lucide-react";
 import { profile } from "../data/portfolio";
+import "./Contact.css";
 
 export default function Contact() {
   const [message, setMessage] = useState("");
@@ -27,18 +28,20 @@ export default function Contact() {
         <span className="eyebrow">
           <span className="status-dot" /> CONECTEMOS IDEAS
         </span>
-        <div className="contact-heading">
+        <div className="contact-heading contact-heading-whatsapp">
           <h2 id="contact-title">
             Tu próxima idea
             <br />
             puede empezar <span>acá.</span>
           </h2>
           <a
-            className="contact-arrow"
-            href={`mailto:${profile.email}`}
-            aria-label="Escribir un correo a Nicolas Aguirres"
+            className="contact-whatsapp"
+            href={profile.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <ArrowUpRight strokeWidth={1} />
+            <MessageCircle size={22} aria-hidden="true" />
+            Hablemos por WhatsApp
           </a>
         </div>
         <div className="contact-bottom">
@@ -67,13 +70,6 @@ export default function Contact() {
             </div>
           </div>
           <div className="social-links">
-            <a
-              href={profile.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle size={19} /> WhatsApp <ArrowUpRight size={15} />
-            </a>
             <a
               href={profile.linkedin}
               target="_blank"
