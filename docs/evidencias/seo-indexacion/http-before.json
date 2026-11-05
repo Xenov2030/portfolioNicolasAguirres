@@ -1,0 +1,182 @@
+[
+  {
+    "url": "https://nicolasaguirrescode.com/",
+    "result": "200 https://nicolasaguirrescode.com/ 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: text/html",
+      "last-modified: Thu, 05 Nov 2026 16:06:53 GMT"
+    ],
+    "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+    "h1": [
+      "Nicolas Aguirres.<br/><em>Desarrollador web</em> full stack."
+    ],
+    "root_empty": false,
+    "bytes": 56581
+  },
+  {
+    "url": "http://nicolasaguirrescode.com/",
+    "result": "200 https://nicolasaguirrescode.com/ 1",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 301 Moved Permanently",
+      "content-type: text/html",
+      "location: https://nicolasaguirrescode.com/",
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: text/html",
+      "last-modified: Thu, 05 Nov 2026 16:06:53 GMT"
+    ],
+    "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+    "h1": [
+      "Nicolas Aguirres.<br/><em>Desarrollador web</em> full stack."
+    ],
+    "root_empty": false,
+    "bytes": 56581
+  },
+  {
+    "url": "https://www.nicolasaguirrescode.com/",
+    "result": "200 https://nicolasaguirrescode.com/ 1",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 301 ",
+      "content-type: text/html",
+      "location: https://nicolasaguirrescode.com/",
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: text/html",
+      "last-modified: Thu, 05 Nov 2026 16:06:53 GMT"
+    ],
+    "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+    "h1": [
+      "Nicolas Aguirres.<br/><em>Desarrollador web</em> full stack."
+    ],
+    "root_empty": false,
+    "bytes": 56581
+  },
+  {
+    "url": "http://www.nicolasaguirrescode.com/",
+    "result": "200 https://nicolasaguirrescode.com/ 2",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 301 Moved Permanently",
+      "content-type: text/html",
+      "location: https://www.nicolasaguirrescode.com/",
+      "HTTP/1.1 200 OK",
+      "HTTP/2 301 ",
+      "content-type: text/html",
+      "location: https://nicolasaguirrescode.com/",
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: text/html",
+      "last-modified: Thu, 05 Nov 2026 16:06:53 GMT"
+    ],
+    "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+    "h1": [
+      "Nicolas Aguirres.<br/><em>Desarrollador web</em> full stack."
+    ],
+    "root_empty": false,
+    "bytes": 56581
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/robots.txt",
+    "result": "200 https://nicolasaguirrescode.com/robots.txt 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: text/plain",
+      "last-modified: Thu, 29 Oct 2026 20:30:10 GMT"
+    ],
+    "title": null,
+    "h1": [],
+    "root_empty": false,
+    "bytes": 76
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/sitemap.xml",
+    "result": "200 https://nicolasaguirrescode.com/sitemap.xml 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: application/xml",
+      "last-modified: Thu, 29 Oct 2026 20:30:10 GMT"
+    ],
+    "title": null,
+    "h1": [],
+    "root_empty": false,
+    "bytes": 163
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/desarrollo-web-mendoza/",
+    "result": "404 https://nicolasaguirrescode.com/desarrollo-web-mendoza/ 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 404 ",
+      "content-type: text/html",
+      "last-modified: Tue, 22 Apr 2025 07:57:10 GMT"
+    ],
+    "title": "This Page Does Not Exist",
+    "h1": [
+      "This Page Does Not Exist"
+    ],
+    "root_empty": false,
+    "bytes": 4511
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/aplicaciones-web-a-medida/",
+    "result": "404 https://nicolasaguirrescode.com/aplicaciones-web-a-medida/ 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 404 ",
+      "content-type: text/html",
+      "last-modified: Tue, 22 Apr 2025 07:57:10 GMT"
+    ],
+    "title": "This Page Does Not Exist",
+    "h1": [
+      "This Page Does Not Exist"
+    ],
+    "root_empty": false,
+    "bytes": 4511
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/seo-comprobacion-no-existe-20261105/",
+    "result": "404 https://nicolasaguirrescode.com/seo-comprobacion-no-existe-20261105/ 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 404 ",
+      "content-type: text/html",
+      "last-modified: Tue, 22 Apr 2025 07:57:10 GMT"
+    ],
+    "title": "This Page Does Not Exist",
+    "h1": [
+      "This Page Does Not Exist"
+    ],
+    "root_empty": false,
+    "bytes": 4511
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/index.html",
+    "result": "200 https://nicolasaguirrescode.com/index.html 0",
+    "error": "",
+    "headers": [
+      "HTTP/1.1 200 OK",
+      "HTTP/2 200 ",
+      "content-type: text/html",
+      "last-modified: Thu, 05 Nov 2026 16:06:53 GMT"
+    ],
+    "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+    "h1": [
+      "Nicolas Aguirres.<br/><em>Desarrollador web</em> full stack."
+    ],
+    "root_empty": false,
+    "bytes": 56581
+  }
+]

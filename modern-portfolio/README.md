@@ -9,22 +9,26 @@ npm ci
 npm run dev
 npm run build
 npm run check:static
+npm run check:http
 npm run preview
 ```
 
-`build` compila el cliente, crea temporalmente un bundle SSR y genera `dist/index.html` con el árbol React completo. Borra `.ssr/` al terminar. `main.jsx` usa `hydrateRoot` para habilitar interacciones sin reemplazar el contenido. No requiere backend, claves ni consultas a GitHub durante build o navegación.
+`build` compila el cliente, crea temporalmente un bundle SSR y genera la portada, dos directorios de servicios con su `index.html`, un documento `404.html` y el sitemap. Cada página entrega el árbol React completo y metadatos específicos. Borra `.ssr/` al terminar. `main.jsx` usa `hydrateRoot` para habilitar interacciones sin reemplazar el contenido. No requiere backend, claves ni consultas a GitHub durante build o navegación.
 
 ## Contenido y mantenimiento
 
 - `src/data/portfolio.js`: proyectos, límites, capturas y contacto.
 - `src/components/Services.jsx`: servicios y enlaces internos.
-- `index.html`: metadatos y grafo Person/ProfilePage.
+- `index.html`: plantilla del documento; `src/data/seo.js` define metadatos y schema por página.
+- `src/data/services.js` y `src/components/ServicePage.jsx`: contenido y vista de los dos servicios.
+- `site-verification.json`: token opcional real de Google para una propiedad de prefijo de URL; vacío por defecto. La propiedad de dominio se verifica por DNS con el TXT emitido por Google.
 - `src/entry-server.jsx`, `scripts/prerender.mjs`: HTML inicial generado desde App.
 - `scripts/check-static.mjs`: comprobación de contenido inicial, encabezado, canonical, JSON estructurado, anclas, archivos y sitemap.
-- `public/.htaccess`: redirección www al dominio canónico, pendiente de comprobar en el hosting después de publicar.
-- `public/robots.txt`, `public/sitemap.xml`: una única página real, sin fragmentos.
+- `public/.htaccess`: conserva www → dominio canónico, agrega index.html → directorio y el documento de error 404. Las reglas nuevas requieren comprobarse en Hostinger tras publicar.
+- `public/robots.txt`: permite rastreo e indica el sitemap. El build genera el sitemap de tres páginas a partir de `pages`, sin fragmentos ni fechas inventadas.
+- `scripts/check-http.mjs`: inicia y detiene Vite preview en 4193, verifica acceso directo y repetido, recursos y 404. No prueba las reglas de Apache.
 
-Para actualizar contenido, modificar los componentes/datos y volver a compilar. No editar manualmente dist. Si se agregan rutas en el futuro, generar cada documento con contenido propio y metadatos específicos y probar la respuesta directa; no basta un fallback SPA.
+Para actualizar contenido, modificar los componentes/datos y volver a compilar. No editar manualmente dist. Vite usa modo multipágina: `preview` no devuelve la portada en direcciones inexistentes. En desarrollo se sirven solo las dos rutas de servicio conocidas mediante la plantilla fuente; React monta el contenido si el contenedor está vacío y lo hidrata en los documentos de producción. Para revisar SEO y metadatos definitivos, usar build + preview. Si se agregan rutas, ampliar `pages`/`services` y ejecutar ambos controles.
 
 ## Imágenes y procedencia
 
@@ -40,4 +44,4 @@ Se conservan las capturas anteriores de Limbo e Infinity obtenidas de los sitios
 
 La identidad NA y la paleta vigente se mantienen. Las galerías avanzan automáticamente cada 4,5 segundos cuando están visibles y la pestaña está activa, respetando movimiento reducido. No muestran botón de reproducción/pausa; las flechas, el teclado y los gestos permiten recorrer las capturas sin detener el avance automático. Se retiraron los efectos de entrada del título para no retrasar el contenido principal.
 
-La auditoría y las limitaciones de las pruebas están en [docs/seo-audit.md](../docs/seo-audit.md).
+El diagnóstico actual, las pruebas y los pasos exactos de Search Console están en [docs/seo-indexacion.md](../docs/seo-indexacion.md). La auditoría anterior se conserva como referencia histórica.

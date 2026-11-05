@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://nicolasaguirrescode.com/assets/index-CoKEhzVA.js",
+    "response": "200 application/x-javascript",
+    "error": ""
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/assets/index-BPRY4tY5.css",
+    "response": "200 text/css",
+    "error": ""
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/assets/nicolas-aguirres.jpg",
+    "response": "200 image/jpeg",
+    "error": ""
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/assets/jornadapp-desktop.webp",
+    "response": "200 image/webp",
+    "error": ""
+  },
+  {
+    "url": "https://nicolasaguirrescode.com/robots.txt",
+    "response": "200 text/plain",
+    "error": ""
+  },
+  {
+    "test": "Googlebot user-agent only; not a verified crawler IP",
+    "same_html": true,
+    "error": ""
+  }
+]

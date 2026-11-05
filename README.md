@@ -19,6 +19,7 @@ npm ci
 npm run dev
 npm run build
 npm run check:static
+npm run check:http
 npm run preview
 ```
 
@@ -38,6 +39,6 @@ Las tecnologías y límites se contrastaron con el código y documentación púb
 
 El workflow de despliegue publica por FTP cuando se integra a `main`. Revisar el PR antes de integrar. El workflow de PR solo compila y comprueba el HTML estático.
 
-Se conserva una sola página real y una sola URL en el sitemap. Las anclas no son páginas independientes. El título, descripción, canonical y tarjetas sociales están en `modern-portfolio/index.html`; los datos de contacto y proyectos en `src/data/portfolio.js`.
+Se generan tres páginas reales: portada, `/desarrollo-web-mendoza/` y `/aplicaciones-web-a-medida/`. Cada una entrega HTML y metadatos propios; el sitemap solo incluye esas tres URLs canónicas. Las anclas no son páginas independientes. Los datos de contacto y proyectos siguen en `src/data/portfolio.js`; el contenido de servicios está en `src/data/services.js` y los metadatos/esquemas en `src/data/seo.js`.
 
-Ver [auditoría, validación y seguimiento](docs/seo-audit.md). Después de publicar: verificar propiedad en Search Console, enviar sitemap, inspeccionar URL y medir impresiones, clics, CTR y posición por consulta. Las mejoras técnicas no garantizan posiciones.
+Ver el [diagnóstico actual de indexación y páginas de servicios](docs/seo-indexacion.md). La [auditoría inicial](docs/seo-audit.md) conserva las evidencias de la actualización anterior. Después de publicar: verificar propiedad en Search Console, enviar sitemap, inspeccionar URL y medir impresiones, clics, CTR y posición por consulta. Las mejoras técnicas no garantizan posiciones.

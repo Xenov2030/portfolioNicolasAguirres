@@ -8,7 +8,7 @@ const links = [
   ["Stack", "#skills"],
 ];
 
-export default function Navbar() {
+export default function Navbar({ isSubpage = false }) {
   const [open, setOpen] = useState(false);
   const toggle = useRef(null);
   const navigation = useRef(null);
@@ -50,7 +50,7 @@ export default function Navbar() {
     <header className="site-header">
       <div className="container nav-shell">
         <a
-          href="#home"
+          href={isSubpage ? "/#home" : "#home"}
           className="brand"
           aria-label="Nicolas Aguirres, inicio"
           onClick={() => setOpen(false)}
@@ -82,7 +82,7 @@ export default function Navbar() {
           className={`navigation ${open ? "is-open" : ""}`}
         >
           {links.map(([name, href]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>
+            <a key={href} href={isSubpage ? `/${href}` : href} onClick={() => setOpen(false)}>
               {name}
             </a>
           ))}

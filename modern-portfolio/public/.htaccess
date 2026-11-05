@@ -1,7 +1,12 @@
-# Canonical host for the existing Hostinger Apache/LiteSpeed static deployment.
+# Hostinger Apache/LiteSpeed: real static files, never a SPA fallback.
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
+# The explicit browser request must name index.html; internal DirectoryIndex is safe.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html(?:[?\s]) [NC]
+RewriteRule ^(.*)index\.html$ https://nicolasaguirrescode.com/$1 [R=301,L,NE]
 RewriteCond %{HTTP_HOST} ^www\.nicolasaguirrescode\.com$ [NC]
 RewriteRule ^ https://nicolasaguirrescode.com%{REQUEST_URI} [R=301,L,NE]
 </IfModule>
-# HTTPS is already enforced by the hosting platform. Keep unknown paths as 404.
+# HTTPS is already enforced by hosting. Unknown paths retain status 404.

@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "path": "/",
+      "width": 390,
+      "status": 200,
+      "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+      "h1": [
+        "Nicolas Aguirres.Desarrollador web full stack."
+      ],
+      "violations": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "title": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+      "h1": [
+        "Nicolas Aguirres.Desarrollador web full stack."
+      ],
+      "violations": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 390,
+      "status": 200,
+      "title": "Diseño y desarrollo web en Mendoza | Nicolas Aguirres",
+      "h1": [
+        "Diseño y desarrollo web en Mendoza"
+      ],
+      "violations": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 1440,
+      "status": 200,
+      "title": "Diseño y desarrollo web en Mendoza | Nicolas Aguirres",
+      "h1": [
+        "Diseño y desarrollo web en Mendoza"
+      ],
+      "violations": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 390,
+      "status": 200,
+      "title": "Aplicaciones web a medida | Nicolas Aguirres",
+      "h1": [
+        "Desarrollo de aplicaciones web a medida"
+      ],
+      "violations": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 1440,
+      "status": 200,
+      "title": "Aplicaciones web a medida | Nicolas Aguirres",
+      "h1": [
+        "Desarrollo de aplicaciones web a medida"
+      ],
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "unknownStatus": 404,
+  "nojs": "3 pages including FAQs",
+  "reload": "3 pages",
+  "mobileMenu": "Escape focus and navigation",
+  "homeFilters": "7/4/3"
+}
