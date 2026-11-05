@@ -1,64 +1,43 @@
-# Portfolio de Nicolas Aguirres
+# Portfolio React + Vite con HTML estático
 
-Aplicación React + Vite que se despliega en https://nicolasaguirrescode.com/.
-`../portfolio/` conserva la versión estática anterior; el workflow de Hostinger publica `modern-portfolio/dist/`.
+Sitio de Nicolas Aguirres: https://nicolasaguirrescode.com/
 
-## Desarrollo
-
-Con Node.js 24 y npm 11, desde esta carpeta:
+## Comandos (Node.js 24)
 
 ```sh
 npm ci
-npm run dev -- --host 0.0.0.0 --port 5173 --strictPort
-```
-
-```sh
+npm run dev
 npm run build
-npm run preview -- --host 0.0.0.0 --port 4173 --strictPort
+npm run check:static
+npm run preview
 ```
 
-No requiere variables de entorno, backend ni consultas a la API de GitHub. Usa tipografías del sistema y recursos locales, sin depender de Google Fonts.
+`build` compila el cliente, crea temporalmente un bundle SSR y genera `dist/index.html` con el árbol React completo. Borra `.ssr/` al terminar. `main.jsx` usa `hydrateRoot` para habilitar interacciones sin reemplazar el contenido. No requiere backend, claves ni consultas a GitHub durante build o navegación.
 
-## Actualizar el contenido
+## Contenido y mantenimiento
 
-- `src/data/portfolio.js`: contacto, CV en español e inglés, proyectos, tecnologías y enlaces.
-- `src/components/`: secciones de presentación, navegación y contacto.
-- `src/index.css` y `src/editorial.css`: estilos base, composición editorial y adaptaciones responsive; respetan movimiento reducido.
-- `public/assets/`: capturas de los proyectos.
-- `public/social-preview.svg`: fuente de la imagen social; `social-preview.png` es la versión compatible con plataformas sociales (1200 × 630). Al cambiarla, exportar nuevamente el PNG.
-- `index.html`, `public/robots.txt` y `public/sitemap.xml`: metadatos e indexación del dominio.
+- `src/data/portfolio.js`: proyectos, límites, capturas y contacto.
+- `src/components/Services.jsx`: servicios y enlaces internos.
+- `index.html`: metadatos y grafo Person/ProfilePage.
+- `src/entry-server.jsx`, `scripts/prerender.mjs`: HTML inicial generado desde App.
+- `scripts/check-static.mjs`: comprobación de contenido inicial, encabezado, canonical, JSON estructurado, anclas, archivos y sitemap.
+- `public/.htaccess`: redirección www al dominio canónico, pendiente de comprobar en el hosting después de publicar.
+- `public/robots.txt`, `public/sitemap.xml`: una única página real, sin fragmentos.
 
-Los filtros trabajan sobre los datos locales. El botón de copiar correo usa la Clipboard API cuando está disponible; el enlace de email siempre funciona como alternativa.
+Para actualizar contenido, modificar los componentes/datos y volver a compilar. No editar manualmente dist. Si se agregan rutas en el futuro, generar cada documento con contenido propio y metadatos específicos y probar la respuesta directa; no basta un fallback SPA.
 
-## Fuentes del contenido
+## Imágenes y procedencia
 
-Información del código y los README públicos de GitHub consultada durante la actualización del portfolio:
+JornadApp y TrabajoClaro: capturas reales de sus pantallas públicas en 1440×900 y 390×844, obtenidas el 05/11/2026 sin iniciar sesión ni usar datos privados. Se transportaron los recursos mediante curl con TLS verificado para que Chromium pudiera inspeccionarlos en este entorno. No acreditan los flujos autenticados ni el funcionamiento de cuentas.
 
-- https://github.com/Xenov2030/campaign-forge — stack y alcance de la plataforma de rol.
-- https://github.com/Xenov2030/gentlemanbaber — diseño de barbería, servicios y reservas por WhatsApp.
-- https://github.com/Xenov2030/limbohamburguesas — sitio comercial responsive.
-- https://github.com/Xenov2030/infinitygeek — comunidad tecnológica y stack web.
+Aetherfall: capturas públicas del repositorio, commit `865e7306188498eba470af09da124a1e90742abd`, `docs/capturas/master.png` y `jugador-movil.png`. Se inspeccionaron visualmente: muestran una campaña ficticia. No son capturas nuevas de producción.
 
-No se presentan métricas comerciales sin evidencia ni niveles de experiencia no documentados. La ilustración de CampaignForge representa su temática; no es una captura de la aplicación. La presentación personal y los datos de contacto parten del contenido existente del repositorio.
+Las seis capturas nuevas se convirtieron a WebP (230 KB aproximadamente, frente a 1 MB de PNG). Dimensiones explícitas y carga diferida en galerías; el retrato de portada mantiene prioridad alta y no usa lazy loading.
 
-## Comprobaciones para revisar cambios
+CampaignForge conserva una ilustración temática, no una captura real: faltan capturas verificadas de escritorio y celular. No se inventan pantallas. Sus versiones declaradas difieren entre README y package.json y no se publica como versión estable.
 
-Además de `npm run build`, comprobar en navegador:
+Se conservan las capturas anteriores de Limbo e Infinity obtenidas de los sitios públicos. Gentleman procede del HTML/CSS del repositorio, con fuentes y recursos externos de respaldo según la documentación anterior. Los CV aportados en español e inglés se conservan sin modificar.
 
-- Renderizado sin errores de consola, con todas las imágenes cargadas.
-- Filtros: Todos (4), Aplicaciones (1), Sitios web (3).
-- Navegación por anclas, enlaces de código y PDF del CV.
-- Menú móvil: abrir/cerrar, Escape y recorrido de foco con Tab.
-- Copia del correo y alternativa cuando el navegador no permite el portapapeles.
-- Sin desbordes horizontales en 320, 375, 390, 768, 1024 y 1440 px.
-- Preferencia de movimiento reducido y navegación por teclado.
+La identidad NA y la paleta vigente se mantienen. Los controles de galería ahora son visibles para permitir pausar y recorrer también con mouse y tacto. Se retiraron los efectos de entrada del título para no retrasar el contenido principal.
 
-El workflow `.github/workflows/deploy.yml` instala con `npm ci`, compila con Node 24 y despliega por FTP al recibir un push en `main`. El desarrollo local no publica el sitio.
-
-La captura de Gentleman Barber Shop se obtuvo del HTML y CSS del repositorio (commit `4a517be2c2affe676a369d53dff5b9ddf516cadd`). El entorno restringe Unsplash y Google Fonts, por lo que la captura usa los estilos de respaldo del sitio sin esas solicitudes externas. La ficha enlaza al código porque no se verificó un despliegue público.
-
-Los PDF descargables corresponden a los archivos en español e inglés aportados por Nicolas, fechados el 27/10/2026. Se conservan sin modificar. La paleta usa carbón cálido, marfil, coral y un detalle lavanda.
-
-La portada permite explorar tres proyectos con botones accesibles y sin reproducción automática. La propuesta editorial usa tipografía de gran escala, capturas amplias y superficies marfil, lavanda y coral; no afirma haber recibido premios.
-
-Las capturas `limbo-live.png` e `infinity-geeks-live.png` provienen directamente de las páginas públicas de ambos proyectos, capturadas en Chromium el 29/10/2026.
+La auditoría y las limitaciones de las pruebas están en [docs/seo-audit.md](../docs/seo-audit.md).

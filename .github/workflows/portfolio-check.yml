@@ -1,4 +1,4 @@
-name: Portfolio build
+name: Portfolio checks
 on:
   pull_request:
     paths:
@@ -19,3 +19,4 @@ jobs:
           cache-dependency-path: modern-portfolio/package-lock.json
       - run: npm ci
       - run: npm run build
+      - run: npm run check:static

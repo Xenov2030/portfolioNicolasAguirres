@@ -1,38 +1,43 @@
 # Nicolas Aguirres · Portfolio
 
-Desarrollador web full stack en Mendoza, Argentina.
+Desarrollador web full stack en Mendoza, Argentina. Sitios para negocios, interfaces con React y aplicaciones web.
 
 - Portfolio: https://nicolasaguirrescode.com/
 - GitHub: https://github.com/Xenov2030
 - LinkedIn: https://www.linkedin.com/in/nicolas-aguirres/
 - Contacto: nicolas.f.aguirres@gmail.com
 
-## Proyectos destacados
+El sitio vigente está en `modern-portfolio/`. `portfolio/` conserva una versión anterior.
 
-- [JornadApp](https://controldehorastrabajadas.vercel.app/): beta de registro personal de jornadas e ingresos.
-- [TrabajoClaro](https://trabajo-claro-orpin.vercel.app/): beta de clientes, presupuestos, trabajos y registro manual de cobros.
-- [Aetherfall](https://github.com/Xenov2030/Aetherfall): archivo de campaña de rol en desarrollo.
-- [CampaignForge](https://github.com/Xenov2030/campaign-forge): plataforma de campañas de rol.
+## Desarrollo y validación
 
-Las funciones y estados se contrastan con los README de cada repositorio. No se declaran métricas comerciales ni clientes sin evidencia.
-
-## Desarrollo
-
-El sitio vigente está en `modern-portfolio/` (React y Vite). La carpeta `portfolio/` conserva una versión anterior.
+Node.js 24 y npm:
 
 ```sh
 cd modern-portfolio
 npm ci
-npm run build
 npm run dev
+npm run build
+npm run check:static
+npm run preview
 ```
 
-Los pushes a `main` ejecutan el despliegue FTP existente a Hostinger. Revisar los cambios antes de integrar.
+La compilación genera HTML completo desde React con `renderToString`; el cliente hidrata el mismo árbol. El resultado es estático y compatible con el despliegue FTP existente: no necesita un servidor Node.js en hosting. Los filtros y carruseles necesitan JavaScript; contenido, contacto y proyectos permanecen disponibles sin él.
 
-## Visibilidad en buscadores
+## Proyectos seleccionados
 
-Se conservan canonical, robots.txt y sitemap; se mejora el título, la descripción, el encabezado principal y los datos estructurados de persona y perfil.
+- [JornadApp](https://github.com/Xenov2030/ControldeHorasTrabajadas): producto propio beta de jornadas e ingresos.
+- [TrabajoClaro](https://github.com/Xenov2030/TrabajoClaro): producto propio beta de gestión para pequeños negocios.
+- [Aetherfall](https://github.com/Xenov2030/Aetherfall): archivo privado de una campaña presencial, en desarrollo.
+- [CampaignForge](https://github.com/Xenov2030/campaign-forge): plataforma multijugador con integración de IA, en desarrollo.
+- Gentleman Barber Shop, Limbo Hamburguesas e Infinity Geeks: variedad de diseño y fundamentos web. No se atribuyen contratos comerciales sin evidencia.
 
-Pendiente tras publicar: verificar el dominio en Google Search Console, enviar `/sitemap.xml`, inspeccionar la URL principal y medir consultas por nombre y especialidad. No hay acceso a Search Console desde este repositorio ni garantía de posición.
+Las tecnologías y límites se contrastaron con el código y documentación públicos. MusashiPaginaWeb solo contiene README y no se destaca. No se declaran usuarios, ventas, testimonios ni nivel de inglés.
 
-La aplicación se renderiza en el navegador. Evaluar prerenderizado o SSR como una mejora posterior; no se implementa en esta actualización.
+## Publicación y SEO
+
+El workflow de despliegue publica por FTP cuando se integra a `main`. Revisar el PR antes de integrar. El workflow de PR solo compila y comprueba el HTML estático.
+
+Se conserva una sola página real y una sola URL en el sitemap. Las anclas no son páginas independientes. El título, descripción, canonical y tarjetas sociales están en `modern-portfolio/index.html`; los datos de contacto y proyectos en `src/data/portfolio.js`.
+
+Ver [auditoría, validación y seguimiento](docs/seo-audit.md). Después de publicar: verificar propiedad en Search Console, enviar sitemap, inspeccionar URL y medir impresiones, clics, CTR y posición por consulta. Las mejoras técnicas no garantizan posiciones.

@@ -1,0 +1,7 @@
+# Canonical host for the existing Hostinger Apache/LiteSpeed static deployment.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.nicolasaguirrescode\.com$ [NC]
+RewriteRule ^ https://nicolasaguirrescode.com%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+# HTTPS is already enforced by the hosting platform. Keep unknown paths as 404.

@@ -91,12 +91,13 @@ export default function ProjectGallery({ project }) {
                 i === index ? "gallery-frame is-current" : "gallery-frame"
               }
               loading="lazy"
-              width="1440"
-              height="820"
+              width={slide.width || 1440}
+              height={slide.height || 820}
             />
           ))}
         </div>
       </div>
+      <a className="capture-link" href={slides[index].src} target="_blank" rel="noopener noreferrer">Abrir captura de {project.title} ↗</a>
       {slides.length > 1 && (
         <div className="gallery-controls keyboard-only-controls">
           <button

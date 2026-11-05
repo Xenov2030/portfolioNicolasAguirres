@@ -43,12 +43,17 @@ export default function Hero() {
           <em>Desarrollador web</em> full stack.
         </h1>
         <p className="cosmic-intro">
-          Desarrollo sitios web y aplicaciones para negocios. React, Next.js, JavaScript, PHP y bases de datos. Desde Mendoza, Argentina, para proyectos locales y remotos.
+          Desarrollo sitios y aplicaciones web para negocios desde Mendoza, Argentina.
+          Interfaces con React y Next.js, sistemas a medida y una experiencia pensada para el celular.
         </p>
         <div
           className="recruiter-actions"
-          aria-label="Información para selección"
+          aria-label="Proyectos y oportunidades laborales"
         >
+          <a href="#contact">
+            Consultar por un proyecto <ArrowUpRight size={15} />
+          </a>
+          <a href="#projects">Ver proyectos <ArrowDown size={15} /></a>
           <a href={profile.cv} download>
             Descargar CV · Español <ArrowDown size={15} />
           </a>
@@ -56,7 +61,7 @@ export default function Hero() {
             Download CV · English <ArrowDown size={15} />
           </a>
           <a href="#contact">
-            Contactar a Nicolas <ArrowUpRight size={15} />
+            Proponer una oportunidad laboral <ArrowUpRight size={15} />
           </a>
         </div>
         <StackExperience />

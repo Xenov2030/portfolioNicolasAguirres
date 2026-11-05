@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const links = [
+  ["Servicios", "#services"],
   ["Proyectos", "#projects"],
   ["Sobre mí", "#about"],
   ["Stack", "#skills"],

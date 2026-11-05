@@ -1,4 +1,5 @@
 import usePortfolioMotion from "./hooks/usePortfolioMotion";
+import Services from "./components/Services";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -31,6 +32,7 @@ export default function App() {
             <span>PostgreSQL</span>
           </div>
         </div>
+        <Services />
         <Projects />
         <About />
         <Skills />

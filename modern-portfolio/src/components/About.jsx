@@ -52,7 +52,7 @@ export default function About() {
             clara y una buena experiencia móvil.
           </p>
           <p>
-            Trabajo con HTML, CSS, JavaScript y React. Uso la IA como una
+            Como desarrollador frontend trabajo con HTML, CSS, JavaScript y React. También exploro el desarrollo full stack con Next.js y bases de datos; PHP y MySQL forman parte de mi aprendizaje. Uso la IA como una
             herramienta de apoyo para explorar, aprender e iterar, con criterio
             sobre lo que construyo.
           </p>

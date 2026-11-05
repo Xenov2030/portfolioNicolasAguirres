@@ -54,9 +54,9 @@ export default function Projects() {
             </h2>
           </div>
           <p>
-            De sitios para negocios a mundos de rol.
+            Productos propios, proyectos de práctica y sitios de muestra.
             <br />
-            Cada proyecto, un desafío distinto.
+            El estado y alcance de cada trabajo se indican por separado.
           </p>
         </div>
         <div className="projects-toolbar">
@@ -88,11 +88,11 @@ export default function Projects() {
         <div className="project-grid">
           {visible.map((project) =>
             project.featured ? (
-              <article className="featured-project" key={project.id}>
-                <div className="forge-art" aria-hidden="true">
+              <article id={project.id} className="featured-project" key={project.id}>
+                {project.gallery ? <ProjectGallery project={project} /> : <div className="forge-art" aria-hidden="true">
                   <div className="forge-grid" />
                   <span className="forge-top">
-                    <Sparkles size={12} /> PROYECTOS DE NICOLAS AGUIRRES
+                    <Sparkles size={12} /> DONDE EMPIEZA LA AVENTURA
                   </span>
                   <div className="forge-emblem">
                     <Dices size={72} strokeWidth={1} />
@@ -101,9 +101,9 @@ export default function Projects() {
                     {project.title}
                   </div>
                   <span className="forge-bottom">
-                    {project.tagline || "CONSTRUYE MUNDOS. CREA HISTORIAS."}
+                    CONSTRUYE MUNDOS. CREA HISTORIAS.
                   </span>
-                </div>
+                </div>}
                 <div className="featured-copy">
                   <div className="project-label">
                     <Layers size={14} /> {project.label}
@@ -111,10 +111,11 @@ export default function Projects() {
                   </div>
                   <h3>
                     {project.title}
-                    <span>{project.tagline || "Una aventura full stack."}</span>
+                    <span>{project.tagline}</span>
                   </h3>
                   <p>{project.description}</p>
                   <p className="project-detail">{project.detail}</p>
+                  <p className="project-detail">{project.limits}</p>
                   <div className="tech-tags">
                     {project.tech.map((tech) => (
                       <span key={tech}>{tech}</span>
@@ -124,7 +125,7 @@ export default function Projects() {
                 </div>
               </article>
             ) : (
-              <article className="project-card" key={project.id}>
+              <article id={project.id} className="project-card" key={project.id}>
                 <ProjectGallery project={project} />
                 <div className="project-card-copy">
                   <span className="project-label">{project.label}</span>
