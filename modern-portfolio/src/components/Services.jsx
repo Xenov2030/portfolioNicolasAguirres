@@ -1,4 +1,4 @@
-import { profile } from "../data/portfolio";
+import { contactLinks } from "../data/contact";
 export default function Services() {
   return <section id="services" className="section services-section" aria-labelledby="services-title">
     <div className="container">
@@ -10,7 +10,7 @@ export default function Services() {
         <article><h3>Aplicaciones web a medida</h3><p>Interfaces con React y Next.js y lógica de aplicación para organizar procesos. JornadApp muestra mi trabajo con registros, horarios y estimaciones.</p><a href="/aplicaciones-web-a-medida/">Ver el servicio de aplicaciones a medida →</a></article>
         <article><h3>Sistemas de gestión para negocios</h3><p>Clientes, presupuestos, trabajos y seguimiento de cobros según el alcance acordado. TrabajoClaro es mi beta propia para explorar estas necesidades.</p><a href="#trabajoclaro">Conocer TrabajoClaro →</a></article>
       </div>
-      <a className="inline-link" href={`mailto:${profile.email}?subject=Consulta%20por%20desarrollo%20web`}>Contame qué necesitás desarrollar →</a>
+      <a className="inline-link" href={contactLinks.email}>Contame qué necesitás desarrollar →</a>
     </div>
   </section>;
 }

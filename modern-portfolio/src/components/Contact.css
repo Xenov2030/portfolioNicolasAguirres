@@ -4,7 +4,8 @@
   gap: 28px;
 }
 
-.contact-whatsapp {
+.contact-whatsapp,
+.contact-email {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -22,10 +23,48 @@
   transition: background 0.2s;
 }
 
-.contact-whatsapp:hover { background: #3b2b4d; }
-.contact-whatsapp:focus-visible { outline: 3px solid #241b30; outline-offset: 4px; }
-.contact-whatsapp svg { flex-shrink: 0; }
+.contact-whatsapp:hover {
+  background: #3b2b4d;
+}
+.contact-whatsapp:focus-visible {
+  outline: 3px solid #241b30;
+  outline-offset: 4px;
+}
+.contact-whatsapp svg,
+.contact-email svg {
+  flex-shrink: 0;
+}
 
 @media (max-width: 540px) {
-  .contact-whatsapp { width: 100%; font-size: 15px; padding: 15px 16px; }
+  .contact-whatsapp,
+  .contact-email {
+    width: 100%;
+    font-size: 15px;
+    padding: 15px 16px;
+  }
+}
+
+.contact-choices {
+  width: 100%;
+}
+.contact-choices > p {
+  margin: 0 0 14px;
+  color: #241b30;
+  font-size: 16px;
+}
+.contact-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.contact-email {
+  background: transparent;
+  color: #241b30;
+}
+.contact-email:hover {
+  background: #241b3010;
+}
+.contact-email:focus-visible {
+  outline: 3px solid #241b30;
+  outline-offset: 4px;
 }

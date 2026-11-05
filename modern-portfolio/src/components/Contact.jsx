@@ -1,7 +1,8 @@
 import { Github, Linkedin } from "./SocialIcons";
 import { useState, useRef, useEffect } from "react";
-import { ArrowUpRight, Copy, Check, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Copy, Check, MessageCircle, Mail } from "lucide-react";
 import { profile } from "../data/portfolio";
+import { contactLinks } from "../data/contact";
 import "./Contact.css";
 
 export default function Contact() {
@@ -34,15 +35,28 @@ export default function Contact() {
             <br />
             puede empezar <span>acá.</span>
           </h2>
-          <a
-            className="contact-whatsapp"
-            href={profile.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <MessageCircle size={22} aria-hidden="true" />
-            Hablemos por WhatsApp
-          </a>
+          <div className="contact-choices">
+            <p>Elegí cómo contactarme.</p>
+            <div
+              className="contact-options"
+              role="group"
+              aria-label="Opciones de contacto"
+            >
+              <a
+                className="contact-whatsapp"
+                href={contactLinks.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={22} aria-hidden="true" />
+                Hablemos por WhatsApp
+              </a>
+              <a className="contact-email" href={contactLinks.email}>
+                <Mail size={22} aria-hidden="true" />
+                Enviar correo
+              </a>
+            </div>
+          </div>
         </div>
         <div className="contact-bottom">
           <div>
@@ -52,7 +66,7 @@ export default function Contact() {
               Me gustaría conocerla.
             </p>
             <div className="email-row">
-              <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              <a href={contactLinks.email}>{profile.email}</a>
               <button
                 type="button"
                 onClick={copyEmail}
