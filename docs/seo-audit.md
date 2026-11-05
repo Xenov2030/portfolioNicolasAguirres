@@ -32,7 +32,7 @@ El PR #1 y su rama `seo-proyectos-destacados` se revisaron como referencia. Se c
 
 Commits examinados: JornadApp `29ea710`, TrabajoClaro `25565a1`, Aetherfall `865e730`, CampaignForge `890feca`. Las comprobaciones de código no equivalen a una auditoría funcional completa de esas aplicaciones.
 
-Capturas: JornadApp y TrabajoClaro, pantallas públicas reales de escritorio y móvil sin sesión. Aetherfall, imágenes del repositorio con campaña ficticia inspeccionadas visualmente. Seis WebP: 230 KB frente a unos 1 MB en PNG, aproximadamente 77% menos. Las pantallas públicas se cargaron transportando recursos con curl y TLS verificado por limitaciones de certificados de Chromium; esto no acredita autenticación ni backend. CampaignForge conserva una ilustración temática: sus capturas reales de escritorio/móvil quedan pendientes y no se sustituyeron por imágenes inventadas.
+Capturas: JornadApp y TrabajoClaro, pantallas públicas reales de escritorio y móvil sin sesión. Aetherfall, imágenes del repositorio con campaña ficticia inspeccionadas visualmente. Las ocho capturas nuevas usan WebP. Las pantallas públicas se cargaron transportando recursos con curl y TLS verificado por limitaciones de certificados de Chromium; esto no acredita autenticación ni backend. CampaignForge: capturas reales de escritorio y móvil de su modo de demostración local, con cuentas y campaña ficticias del seed; se verificó el acceso al panel local sin conectar producción ni los servicios externos. Estas capturas reemplazan la ilustración temática anterior.
 
 ## Palabras clave y destino
 
@@ -50,7 +50,7 @@ La prioridad se basa en intención y evidencia del portfolio. No se contó con h
 
 ## Validación ejecutada
 
-- Node.js 24.19.0, dependencias existentes; compilación Vite cliente + SSR y generación de HTML completadas.
+- Node.js 24.19.0, dependencias existentes; compilación Vite cliente + SSR y generación de HTML completadas. GitHub Actions también completó satisfactoriamente la compilación con instalación limpia y check:static en el commit c6de320; el nuevo commit de capturas vuelve a ejecutar ese workflow.
 - `npm run check:static`: un H1, contenido inicial de siete proyectos, canonical, JSON Person/ProfilePage, anclas, recursos locales, robots y sitemap. Sin fragmentos en sitemap.
 - Chromium sobre producción local: 320, 390, 768 y 1440 px sin desborde horizontal. Capturas de escritorio y móvil inspeccionadas.
 - axe WCAG 2 A/AA y 2.1 AA en 390 y 1440 px: cero infracciones detectadas en la pasada final. No equivale a una certificación integral o prueba con lector de pantalla.
@@ -60,7 +60,7 @@ La prioridad se basa en intención y evidencia del portfolio. No se contó con h
 - Medición orientativa de una carga local en Chromium 390×844, sin throttling: LCP 336 ms y CLS 0. No son resultados de campo, Lighthouse ni PageSpeed, ni pueden extrapolarse a teléfonos o producción. INP y Core Web Vitals reales quedan pendientes. JS transferido unos 72 KB y CSS 13 KB en esa carga local.
 - Sitio vigente, robots, sitemap, JornadApp, TrabajoClaro, Limbo e Infinity: respuesta 200. HTTP raíz redirige una vez a HTTPS. www todavía responde 200 sin redirección; el nuevo .htaccess no se probó en Hostinger. No se introdujeron rutas nuevas cuyo acceso directo deba resolverse con una SPA.
 
-Pendientes antes de dar por cerrada la publicación: verificar 301 de www conservando rutas/query, canonical de la respuesta final, cabeceras y disponibilidad del nuevo HTML en Hostinger, respuesta 404 para URL inexistente, pruebas reales de campo, revisión con lector de pantalla y capturas autenticadas de CampaignForge con datos de prueba. Sin acceso a métricas de Google no se acredita indexación ni ranking. La configuración de hosting existente no fue modificada.
+Pendientes antes de dar por cerrada la publicación: verificar 301 de www conservando rutas/query, canonical de la respuesta final, cabeceras y disponibilidad del nuevo HTML en Hostinger, respuesta 404 para URL inexistente, pruebas reales de campo, revisión con lector de pantalla y comprobaciones de los servicios externos de CampaignForge si se publica una demo. Sin acceso a métricas de Google no se acredita indexación ni ranking. La configuración de hosting existente no fue modificada.
 
 ## Search Console y medición después de publicar
 
@@ -72,3 +72,11 @@ Pendientes antes de dar por cerrada la publicación: verificar 301 de www conser
 6. Registrar consultas recibidas por correo/WhatsApp y oportunidades laborales de forma separada. No se instaló analítica ni se envían eventos de contacto en esta propuesta.
 
 Los cambios mejoran la base técnica y la claridad comercial; la visibilidad orgánica deberá medirse después de publicar. No se promete primer puesto ni un plazo de posicionamiento.
+
+## Evidencias de la propuesta
+
+- [Captura completa de escritorio](capturas/portfolio-escritorio.webp)
+- [Captura completa móvil](capturas/portfolio-movil.webp)
+- [Salida de la validación de navegador](validacion.txt)
+
+Las capturas del portfolio se tomaron con movimiento reducido, sobre la compilación local, después de recorrer la página para cargar sus imágenes.

@@ -32,9 +32,9 @@ JornadApp y TrabajoClaro: capturas reales de sus pantallas públicas en 1440×90
 
 Aetherfall: capturas públicas del repositorio, commit `865e7306188498eba470af09da124a1e90742abd`, `docs/capturas/master.png` y `jugador-movil.png`. Se inspeccionaron visualmente: muestran una campaña ficticia. No son capturas nuevas de producción.
 
-Las seis capturas nuevas se convirtieron a WebP (230 KB aproximadamente, frente a 1 MB de PNG). Dimensiones explícitas y carga diferida en galerías; el retrato de portada mantiene prioridad alta y no usa lazy loading.
+Las ocho capturas nuevas se convirtieron a WebP. Dimensiones explícitas y carga diferida en galerías; el retrato de portada mantiene prioridad alta y no usa lazy loading.
 
-CampaignForge conserva una ilustración temática, no una captura real: faltan capturas verificadas de escritorio y celular. No se inventan pantallas. Sus versiones declaradas difieren entre README y package.json y no se publica como versión estable.
+CampaignForge: capturas reales del modo local `MOCK_MODE=true`, commit `890feca`, con campaña y cuentas ficticias del seed. Se instaló el código sin modificarlo, se generó Prisma y se inició Next.js en desarrollo. Se ingresó en la cuenta ficticia local y se capturó el panel en escritorio y móvil. No se conectaron bases de producción, IA, Pusher ni LiveKit; las capturas no acreditan esos servicios. Sus versiones declaradas difieren entre README y package.json y no se publica como versión estable.
 
 Se conservan las capturas anteriores de Limbo e Infinity obtenidas de los sitios públicos. Gentleman procede del HTML/CSS del repositorio, con fuentes y recursos externos de respaldo según la documentación anterior. Los CV aportados en español e inglés se conservan sin modificar.
 

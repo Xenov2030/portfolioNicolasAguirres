@@ -124,7 +124,13 @@ export const projects = [
       "Un lugar para construir mundos y jugar en equipo. Plataforma de campañas de rol con personajes, misiones, chat e integración de IA.",
     detail:
       "Desarrollé interfaces y módulos de campañas, personajes y misiones. Next.js, TypeScript, PostgreSQL y Prisma, con integración de Gemini. El código incluye chat y voz con servicios externos; no hay demo pública verificada. La documentación y el paquete usan versiones distintas, por lo que no se anuncia como versión estable.",
-    limits: "Requiere base de datos y credenciales externas. La IA y los servicios en tiempo real dependen de su configuración.",
+    limits: "Requiere base de datos y credenciales externas. La IA y los servicios en tiempo real dependen de su configuración. Las capturas muestran el modo de demostración local con datos ficticios.",
+    image: "/assets/campaign-forge-desktop.webp",
+    alt: "CampaignForge en escritorio, demostración local con datos ficticios",
+    gallery: [
+      { src: "/assets/campaign-forge-desktop.webp", alt: "Panel de CampaignForge en escritorio con datos ficticios", width: 1440, height: 900 },
+      { src: "/assets/campaign-forge-mobile.webp", alt: "Panel de CampaignForge en celular con datos ficticios", width: 390, height: 844 },
+    ],
     tagline: "Mundos compartidos, historias conectadas.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Gemini"],
     repo: "https://github.com/Xenov2030/campaign-forge",
