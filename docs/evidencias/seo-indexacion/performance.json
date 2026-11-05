@@ -1,0 +1,20 @@
+{
+  "method": "One unthrottled local Chromium load per page, 390x844. Not field data; INP not measured.",
+  "results": [
+    {
+      "path": "/",
+      "lcp": 432,
+      "cls": 0
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "lcp": 224,
+      "cls": 0
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "lcp": 276,
+      "cls": 0
+    }
+  ]
+}

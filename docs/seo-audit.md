@@ -1,4 +1,6 @@
-# Auditoría y actualización del portfolio
+# Auditoría inicial y actualización del portfolio
+
+Documento histórico de la primera propuesta. Para el estado actual de las páginas y Search Console, consultar [seo-indexacion.md](seo-indexacion.md).
 
 Revisión del 5 de noviembre de 2026. Marca: **Nicolas Aguirres / NA**. Propuesta para revisión; no publicada ni integrada a main.
 

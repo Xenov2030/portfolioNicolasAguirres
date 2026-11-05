@@ -1,3 +1,5 @@
+import ServicePage from "./components/ServicePage";
+import { getService } from "./data/services";
 import usePortfolioMotion from "./hooks/usePortfolioMotion";
 import Services from "./components/Services";
 import Navbar from "./components/Navbar";
@@ -8,34 +10,57 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-export default function App() {
+export default function App({ path = "/" }) {
+  const service = getService(path);
+  const isHome = path === "/";
   usePortfolioMotion();
   return (
     <>
       <a className="skip-link" href="#main">
         Saltar al contenido
       </a>
-      <div className="entrance-signature" aria-hidden="true"><span>nicolas aguirres<span className="entrance-dot">.</span></span></div><Navbar />
+      <div className="entrance-signature" aria-hidden="true">
+        <span>
+          nicolas aguirres<span className="entrance-dot">.</span>
+        </span>
+      </div>
+      <Navbar isSubpage={!isHome} />
       <main id="main" tabIndex={-1}>
-        <Hero />
-        <div className="stack-strip" aria-label="Tecnologías principales">
-          <div className="container">
-            <span>DISEÑO ↗ DESARROLLO</span>
-            <span>React</span>
-            <i aria-hidden="true">✦</i>
-            <span>JavaScript</span>
-            <i aria-hidden="true">✦</i>
-            <span>Next.js</span>
-            <i aria-hidden="true">✦</i>
-            <span>TypeScript</span>
-            <i aria-hidden="true">✦</i>
-            <span>PostgreSQL</span>
-          </div>
-        </div>
-        <Services />
-        <Projects />
-        <About />
-        <Skills />
+        {isHome ? (
+          <>
+            <Hero />
+            <div className="stack-strip" aria-label="Tecnologías principales">
+              <div className="container">
+                <span>DISEÑO ↗ DESARROLLO</span>
+                <span>React</span>
+                <i aria-hidden="true">✦</i>
+                <span>JavaScript</span>
+                <i aria-hidden="true">✦</i>
+                <span>Next.js</span>
+                <i aria-hidden="true">✦</i>
+                <span>TypeScript</span>
+                <i aria-hidden="true">✦</i>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+            <Services />
+            <Projects />
+            <About />
+            <Skills />
+          </>
+        ) : service ? (
+          <ServicePage service={service} />
+        ) : (
+          <section id="home" className="service-hero">
+            <div className="container">
+              <h1>Página no encontrada</h1>
+              <p>La dirección no corresponde a una página de este portfolio.</p>
+              <a className="inline-link" href="/">
+                Volver al inicio
+              </a>
+            </div>
+          </section>
+        )}
         <Contact />
       </main>
       <Footer />
