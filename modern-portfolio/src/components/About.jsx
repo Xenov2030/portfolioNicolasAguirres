@@ -37,43 +37,29 @@ export default function About() {
         </div>
         <div className="about-copy">
           <h2 id="about-title">
-            Siempre curioso.
+            Una web que represente tu negocio.
             <br />
-            <span className="muted">Siempre construyendo.</span>
+            <span className="muted">Una herramienta que simplifique tu trabajo.</span>
           </h2>
           <p className="about-lead">
-            Me interesa lo que pasa cuando una buena idea encuentra la forma de
-            convertirse en algo útil.
+            Soy Nicolas Aguirres, desarrollador web en Mendoza, Argentina. Creo sitios y aplicaciones web para que tus clientes conozcan lo que ofrecés, encuentren lo que necesitan y puedan contactarte fácilmente desde cualquier dispositivo.
           </p>
           <p>
-            Mi camino hacia el desarrollo viene de la curiosidad y el
-            aprendizaje constante. Empecé por los fundamentos de la web y hoy
-            exploro aplicaciones full stack, sin perder el foco en una interfaz
-            clara y una buena experiencia móvil.
+            Cada proyecto empieza por entender tu negocio: qué querés conseguir, quién va a usarlo y qué conviene resolver primero. Con esa base, desarrollo una solución con identidad propia, navegación clara y una experiencia cuidada en celulares y computadoras.
           </p>
           <p>
-            Como desarrollador frontend trabajo con HTML, CSS, JavaScript y React. También exploro el desarrollo full stack con Next.js y bases de datos; PHP y MySQL forman parte de mi aprendizaje. Uso la IA como una
-            herramienta de apoyo para explorar, aprender e iterar, con criterio
-            sobre lo que construyo.
+            Desde una página para presentar tus servicios hasta una aplicación para organizar presupuestos, turnos o tareas, mi enfoque es combinar diseño y funcionalidad para darle una utilidad concreta a tu idea.
           </p>
           <div className="about-principles">
-            <span>
-              <b>01</b> Entender antes de construir
-            </span>
-            <span>
-              <b>02</b> Diseñar para quien lo usa
-            </span>
-            <span>
-              <b>03</b> Aprender en cada entrega
-            </span>
+            <span><b>01</b> <strong>Entender tu negocio</strong></span>
+            <span><b>02</b> <strong>Crear con un objetivo claro</strong></span>
+            <span><b>03</b> <strong>Cuidar cada detalle</strong></span>
           </div>
-          <a
-            className="inline-link"
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Conoceme en LinkedIn <ArrowUpRight size={16} />
+          <p>
+            ¿Tenés un proyecto en mente? Contame qué necesitás y veamos cómo hacerlo realidad.
+          </p>
+          <a className="inline-link" href="#contact">
+            <strong>Hablemos de tu proyecto</strong> <ArrowUpRight size={16} />
           </a>
         </div>
       </div>
