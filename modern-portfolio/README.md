@@ -38,6 +38,6 @@ CampaignForge: capturas reales del modo local `MOCK_MODE=true`, commit `890feca`
 
 Se conservan las capturas anteriores de Limbo e Infinity obtenidas de los sitios públicos. Gentleman procede del HTML/CSS del repositorio, con fuentes y recursos externos de respaldo según la documentación anterior. Los CV aportados en español e inglés se conservan sin modificar.
 
-La identidad NA y la paleta vigente se mantienen. Los controles de galería ahora son visibles para permitir pausar y recorrer también con mouse y tacto. Se retiraron los efectos de entrada del título para no retrasar el contenido principal.
+La identidad NA y la paleta vigente se mantienen. Las galerías avanzan automáticamente cada 4,5 segundos cuando están visibles y la pestaña está activa, respetando movimiento reducido. No muestran botón de reproducción/pausa; las flechas, el teclado y los gestos permiten recorrer las capturas sin detener el avance automático. Se retiraron los efectos de entrada del título para no retrasar el contenido principal.
 
 La auditoría y las limitaciones de las pruebas están en [docs/seo-audit.md](../docs/seo-audit.md).

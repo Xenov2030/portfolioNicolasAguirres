@@ -11,7 +11,7 @@ Revisión del 5 de noviembre de 2026. Marca: **Nicolas Aguirres / NA**. Propuest
 | Faltaban JornadApp, TrabajoClaro y Aetherfall | Casos destacados con problema, participación, funciones, stack y límites explícitos. |
 | LinkedIn anterior en datos y schema; README con dominio antiguo | Enlaces actualizados al dominio y perfil aportados. LinkedIn devuelve 999 a solicitudes automáticas: no se confirma su disponibilidad en una sesión humana. |
 | Solo Person y mensajes sociales inconsistentes | Grafo Person/ProfilePage con identidad, ubicación y enlaces coherentes; títulos y descripciones sociales alineados. JSON analizado sin errores; no se ejecutó un validador externo de resultados enriquecidos. |
-| Controles de galería ocultos salvo foco por teclado | Controles visibles para pausar y recorrer desde teclado, mouse y táctil; enlace al archivo completo. |
+| Controles de galería ocultos salvo foco por teclado | Flechas visibles para recorrer desde teclado, mouse y táctil; enlace al archivo completo. A pedido del titular se retiró el botón de reproducción/pausa y se mantuvo el avance automático, respetando movimiento reducido. |
 | Introducción con desenfoque y retraso | Se retira la animación del encabezado principal, presentación y acciones. Retrato con prioridad alta, sin lazy loading. |
 | www responde 200 sin redirigir | .htaccess preparado para 301 a la versión sin www. Requiere verificación después del despliegue. HTTP ya redirige a HTTPS. |
 
