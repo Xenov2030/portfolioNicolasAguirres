@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { stripVTControlCharacters } from "node:util";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { setTimeout } from "node:timers/promises";
@@ -25,7 +26,7 @@ try {
   for (let i = 0; i < 50; i++) {
     if (preview.exitCode !== null) throw new Error(logs);
     // Never accept a different process already using this port.
-    if (logs.includes("http://127.0.0.1:4193")) {
+    if (stripVTControlCharacters(logs).includes(base)) {
       ready = true;
       break;
     }
