@@ -1,5 +1,6 @@
 import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
 import { profile } from "../data/portfolio";
+import { contactLinks } from "../data/contact";
 
 export default function About() {
   return (
@@ -9,58 +10,61 @@ export default function About() {
       aria-labelledby="about-title"
     >
       <div className="container about-layout">
-        <div className="about-identity">
-          <span className="eyebrow section-index">02 / DETRÁS DEL CÓDIGO</span>
-          <figure className="about-portrait">
-            <img src="/assets/nicolas-aguirres.jpg" alt="Nicolas Aguirres, desarrollador web" width="400" height="400" loading="lazy" />
-            <figcaption>NICOLAS AGUIRRES <span>DESARROLLADOR WEB</span></figcaption>
-          </figure>
-          <div className="cv-downloads" aria-label="Descargar currículum">
-            <a
-              className="cv-link"
-              href={profile.cv}
-              download="Nicolas_Aguirres_CV_ES.pdf"
-              hrefLang="es"
-            >
-              CV en español <ArrowDownToLine size={18} />
-            </a>
-            <a
-              className="cv-link"
-              href={profile.cvEn}
-              download="Nicolas_Aguirres_CV_EN.pdf"
-              hrefLang="en"
-              lang="en"
-            >
-              CV in English <ArrowDownToLine size={18} />
-            </a>
-          </div>
-        </div>
+        <figure className="profile-photo">
+          <img
+            src="/assets/nicolas-aguirres.jpg"
+            alt="Nicolas Aguirres, desarrollador web en Mendoza"
+            width="400"
+            height="400"
+            loading="lazy"
+          />
+          <figcaption>Nicolas Aguirres · Mendoza, Argentina</figcaption>
+        </figure>
         <div className="about-copy">
           <h2 id="about-title">
-            Una web que represente tu negocio.
+            Una persona detrás
             <br />
-            <span className="muted">Una herramienta que simplifique tu trabajo.</span>
+            de tu próximo proyecto.
           </h2>
-          <p className="about-lead">
-            Soy Nicolas Aguirres, desarrollador web en Mendoza, Argentina. Creo sitios y aplicaciones web para que tus clientes conozcan lo que ofrecés, encuentren lo que necesitan y puedan contactarte fácilmente desde cualquier dispositivo.
+          <p>
+            Me interesa entender cómo funciona tu negocio y construir algo que
+            te resulte útil. Trabajo en sitios y aplicaciones web con una
+            navegación clara, una identidad propia y atención al uso desde el
+            celular.
           </p>
           <p>
-            Cada proyecto empieza por entender tu negocio: qué querés conseguir, quién va a usarlo y qué conviene resolver primero. Con esa base, desarrollo una solución con identidad propia, navegación clara y una experiencia cuidada en celulares y computadoras.
+            Mi camino en desarrollo combina los fundamentos de la web con
+            proyectos propios en los que sigo aprendiendo y comprobando lo que
+            construyo.
           </p>
-          <p>
-            Desde una página para presentar tus servicios hasta una aplicación para organizar presupuestos, turnos o tareas, mi enfoque es combinar diseño y funcionalidad para darle una utilidad concreta a tu idea.
-          </p>
-          <div className="about-principles">
-            <span><b>01</b> <strong>Entender tu negocio</strong></span>
-            <span><b>02</b> <strong>Crear con un objetivo claro</strong></span>
-            <span><b>03</b> <strong>Cuidar cada detalle</strong></span>
-          </div>
-          <p>
-            ¿Tenés un proyecto en mente? Contame qué necesitás y veamos cómo hacerlo realidad.
-          </p>
-          <a className="inline-link" href="#contact">
-            <strong>Hablemos de tu proyecto</strong> <ArrowUpRight size={16} />
+          <a
+            className="inline-link"
+            href={contactLinks.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hablemos de tu proyecto <ArrowUpRight size={17} />
           </a>
+          <div className="recruiter-panel" id="opportunities">
+            <h3>¿Una oportunidad laboral?</h3>
+            <p>Conocé mis proyectos y mi perfil profesional.</p>
+            <div className="professional-links">
+              <a href={profile.cv} download>
+                CV en español <ArrowDownToLine size={16} />
+              </a>
+              <a href={profile.cvEn} download lang="en">
+                CV in English <ArrowDownToLine size={16} />
+              </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn <ArrowUpRight size={16} />
+              </a>
+              <a href={contactLinks.email}>Proponer una oportunidad</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

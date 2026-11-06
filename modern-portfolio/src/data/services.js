@@ -8,11 +8,11 @@ export const services = [
     eyebrow: "SITIOS WEB PARA NEGOCIOS · MENDOZA, ARGENTINA",
     intro:
       "Una página que explique lo que hacés y facilite el próximo contacto.",
-    lead: "Soy Nicolas Aguirres, desarrollador web en Mendoza. Creo sitios para negocios, profesionales y emprendedores que necesitan presentar sus servicios con identidad propia y ayudar a sus visitantes a encontrar información y consultar desde el celular o la computadora.",
+    lead: "Soy Nicolas Aguirres, desarrollador web en Mendoza. Creo páginas para negocios, profesionales y emprendedores que necesitan presentar sus servicios y recibir consultas desde cualquier dispositivo.",
     audienceTitle:
       "Cuando tus clientes necesitan conocerte antes de escribirte",
     audience:
-      "Este servicio puede servirte si hoy compartís toda la información por mensajes, si tus servicios están dispersos en redes sociales o si tu página quedó desactualizada. El objetivo es reunir lo esencial en un lugar propio: qué ofrecés, para quién, ejemplos de tu trabajo y cómo contactarte.",
+      "Si hoy explicás todo por mensajes o tus servicios están dispersos en redes, una web puede reunir lo esencial: qué ofrecés, ejemplos de tu trabajo y cómo contactarte.",
     needs: [
       {
         title: "Presentar tus servicios",
@@ -29,7 +29,7 @@ export const services = [
     ],
     scopeTitle: "Qué podemos definir para tu sitio",
     scope:
-      "Según el proyecto, el alcance puede incluir una página de presentación o varias páginas, diseño responsive, navegación, contenido organizado, galería y enlaces de contacto. También se revisan títulos, descripciones, imágenes y las condiciones técnicas para que los buscadores puedan acceder al contenido. Estas tareas no garantizan posiciones en Google.",
+      "Definimos las páginas, el contenido y las acciones que necesita tu negocio. El desarrollo puede incluir presentación de servicios, galería y contacto, con una navegación adaptable al celular y la computadora.",
     deliverables: [
       "Estructura de páginas y secciones acordada antes de desarrollar.",
       "Diseño e implementación adaptados a celulares y computadoras.",
@@ -37,7 +37,7 @@ export const services = [
       "Revisión de navegación, enlaces y visualización antes de publicar.",
     ],
     boundaries:
-      "Dominio, hosting, redacción completa, formularios, carga de catálogos, mantenimiento e integraciones se conversan por separado. No se asumen incluidos ni se fija un plazo o precio sin conocer el alcance. Si necesitás gestionar usuarios, turnos o información interna, puede convenir una aplicación a medida.",
+      "Dominio, hosting, contenido adicional, mantenimiento e integraciones se acuerdan por separado. Si necesitás gestionar datos o usuarios, evaluamos una aplicación a medida.",
     process: [
       {
         title: "Entender tu negocio",
@@ -58,46 +58,46 @@ export const services = [
     ],
     related: [
       {
-        id: "limbo",
+        id: "musashi",
         reason:
-          "Una muestra de presentación gastronómica: identidad visual, información del negocio y navegación adaptable.",
+          "Presentación de una cafetería en Mendoza, carta con categorías y accesos de contacto. La carta estacional es una muestra para revisión.",
       },
       {
-        id: "gentleman-barber",
+        id: "limbo",
         reason:
-          "Una muestra de cómo organizar servicios de barbería y facilitar una consulta por WhatsApp.",
+          "Sitio de muestra para un negocio gastronómico: identidad, información y navegación adaptable.",
       },
     ],
     faqs: [
       {
         question: "¿Trabajás solo con negocios de Mendoza?",
         answer:
-          "Estoy en Mendoza, Argentina, y puedo trabajar de forma remota con proyectos de otras provincias. El canal de comunicación y la forma de revisar avances se acuerdan al definir el proyecto.",
+          "Estoy en Mendoza y también trabajo de forma remota con proyectos de otras provincias. Acordamos cómo conversar y revisar avances.",
       },
       {
         question: "¿Cuánto cuesta y cuánto demora una página web?",
         answer:
-          "Depende de las páginas, el diseño, los materiales disponibles y las funciones. Para preparar una propuesta necesito conocer qué ofrecés, qué tiene que hacer la web y si ya contás con dominio, textos e imágenes. No hay un precio o plazo único para todos los sitios.",
+          "Depende de las páginas, las funciones y el material disponible. Con esa información preparo una propuesta con alcance, precio y condiciones.",
       },
       {
         question: "¿Necesito tener logo, textos y fotos?",
         answer:
-          "Ayuda contar con material propio. En la primera conversación revisamos qué tenés y qué falta. La creación de identidad, fotografía o redacción adicional se define por separado, según lo que necesite tu proyecto.",
+          "Revisamos qué material tenés y qué falta. La creación de identidad, fotografía o redacción adicional se define según el proyecto.",
       },
       {
         question: "¿La página se va a ver bien desde el celular?",
         answer:
-          "El diseño adaptable forma parte del enfoque: se revisan tamaños, navegación, lectura y contacto en pantallas pequeñas y de escritorio. Los dispositivos y navegadores que se validarán se definen según el alcance.",
+          "Sí: el enfoque incluye una interfaz adaptable y revisión de lectura, navegación y contacto en pantallas pequeñas y de escritorio.",
       },
       {
         question: "¿Voy a aparecer primero en Google?",
         answer:
-          "No puedo prometerlo. Una estructura accesible para buscadores, contenido útil y buen funcionamiento ayudan a construir una base, pero la indexación y la posición dependen de Google y de otros factores. Los avances se miden después de publicar.",
+          "No se garantizan posiciones. Preparo una estructura accesible para buscadores y contenido claro; después de publicar, los resultados se miden con Search Console.",
       },
       {
         question: "¿Qué pasa si necesito actualizar el sitio?",
         answer:
-          "Podemos definir cómo se harán los cambios y si necesitás un sistema para administrar contenido. Mantenimiento, nuevas funciones y actualizaciones posteriores se acuerdan de forma explícita.",
+          "Acordamos cómo se harán los cambios y si necesitás administrar contenido. El mantenimiento y las funciones nuevas se definen de forma explícita.",
       },
     ],
     otherPath: "/aplicaciones-web-a-medida/",
@@ -112,10 +112,10 @@ export const services = [
     name: "Desarrollo de aplicaciones web a medida",
     eyebrow: "PROCESOS Y HERRAMIENTAS · MENDOZA Y ARGENTINA",
     intro: "Una herramienta que acompañe tu forma de trabajar.",
-    lead: "Desarrollo aplicaciones web para negocios que necesitan organizar información y acciones, además de presentar sus servicios. Desde Mendoza, Argentina, trabajo con interfaces de React y Next.js y bases de datos, eligiendo la solución según el problema y el alcance acordado.",
+    lead: "Desarrollo herramientas para negocios que necesitan organizar información y acciones: clientes, presupuestos, trabajos o registros. Desde Mendoza, Argentina, definimos primero el proceso que conviene resolver.",
     audienceTitle: "Cuando una página de presentación ya no alcanza",
     audience:
-      "Si repetís la misma carga en varias planillas, perdés el estado de un presupuesto o te cuesta saber qué tarea sigue, puede tener sentido evaluar un sistema de gestión. Primero revisamos el proceso: una herramienta a medida conviene cuando resuelve una necesidad concreta y se puede mantener, no solo por agregar tecnología.",
+      "Si repetís datos en varias planillas o cuesta saber en qué estado está un presupuesto, podemos evaluar un recorrido que reúna esa información y sus próximas acciones.",
     needs: [
       {
         title: "Reunir clientes y presupuestos",
@@ -132,7 +132,7 @@ export const services = [
     ],
     scopeTitle: "Empezar por una versión que tenga sentido",
     scope:
-      "Podemos definir una primera versión con un recorrido principal: por ejemplo, cargar un cliente, armar un presupuesto y registrar el estado del trabajo. Acordamos campos, reglas, pantallas, permisos y criterios de revisión antes de ampliar funciones. No se asume que una beta propia equivale a un sistema listo para cualquier negocio.",
+      "Empezamos por un recorrido acotado: por ejemplo, cargar un cliente, preparar un presupuesto y registrar el estado del trabajo. Acordamos campos, reglas, pantallas y permisos antes de ampliar funciones.",
     deliverables: [
       "Mapa del recorrido y funciones prioritarias de la primera versión.",
       "Pantallas y reglas de datos definidas para ese recorrido.",
@@ -140,7 +140,7 @@ export const services = [
       "Condiciones de despliegue, uso y continuidad documentadas según el proyecto.",
     ],
     boundaries:
-      "Cuentas, migración de datos, copias de seguridad, integraciones, soporte e infraestructura requieren definición específica. Registrar un cobro no equivale a procesar dinero ni emitir una factura fiscal. Pagos, contabilidad o conexiones con terceros no se incluyen por defecto; su viabilidad se evalúa antes de comprometerlos.",
+      "Migraciones, copias de seguridad, integraciones e infraestructura se definen según el caso. Registrar un cobro no es procesar dinero ni emitir una factura fiscal.",
     process: [
       {
         title: "Conocer el proceso actual",
@@ -175,32 +175,32 @@ export const services = [
       {
         question: "¿Cómo sé si necesito un sistema a medida?",
         answer:
-          "Conviene empezar por el problema. Si una herramienta existente o una planilla bien organizada resuelve la necesidad, puede ser suficiente. Evaluamos un desarrollo cuando hay reglas o recorridos propios que justifican construir y mantener otra solución.",
+          "Partimos del problema. Si una herramienta existente resuelve la necesidad, puede ser suficiente. Evaluamos un desarrollo cuando hay reglas propias que lo justifican.",
       },
       {
         question: "¿Podés desarrollar un sistema de gestión para mi negocio?",
         answer:
-          "Podemos evaluar el proceso y definir una primera versión de clientes, presupuestos, tareas u otros registros. La propuesta depende de las reglas, los usuarios y las integraciones que necesitás; no se ofrece un sistema universal sin revisar el caso.",
+          "Podemos definir una primera versión de clientes, presupuestos, tareas u otros registros. El alcance depende del proceso, los usuarios y las integraciones que necesitás.",
       },
       {
         question: "¿Cuánto cuesta una aplicación web?",
         answer:
-          "Depende de las funciones, los datos, los permisos y la infraestructura. Para estimarla necesito conocer un ejemplo de trabajo de principio a fin, cuántas personas la usarán y qué herramientas utilizan hoy. El alcance y las exclusiones se explicitan en la propuesta.",
+          "Necesito conocer el recorrido de trabajo, cuántas personas lo usarán y las herramientas actuales. La propuesta aclara funciones, exclusiones y costos de terceros.",
       },
       {
         question: "¿Se puede usar desde el celular?",
         answer:
-          "La interfaz se puede diseñar para navegador móvil y computadora según las tareas prioritarias. Una aplicación web no es automáticamente una app nativa ni funciona sin conexión; esos requisitos se evalúan por separado.",
+          "Podemos diseñarla para navegador móvil y computadora. El funcionamiento sin conexión o una app nativa requieren una evaluación específica.",
       },
       {
         question: "¿Los proyectos del portfolio ya son productos terminados?",
         answer:
-          "JornadApp y TrabajoClaro son productos propios en beta, con funciones y límites descritos en sus fichas. Podés consultar el alcance actual de cada una en sus fichas antes de evaluar una solución para tu negocio.",
+          "JornadApp y TrabajoClaro son betas propias. Sus fichas muestran funciones, capturas y límites para que puedas evaluar el trabajo realizado.",
       },
       {
         question: "¿Podés conectar pagos o importar mis datos?",
         answer:
-          "La integración con un proveedor o la migración de información requiere revisar formatos, permisos, costos y condiciones. No está incluida por defecto y no se promete su viabilidad antes de evaluar el caso.",
+          "Primero revisamos formatos, permisos, costos y condiciones del proveedor. La migración o integración se acuerda según su viabilidad y alcance.",
       },
     ],
     otherPath: "/desarrollo-web-mendoza/",

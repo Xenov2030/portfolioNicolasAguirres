@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const links = [
+  ["Trabajos", "#projects"],
   ["Servicios", "#services"],
-  ["Proyectos", "#projects"],
   ["Sobre mí", "#about"],
-  ["Stack", "#skills"],
+  ["Capacidades", "#skills"],
 ];
 
 export default function Navbar({ isSubpage = false }) {
