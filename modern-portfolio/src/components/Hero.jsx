@@ -3,7 +3,7 @@ import { projects } from "../data/portfolio";
 import { contactLinks } from "../data/contact";
 
 export default function Hero() {
-  const preview = projects.find(project => project.id === "musashi").gallery[0];
+  const preview = projects.find((project) => project.id === "musashi").preview;
   return (
     <section id="home" className="commercial-hero" aria-labelledby="hero-title">
       <div className="container hero-layout">
@@ -11,8 +11,7 @@ export default function Hero() {
           <h1 id="hero-title">
             Nicolas Aguirres.{" "}
             <span>
-              Desarrollador web{" "}
-              <br />
+              Desarrollador web <br />
               en Mendoza.
             </span>
           </h1>

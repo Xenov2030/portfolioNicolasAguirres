@@ -28,9 +28,9 @@ export default function Contact() {
       <div className="container">
         <div className="contact-heading contact-heading-whatsapp">
           <h2 id="contact-title">
-            Tu próxima idea
+            ¿Qué necesitás
             <br />
-            puede empezar <span>acá.</span>
+            <span>resolver en tu negocio?</span>
           </h2>
           <div className="contact-choices">
             <p>Elegí cómo contactarme.</p>
@@ -58,9 +58,9 @@ export default function Contact() {
         <div className="contact-bottom">
           <div>
             <p>
-              ¿Un proyecto, una colaboración o una oportunidad?
+              Contame qué ofrecés o cómo trabajás hoy.
               <br />
-              Me gustaría conocerla.
+              Con eso podemos empezar a definir tu proyecto.
             </p>
             <div className="email-row">
               <a href={contactLinks.email}>{profile.email}</a>

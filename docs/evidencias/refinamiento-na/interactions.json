@@ -1,0 +1,8 @@
+{
+  "autoplay": "advances while visible",
+  "pause": "checkbox stops and resumes",
+  "reducedMotion": "auto disabled, manual navigation available",
+  "touch": "horizontal swipe synthesized with Chromium CDP on emulated touch device",
+  "contact": "destinations and encoded messages checked without opening WhatsApp or sending email",
+  "clipboard": "correct email copied"
+}

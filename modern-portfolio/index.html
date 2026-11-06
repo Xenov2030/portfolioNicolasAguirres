@@ -2,6 +2,13 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="preload"
+      href="/assets/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#181615" />
@@ -45,8 +52,36 @@
       name="twitter:image"
       content="https://nicolasaguirrescode.com/social-preview.png"
     />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://nicolasaguirrescode.com/#person","name":"Nicolas Aguirres","alternateName":"Nicolas Fabian Aguirres","url":"https://nicolasaguirrescode.com/","jobTitle":"Desarrollador web full stack","homeLocation":{"@type":"Place","name":"Mendoza, Argentina"},"sameAs":["https://github.com/Xenov2030","https://www.linkedin.com/in/nicolas-aguirres/"],"knowsAbout":["JavaScript","React","Next.js","Desarrollo web"]},{"@type":"ProfilePage","@id":"https://nicolasaguirrescode.com/#profile","url":"https://nicolasaguirrescode.com/","name":"Nicolas Aguirres | Desarrollador Web en Mendoza","inLanguage":"es-AR","mainEntity":{"@id":"https://nicolasaguirrescode.com/#person"}}]}</script>
-</head>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://nicolasaguirrescode.com/#person",
+            "name": "Nicolas Aguirres",
+            "alternateName": "Nicolas Fabian Aguirres",
+            "url": "https://nicolasaguirrescode.com/",
+            "jobTitle": "Desarrollador web full stack",
+            "homeLocation": { "@type": "Place", "name": "Mendoza, Argentina" },
+            "sameAs": [
+              "https://github.com/Xenov2030",
+              "https://www.linkedin.com/in/nicolas-aguirres/"
+            ],
+            "knowsAbout": ["JavaScript", "React", "Next.js", "Desarrollo web"]
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://nicolasaguirrescode.com/#profile",
+            "url": "https://nicolasaguirrescode.com/",
+            "name": "Nicolas Aguirres | Desarrollador Web en Mendoza",
+            "inLanguage": "es-AR",
+            "mainEntity": { "@id": "https://nicolasaguirrescode.com/#person" }
+          }
+        ]
+      }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

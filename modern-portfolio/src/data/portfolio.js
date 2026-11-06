@@ -24,7 +24,7 @@ export const projects = [
       "Accesos de contacto y reservas"
     ],
     "tryNote": "La carta estacional publicada es una muestra para revisión.",
-    "detail": "Diseño e implementación completos confirmados por Nicolas. En la vista pública se comprobaron la presentación de la cafetería, la carta por categorías y los enlaces de contacto. No se probaron reservas ni transacciones reales.",
+    "detail": "Diseñé y desarrollé la presentación del local, el recorrido por sus experiencias y la carta por categorías. Los filtros permiten explorar propuestas sin recorrer toda la página. Los accesos de contacto acompañan la navegación.",
     "tech": [
       "React",
       "JavaScript",
@@ -32,26 +32,30 @@ export const projects = [
     ],
     "demo": "https://musashiweb.netlify.app/",
     "repo": null,
-    "limits": "La vista pública incluye noindex/nofollow y una carta estacional con productos ilustrativos y precios por confirmar. No se acredita lanzamiento final, indexación ni funcionamiento de un sistema de reservas. El repositorio público MusashiPaginaWeb solo contiene un README; no se ofrece como enlace de código.",
-    "captureNote": "Capturas de escritorio y móvil de la web pública, sin iniciar sesión. La autoría completa fue confirmada por Nicolas; el alcance observable se revisó en la aplicación.",
+    "limits": "La carta estacional es una muestra en revisión: contiene productos ilustrativos y precios por confirmar. Los enlaces de reservas abren los canales de contacto del negocio; no se presenta un sistema de reservas dentro de la web.",
+    "captureNote": "Capturas de la web pública: carta con el filtro Café frío seleccionado. Los productos y precios pertenecen a la muestra en revisión.",
     "gallery": [
       {
-        "src": "/assets/musashi-desktop.webp",
+        "src": "/assets/musashi-carta-desktop.webp",
         "width": 1440,
-        "height": 900,
-        "alt": "Musashi: presentación de la cafetería, vista desktop",
-        "srcSet": "/assets/musashi-desktop-480.webp 480w, /assets/musashi-desktop-960.webp 960w, /assets/musashi-desktop.webp 1440w",
+        "height": 1000,
+        "alt": "Carta de Musashi con Café frío seleccionado y dos propuestas de muestra",
+        "srcSet": "/assets/musashi-carta-desktop-480.webp 480w, /assets/musashi-carta-desktop-960.webp 960w, /assets/musashi-carta-desktop.webp 1440w",
         "sizes": "(max-width: 700px) calc(100vw - 40px), 620px"
       },
       {
-        "src": "/assets/musashi-mobile.webp",
+        "src": "/assets/musashi-carta-mobile.webp",
         "width": 390,
         "height": 844,
-        "alt": "Musashi: presentación de la cafetería, vista mobile"
+        "alt": "Carta de Musashi en celular con el filtro Café frío seleccionado"
       }
     ],
-    "image": "/assets/musashi-desktop.webp",
-    "alt": "Musashi: presentación de la cafetería, vista desktop"
+    "image": "/assets/musashi-carta-desktop.webp",
+    "alt": "Carta de Musashi con Café frío seleccionado y dos propuestas de muestra",
+    "preview": {
+      "src": "/assets/musashi-desktop.webp",
+      "srcSet": "/assets/musashi-desktop-480.webp 480w, /assets/musashi-desktop-960.webp 960w, /assets/musashi-desktop.webp 1440w"
+    }
   },
   {
     "id": "trabajoclaro",
@@ -99,7 +103,7 @@ export const projects = [
       "Pagos parciales y saldos"
     ],
     "tryNote": "Beta propia con demo. Registra cobros manualmente; no procesa dinero ni emite comprobantes fiscales.",
-    "captureNote": "Capturas reales de una demo anónima aislada: presupuesto en borrador con nombre, cliente e importes ficticios. Se comprobó el cálculo de totales, sin publicar ni enviar el presupuesto."
+    "captureNote": "Presupuesto de ejemplo en la demo de TrabajoClaro, con cliente e importes ficticios. El total corresponde a los ítems cargados; el presupuesto permanece como borrador."
   },
   {
     "id": "jornadapp",
@@ -107,7 +111,7 @@ export const projects = [
     "category": "Aplicaciones",
     "label": "Producto propio · Beta 0.1",
     "description": "Control personal de horas trabajadas e ingresos para quienes necesitan registrar jornadas, horas extra, faltas y cobros.",
-    "detail": "Desarrollé la interfaz y la lógica de jornadas, horarios y estimaciones, con varios trabajos por cuenta y copias de los registros. El acceso alojado utiliza Supabase y requiere configuración externa; la sincronización entre dispositivos sigue pendiente de verificación independiente.",
+    "detail": "Desarrollé el registro de jornadas, horarios y estimaciones de ingresos, con varios trabajos por cuenta y copias de los registros. El panel permite pasar de un resumen a las jornadas que lo componen. El acceso publicado utiliza Supabase; la sincronización entre dispositivos sigue en revisión.",
     "tech": [
       "Next.js",
       "React",
@@ -146,7 +150,7 @@ export const projects = [
       "Resumen de ingresos estimados"
     ],
     "tryNote": "Beta propia. Los importes son estimaciones; el acceso público requiere una cuenta.",
-    "captureNote": "Capturas reales del código local, sin servicios de cuentas, con jornadas ficticias cargadas en este navegador. No acreditan sincronización entre dispositivos."
+    "captureNote": "Panel ejecutado en modo local con jornadas ficticias. La captura muestra los registros y sus estimaciones; no representa una cuenta real ni una prueba de sincronización."
   },
   {
     "id": "limbo",
