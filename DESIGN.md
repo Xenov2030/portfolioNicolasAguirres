@@ -65,3 +65,7 @@ La flotación principal dura 7 s, hasta 12 px en escritorio / 7 px en móvil; la
 La ampliación de `journey.css` da una función distinta al movimiento de cada sección: esquemas de oferta en servicios, posición de lectura en proceso, profundidad en retrato, conexión de capacidades y atención al contacto. No replica entradas de bloques ni desplaza párrafos.
 
 `JourneyMotion.jsx` observa únicamente las secciones de portada, agrupa lecturas y escribe transformaciones en piezas decorativas. Mantiene el control global y movimiento reducido. Las líneas de capacidades indican lectura, nunca niveles de experiencia. Ver docs/recorrido-animado-na.md para pruebas y límites.
+
+## Cierre NA
+
+El footer abandona enlaces dispersos y tipografía diminuta. La firma n.a ancla el cierre; dos filas de servicios combinan título legible, explicación y flecha. Perfiles y regreso al inicio se agrupan en una línea secundaria. Usa fondo `#0e0b12`, texto `#f2eaf9`, secundario `#bfaed0` y acento violeta existente. En móvil se apila sin reducir el área de los enlaces. Los únicos movimientos nuevos son respuestas breves al puntero, con reduced motion respetado.
