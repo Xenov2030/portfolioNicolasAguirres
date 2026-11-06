@@ -1,7 +1,9 @@
+import ServiceSketch from "./ServiceSketch";
 import { ArrowUpRight } from "lucide-react";
 export default function Services() {
   return (
     <section
+      data-journey-section
       id="services"
       className="section services-section"
       aria-labelledby="services-title"
@@ -25,6 +27,7 @@ export default function Services() {
               Contá qué ofrecés, mostrá tu trabajo y facilitá que te consulten
               desde cualquier dispositivo.
             </p>
+            <ServiceSketch kind="site" />
             <a href="/desarrollo-web-mendoza/">
               Diseño y desarrollo web en Mendoza <ArrowUpRight size={17} />
             </a>
@@ -35,6 +38,7 @@ export default function Services() {
               Relacioná clientes, presupuestos, trabajos o registros en un
               recorrido pensado para tu proceso.
             </p>
+            <ServiceSketch kind="system" />
             <a href="/aplicaciones-web-a-medida/">
               Aplicaciones y sistemas a medida <ArrowUpRight size={17} />
             </a>

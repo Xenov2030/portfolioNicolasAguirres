@@ -1,6 +1,7 @@
 export default function Process() {
   return (
     <section
+      data-journey-section
       id="process"
       className="section process-section"
       aria-labelledby="process-title"
@@ -17,35 +18,38 @@ export default function Process() {
             empezar.
           </p>
         </div>
-        <ol className="process-list">
-          <li>
-            <h3>Tu forma de trabajar</h3>
-            <p>
-              Conversamos sobre tu negocio, tus usuarios y cómo trabajás hoy.
-            </p>
-          </li>
-          <li>
-            <h3>Una primera versión</h3>
-            <p>
-              Acordamos prioridades, contenido, funciones y condiciones de
-              entrega.
-            </p>
-          </li>
-          <li>
-            <h3>Pantallas y funciones</h3>
-            <p>
-              Desarrollo la web o aplicación y revisamos el recorrido con
-              ejemplos concretos.
-            </p>
-          </li>
-          <li>
-            <h3>Prueba y entrega</h3>
-            <p>
-              Comprobamos contenido, navegación y funcionamiento. La publicación
-              y continuidad se coordinan según el alcance.
-            </p>
-          </li>
-        </ol>
+        <div className="process-track">
+          <span className="process-progress" aria-hidden="true" />
+          <ol className="process-list">
+            <li>
+              <h3>Tu forma de trabajar</h3>
+              <p>
+                Conversamos sobre tu negocio, tus usuarios y cómo trabajás hoy.
+              </p>
+            </li>
+            <li>
+              <h3>Una primera versión</h3>
+              <p>
+                Acordamos prioridades, contenido, funciones y condiciones de
+                entrega.
+              </p>
+            </li>
+            <li>
+              <h3>Pantallas y funciones</h3>
+              <p>
+                Desarrollo la web o aplicación y revisamos el recorrido con
+                ejemplos concretos.
+              </p>
+            </li>
+            <li>
+              <h3>Prueba y entrega</h3>
+              <p>
+                Comprobamos contenido, navegación y funcionamiento. La
+                publicación y continuidad se coordinan según el alcance.
+              </p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
   );

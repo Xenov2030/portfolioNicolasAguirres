@@ -1,3 +1,4 @@
+import JourneyMotion from "./components/JourneyMotion";
 import {
   PortfolioMotionProvider,
   usePortfolioMotion,
@@ -60,6 +61,7 @@ function Portfolio({ path }) {
           </section>
         )}
         <Contact />
+        {isHome && <JourneyMotion />}
       </main>
       <Footer />
     </>

@@ -5,19 +5,23 @@ import { contactLinks } from "../data/contact";
 export default function About() {
   return (
     <section
+      data-journey-section
       id="about"
       className="section about-section"
       aria-labelledby="about-title"
     >
       <div className="container about-layout">
         <figure className="profile-photo">
-          <img
-            src="/assets/nicolas-aguirres.jpg"
-            alt="Nicolas Aguirres, desarrollador web en Mendoza"
-            width="400"
-            height="400"
-            loading="lazy"
-          />
+          <div className="portrait-motion-frame">
+            <img
+              data-portrait-motion
+              src="/assets/nicolas-aguirres.jpg"
+              alt="Nicolas Aguirres, desarrollador web en Mendoza"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
           <figcaption>Nicolas Aguirres · Mendoza, Argentina</figcaption>
         </figure>
         <div className="about-copy">

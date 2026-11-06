@@ -1,0 +1,205 @@
+/* El recorrido continúa: esquemas, lectura progresiva y profundidad; nunca texto oculto. */
+.service-sketch {
+  display: block;
+  width: min(100%, 265px);
+  height: auto;
+  margin: 22px 0 8px;
+  fill: none;
+  stroke: #74518b;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sketch-site .sketch-message {
+  fill: #d7c1ed;
+}
+.sketch-system .sketch-node {
+  fill: #e5d9ef;
+}
+.sketch-content {
+  transform-origin: 38px 77px;
+}
+.sketch-node {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.process-track {
+  position: relative;
+  min-width: 0;
+}
+.process-progress {
+  display: block;
+  position: absolute;
+  top: 40px;
+  bottom: 60px;
+  width: 3px;
+  left: 19px;
+  border-radius: 3px;
+  background: #d9bdff;
+  transform-origin: top;
+  z-index: 2;
+  pointer-events: none;
+}
+.home-scene .process-list li:before {
+  position: relative;
+  z-index: 3;
+}
+.home-scene .process-list li[data-reading-active="true"]:before {
+  background: #c5a0f5;
+  color: #24132e;
+  border-color: #ead4ff;
+}
+.home-scene .process-list li[data-reading-active="true"] h3 {
+  color: #e6d0ff;
+}
+.portrait-motion-frame {
+  border-radius: 48% 48% 30px 30px;
+  overflow: hidden;
+  background: #19121f;
+}
+.home-scene .portrait-motion-frame img {
+  display: block;
+  transform-origin: center;
+  box-shadow: none;
+}
+.capability-list dd {
+  position: relative;
+  padding-bottom: 8px;
+}
+.capability-reading-line {
+  display: block;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #a984d2;
+  transform-origin: left;
+  pointer-events: none;
+}
+.home-scene .capability-list > div:focus-within .capability-reading-line {
+  transform: scaleX(1) !important;
+}
+.home-scene .contact-whatsapp {
+  position: relative;
+}
+.home-scene .contact-whatsapp::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid #39224f;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+@keyframes sketch-browser {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  45% {
+    transform: scaleX(0.62);
+  }
+}
+@keyframes sketch-node {
+  0%,
+  65%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.11);
+  }
+}
+@keyframes contact-invite {
+  0%,
+  65%,
+  100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-4px);
+  }
+}
+@keyframes contact-beacon {
+  0%,
+  60%,
+  100% {
+    transform: scale(0.99);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.025);
+    opacity: 0.55;
+  }
+  45% {
+    transform: scale(1.04);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sketch-content {
+    animation: sketch-browser 5.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation-play-state: paused;
+  }
+  .sketch-node {
+    animation: sketch-node 5.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation-play-state: paused;
+  }
+  .sketch-node.node-two {
+    animation-delay: -0.9s;
+  }
+  .sketch-node.node-three {
+    animation-delay: -1.8s;
+  }
+  .home-scene .contact-whatsapp > svg {
+    animation: contact-invite 5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation-play-state: paused;
+  }
+  .home-scene .contact-whatsapp::after {
+    animation: contact-beacon 5s ease-out infinite;
+    animation-play-state: paused;
+  }
+  .home-scene[data-continuous="on"]
+    [data-journey-visible="true"]
+    .sketch-content,
+  .home-scene[data-continuous="on"] [data-journey-visible="true"] .sketch-node,
+  .home-scene[data-continuous="on"]
+    [data-journey-visible="true"]
+    .contact-whatsapp
+    > svg,
+  .home-scene[data-continuous="on"]
+    [data-journey-visible="true"]
+    .contact-whatsapp::after {
+    animation-play-state: running;
+  }
+  .home-scene .contact-section:focus-within .contact-whatsapp > svg,
+  .home-scene .contact-section:focus-within .contact-whatsapp::after {
+    animation-play-state: paused !important;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .home-scene .contact-whatsapp:hover > svg,
+  .home-scene .contact-whatsapp:hover::after {
+    animation-play-state: paused !important;
+  }
+}
+@media (max-width: 700px) {
+  .service-sketch {
+    max-width: 230px;
+    margin: 18px 0 4px;
+  }
+  .portrait-motion-frame {
+    border-radius: 46% 46% 24px 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-sketch *,
+  .home-scene .contact-whatsapp > svg,
+  .home-scene .contact-whatsapp::after {
+    animation: none !important;
+  }
+  .home-scene [data-portrait-motion] {
+    transform: none !important;
+  }
+}

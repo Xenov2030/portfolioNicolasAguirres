@@ -59,3 +59,9 @@ Ver PRODUCT.md y docs/taller-digital-na.md para personalidad, alcance y pruebas.
 La versión aprobada suma flotación de artefactos y un pulso sobre la conexión de portada. Textos, controles y datos permanecen estables. `movement.css` concentra los bucles; `PortfolioMotion.jsx` administra preferencia, movimiento reducido y visibilidad de página. El checkbox «Animaciones activas» persiste la elección y pausa también el avance automático. Las galerías y escenas fuera de vista no se animan.
 
 La flotación principal dura 7 s, hasta 12 px en escritorio / 7 px en móvil; la de galerías 8 s / 7 px; el pulso 4,8 s. Transformaciones y dibujo explicativo se aplican a elementos separados. Ver docs/movimiento-continuo-na.md para pruebas y límites.
+
+## Movimiento distribuido en el recorrido
+
+La ampliación de `journey.css` da una función distinta al movimiento de cada sección: esquemas de oferta en servicios, posición de lectura en proceso, profundidad en retrato, conexión de capacidades y atención al contacto. No replica entradas de bloques ni desplaza párrafos.
+
+`JourneyMotion.jsx` observa únicamente las secciones de portada, agrupa lecturas y escribe transformaciones en piezas decorativas. Mantiene el control global y movimiento reducido. Las líneas de capacidades indican lectura, nunca niveles de experiencia. Ver docs/recorrido-animado-na.md para pruebas y límites.
