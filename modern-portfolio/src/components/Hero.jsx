@@ -9,6 +9,7 @@ const selection = ["musashi", "trabajoclaro", "jornadapp"].map((id) =>
 
 export default function Hero() {
   const [active, setActive] = useState(0);
+  const [pointerChange, setPointerChange] = useState(false);
   const stage = useRef(null);
   const project = selection[active];
   const preview = project.preview || project.gallery[0];
@@ -42,11 +43,12 @@ export default function Hero() {
       parent.removeEventListener("pointerleave", reset);
       media.removeEventListener("change", reset);
     };
-  }, []);
+  }, [active]);
   return (
     <section
       id="home"
-      className="commercial-hero scene-hero"
+      className="commercial-hero scene-hero workshop-hero"
+      data-assembly={pointerChange ? "on" : "off"}
       aria-labelledby="hero-title"
     >
       <div className="container hero-layout">
@@ -59,8 +61,9 @@ export default function Hero() {
           </h1>
           <p className="hero-specialty">Desarrollador web en Mendoza.</p>
           <p>
-            Tu negocio tiene su forma de hacer las cosas. Desarrollo sitios y
-            aplicaciones web que la lleven a la pantalla.
+            Me gusta inventar cosas que sirvan. Desarrollo sitios y aplicaciones
+            web para conectar lo que imaginás con algo que tus clientes puedan
+            usar.
           </p>
           <div className="hero-actions" aria-label="Acciones principales">
             <a
@@ -80,9 +83,31 @@ export default function Hero() {
           </div>
         </div>
         <div className="project-stage">
+          <div className="idea-note" key={`idea-${project.id}`}>
+            <span className="idea-sign" aria-hidden="true">
+              n.a
+            </span>
+            <p>
+              {active === 0
+                ? "Un lugar con identidad. Una carta por descubrir."
+                : active === 1
+                  ? "¿Qué sigue con este encargo y cuánto falta cobrar?"
+                  : "¿Cuánto trabajé esta semana?"}
+            </p>
+          </div>
+          <svg
+            className="idea-connection"
+            viewBox="0 0 600 130"
+            aria-hidden="true"
+            key={`trace-${project.id}`}
+          >
+            <path d="M55 10 C42 92 170 4 222 61 S370 136 510 98" />
+            <path d="m498 86 14 12-18 7" />
+          </svg>
           <a
             ref={stage}
             className="stage-preview"
+            key={project.id}
             href={`#${project.id}`}
             aria-label={`Conocer el proyecto ${project.title}`}
           >
@@ -104,6 +129,15 @@ export default function Hero() {
               <ArrowUpRight size={22} aria-hidden="true" />
             </span>
           </a>
+          <img
+            className="stage-mobile-proof"
+            src={project.gallery[1].src}
+            alt=""
+            aria-hidden="true"
+            width="390"
+            height="844"
+            loading="lazy"
+          />
           <div
             className="stage-selector"
             role="group"
@@ -114,7 +148,10 @@ export default function Hero() {
                 key={p.id}
                 type="button"
                 aria-pressed={active === i}
-                onClick={() => setActive(i)}
+                onClick={(event) => {
+                  setPointerChange(event.detail > 0);
+                  setActive(i);
+                }}
               >
                 {p.title}
               </button>
@@ -126,7 +163,9 @@ export default function Hero() {
         </div>
       </div>
       <div className="container hero-footnote">
-        <span>Sitios para negocios. Aplicaciones para trabajar.</span>
+        <span>
+          Imaginación para encontrar la idea. Desarrollo para hacerla funcionar.
+        </span>
         <a href="#projects">
           Explorá lo que desarrollo <ArrowDown size={17} aria-hidden="true" />
         </a>

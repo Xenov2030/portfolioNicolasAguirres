@@ -18,3 +18,4 @@ else ReactDOM.createRoot(root).render(app);
 import "./commercial.css";
 
 import "./scene.css";
+import "./workshop.css";
