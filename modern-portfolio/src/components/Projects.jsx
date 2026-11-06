@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { BudgetExperiment, TimeExperiment } from "./ProjectExperiments";
 import ProjectGallery from "./ProjectGallery";
 import { projects } from "../data/portfolio";
 
@@ -64,6 +65,8 @@ function Work({ project, secondary = false }) {
           </div>
         </details>
       </div>
+      {!secondary && project.id === "trabajoclaro" && <BudgetExperiment />}
+      {!secondary && project.id === "jornadapp" && <TimeExperiment />}
     </article>
   );
 }

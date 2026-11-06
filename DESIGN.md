@@ -43,3 +43,13 @@ Tokens de la escena en `src/scene.css`: violeta `#b995f5`, tinta sobre violeta `
 El selector no es un carrusel automático. Las capturas cambian solo al pedirlo. La reacción al puntero usa transformación acotada y se desactiva con movimiento reducido. No se oculta contenido durante la carga ni al hacer scroll. El proceso cambia a una secuencia vertical; el panel de capacidades reduce escala.
 
 Ver `docs/identidad-escena-na.md` para alcance, skills aplicadas y validación. Los checkers de las skills siguen sin estar disponibles; no se les atribuyen resultados.
+
+## Dirección vigente: taller digital de ideas que cobran vida
+
+Esta dirección, definida expresamente por Nicolas, prevalece sobre las composiciones anteriores. No se añade una capa de animación ambiental. Tres momentos relacionan una pregunta con un artefacto: trazo/interfaz de portada, presupuesto que responde y lectura del día dentro de la semana.
+
+`src/workshop.css` desarrolla bordes continuos, superposiciones y profundidad. El acento de Musashi es `#ebc9b8` sobre `#261e20`; TrabajoClaro usa `#d9c6f1` con papel `#f5f0fa` y tinta `#2c1b3c`; JornadApp mantiene violeta oscuro con selección `#c2a1f4`. Las capturas no se deforman; los ejemplos se identifican como ficticios e independientes del producto.
+
+El trazo explicativo dura 380 ms y el revelado 260 ms con comienzo a los 340 ms. Solo se activa tras seleccionar con puntero; teclado y reduced motion son instantáneos. El cursor temporal usa transformación de 240 ms. Nada importante espera una animación inicial ni el scroll.
+
+Ver PRODUCT.md y docs/taller-digital-na.md para personalidad, alcance y pruebas. Las capacidades y el contacto conservan el funcionamiento previo.

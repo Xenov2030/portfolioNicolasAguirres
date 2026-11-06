@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/",
+    "width": 390,
+    "focusStops": 60,
+    "contactReached": true
+  },
+  {
+    "path": "/desarrollo-web-mendoza/",
+    "width": 390,
+    "focusStops": 20,
+    "contactReached": true
+  },
+  {
+    "path": "/aplicaciones-web-a-medida/",
+    "width": 390,
+    "focusStops": 20,
+    "contactReached": true
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "focusStops": 64,
+    "contactReached": true
+  },
+  {
+    "path": "/desarrollo-web-mendoza/",
+    "width": 1440,
+    "focusStops": 24,
+    "contactReached": true
+  },
+  {
+    "path": "/aplicaciones-web-a-medida/",
+    "width": 1440,
+    "focusStops": 24,
+    "contactReached": true
+  }
+]
