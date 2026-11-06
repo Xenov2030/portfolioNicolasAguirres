@@ -19,7 +19,11 @@ export default function App({ path = "/" }) {
         Saltar al contenido
       </a>
       <Navbar isSubpage={!isHome} />
-      <main id="main" tabIndex={-1}>
+      <main
+        id="main"
+        className={isHome ? "home-scene" : undefined}
+        tabIndex={-1}
+      >
         {isHome ? (
           <>
             <Hero />
