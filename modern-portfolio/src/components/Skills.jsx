@@ -2,6 +2,7 @@ import { profile } from "../data/portfolio";
 export default function Skills() {
   return (
     <section
+      data-journey-section
       id="skills"
       className="section capabilities-section"
       aria-labelledby="skills-title"
@@ -23,6 +24,11 @@ export default function Skills() {
             <dd>
               HTML, CSS, JavaScript y React. Navegación y contenido para celular
               y escritorio. <a href="#musashi">Ver Musashi</a>.
+              <span
+                className="capability-reading-line"
+                data-reading-line
+                aria-hidden="true"
+              />
             </dd>
           </div>
           <div>
@@ -32,6 +38,11 @@ export default function Skills() {
               presupuestos y estados.{" "}
               <a href="#trabajoclaro">Ver TrabajoClaro</a> y{" "}
               <a href="#jornadapp">JornadApp</a>.
+              <span
+                className="capability-reading-line"
+                data-reading-line
+                aria-hidden="true"
+              />
             </dd>
           </div>
           <div>
@@ -40,6 +51,11 @@ export default function Skills() {
               Git, GitHub, Vite y GitHub Actions: código versionado, compilación
               y publicación. Este portfolio entrega contenido HTML antes de
               ejecutar JavaScript.
+              <span
+                className="capability-reading-line"
+                data-reading-line
+                aria-hidden="true"
+              />
             </dd>
           </div>
           <div>
@@ -48,6 +64,11 @@ export default function Skills() {
               Sigo profundizando en PHP, MySQL e integraciones de IA. En las
               fichas de cada proyecto distingo las tecnologías utilizadas y sus
               límites.
+              <span
+                className="capability-reading-line"
+                data-reading-line
+                aria-hidden="true"
+              />
             </dd>
           </div>
         </dl>

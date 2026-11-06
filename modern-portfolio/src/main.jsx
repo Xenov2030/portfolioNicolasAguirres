@@ -20,3 +20,4 @@ import "./commercial.css";
 import "./scene.css";
 import "./workshop.css";
 import "./movement.css";
+import "./journey.css";

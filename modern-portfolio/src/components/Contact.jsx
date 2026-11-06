@@ -21,6 +21,7 @@ export default function Contact() {
   }
   return (
     <section
+      data-journey-section
       id="contact"
       className="contact-section"
       aria-labelledby="contact-title"

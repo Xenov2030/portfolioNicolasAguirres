@@ -1,0 +1,112 @@
+{
+  "results": [
+    {
+      "path": "/",
+      "width": 320,
+      "status": 200,
+      "h1": [
+        "Nicolas Aguirres."
+      ]
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "status": 200,
+      "h1": [
+        "Nicolas Aguirres."
+      ],
+      "axe": []
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "status": 200,
+      "h1": [
+        "Nicolas Aguirres."
+      ]
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "h1": [
+        "Nicolas Aguirres."
+      ],
+      "axe": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 320,
+      "status": 200,
+      "h1": [
+        "Diseño y desarrollo web en Mendoza"
+      ]
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 390,
+      "status": 200,
+      "h1": [
+        "Diseño y desarrollo web en Mendoza"
+      ],
+      "axe": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 768,
+      "status": 200,
+      "h1": [
+        "Diseño y desarrollo web en Mendoza"
+      ]
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 1440,
+      "status": 200,
+      "h1": [
+        "Diseño y desarrollo web en Mendoza"
+      ],
+      "axe": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 320,
+      "status": 200,
+      "h1": [
+        "Desarrollo de aplicaciones web a medida"
+      ]
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 390,
+      "status": 200,
+      "h1": [
+        "Desarrollo de aplicaciones web a medida"
+      ],
+      "axe": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 768,
+      "status": 200,
+      "h1": [
+        "Desarrollo de aplicaciones web a medida"
+      ]
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 1440,
+      "status": 200,
+      "h1": [
+        "Desarrollo de aplicaciones web a medida"
+      ],
+      "axe": []
+    }
+  ],
+  "moreAxe": [],
+  "errors": [],
+  "filters": "2/4 applications,1/4 websites,3/8 total; native more-work disclosure",
+  "zoom200": "no overflow at 1440 CSS viewport with Chromium CSS zoom 2; physical browser zoom not tested",
+  "nojs": "headings,8 projects and native disclosure available",
+  "interaction": "filters, keyboard case, image navigation/expansion, mobile menu close and Escape focus"
+}
