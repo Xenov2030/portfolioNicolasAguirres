@@ -1,0 +1,92 @@
+{
+  "rows": [
+    {
+      "path": "/",
+      "width": 320,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 320,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 390,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 768,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/desarrollo-web-mendoza/",
+      "width": 1440,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 320,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 390,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 768,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    },
+    {
+      "path": "/aplicaciones-web-a-medida/",
+      "width": 1440,
+      "links": 6,
+      "minTargetHeight": 44,
+      "axe": []
+    }
+  ],
+  "errors": [],
+  "backToTop": "works",
+  "links": "two services, two profiles, signature and return",
+  "scope": "Chromium emulated320/390/768/1440, footer axe6views, focus on all6links, no messages sent"
+}
