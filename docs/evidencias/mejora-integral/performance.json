@@ -1,0 +1,147 @@
+{
+  "context": "Same local Python static HTTP server, Chromium 390/1440x900, reduced motion, three cold contexts each, no network/CPU throttling. Not field Web Vitals; no INP measured.",
+  "runs": [
+    {
+      "version": "before",
+      "width": 390,
+      "run": 0,
+      "lcp": 480,
+      "cls": 0,
+      "transferred": 336907,
+      "firstWorkY": 3892.859375
+    },
+    {
+      "version": "before",
+      "width": 390,
+      "run": 1,
+      "lcp": 308,
+      "cls": 0,
+      "transferred": 336907,
+      "firstWorkY": 3892.859375
+    },
+    {
+      "version": "before",
+      "width": 390,
+      "run": 2,
+      "lcp": 352,
+      "cls": 0,
+      "transferred": 336907,
+      "firstWorkY": 3892.859375
+    },
+    {
+      "version": "before",
+      "width": 1440,
+      "run": 0,
+      "lcp": 448,
+      "cls": 0,
+      "transferred": 336907,
+      "firstWorkY": 2809.140625
+    },
+    {
+      "version": "before",
+      "width": 1440,
+      "run": 1,
+      "lcp": 424,
+      "cls": 0,
+      "transferred": 336907,
+      "firstWorkY": 2809.140625
+    },
+    {
+      "version": "before",
+      "width": 1440,
+      "run": 2,
+      "lcp": 472,
+      "cls": 0,
+      "transferred": 336907,
+      "firstWorkY": 2809.140625
+    },
+    {
+      "version": "after",
+      "width": 390,
+      "run": 0,
+      "lcp": 256,
+      "cls": 0,
+      "transferred": 316656,
+      "firstWorkY": 1095.40625
+    },
+    {
+      "version": "after",
+      "width": 390,
+      "run": 1,
+      "lcp": 312,
+      "cls": 0,
+      "transferred": 316656,
+      "firstWorkY": 1095.40625
+    },
+    {
+      "version": "after",
+      "width": 390,
+      "run": 2,
+      "lcp": 312,
+      "cls": 0,
+      "transferred": 316656,
+      "firstWorkY": 1095.40625
+    },
+    {
+      "version": "after",
+      "width": 1440,
+      "run": 0,
+      "lcp": 380,
+      "cls": 0,
+      "transferred": 386768,
+      "firstWorkY": 929.96875
+    },
+    {
+      "version": "after",
+      "width": 1440,
+      "run": 1,
+      "lcp": 260,
+      "cls": 0,
+      "transferred": 386768,
+      "firstWorkY": 929.96875
+    },
+    {
+      "version": "after",
+      "width": 1440,
+      "run": 2,
+      "lcp": 240,
+      "cls": 0,
+      "transferred": 386768,
+      "firstWorkY": 929.96875
+    }
+  ],
+  "summary": [
+    {
+      "version": "before",
+      "width": 390,
+      "medianLCP": 352,
+      "maxCLS": 0,
+      "firstWorkY": 3892.859375,
+      "transferred": 336907
+    },
+    {
+      "version": "before",
+      "width": 1440,
+      "medianLCP": 448,
+      "maxCLS": 0,
+      "firstWorkY": 2809.140625,
+      "transferred": 336907
+    },
+    {
+      "version": "after",
+      "width": 390,
+      "medianLCP": 312,
+      "maxCLS": 0,
+      "firstWorkY": 1095.40625,
+      "transferred": 316656
+    },
+    {
+      "version": "after",
+      "width": 1440,
+      "medianLCP": 260,
+      "maxCLS": 0,
+      "firstWorkY": 929.96875,
+      "transferred": 386768
+    }
+  ]
+}

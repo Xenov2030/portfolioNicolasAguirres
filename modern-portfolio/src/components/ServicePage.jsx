@@ -14,7 +14,6 @@ export default function ServicePage({ service }) {
               <li aria-current="page">{service.name}</li>
             </ol>
           </nav>
-          <span className="eyebrow">{service.eyebrow}</span>
           <h1>{service.name}</h1>
           <p className="service-intro">{service.intro}</p>
           <p className="service-lead">{service.lead}</p>
@@ -49,7 +48,6 @@ export default function ServicePage({ service }) {
       >
         <div className="container service-two-columns">
           <div>
-            <span className="eyebrow">ALCANCE ORIENTATIVO</span>
             <h2 id="scope-title">{service.scopeTitle}</h2>
             <p>{service.scope}</p>
           </div>
@@ -92,8 +90,8 @@ export default function ServicePage({ service }) {
               const project = projects.find((p) => p.id === item.id);
               return (
                 <article className="service-example" key={item.id}>
-                  <span className="eyebrow">{project.label}</span>
                   <h3>{project.title}</h3>
+                  <p className="service-example-state">{project.label}</p>
                   <p>{item.reason}</p>
                   <a href={`/#${project.id}`}>
                     Ver ficha y alcance de {project.title}{" "}

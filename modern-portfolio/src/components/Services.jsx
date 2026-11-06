@@ -1,16 +1,46 @@
-import { contactLinks } from "../data/contact";
+import { ArrowUpRight } from "lucide-react";
 export default function Services() {
-  return <section id="services" className="section services-section" aria-labelledby="services-title">
-    <div className="container">
-      <span className="eyebrow">DESARROLLO WEB EN MENDOZA · ARGENTINA</span>
-      <h2 id="services-title">Una web para tu negocio. Un sistema para tu forma de trabajar.</h2>
-      <p>Como desarrollador web freelance en Mendoza, trabajo en proyectos locales y remotos. Primero conversamos sobre tu negocio, tus usuarios y lo que necesitás resolver; después definimos el alcance.</p>
-      <div className="services-grid">
-        <article><h3>Diseño y desarrollo de páginas web</h3><p>Sitios para negocios que necesitan explicar sus servicios, mostrar su trabajo y facilitar consultas. Diseño adaptable a celular, contenido claro y navegación accesible.</p><a className="service-more" href="/desarrollo-web-mendoza/">Ver el servicio de páginas web →</a></article>
-        <article><h3>Aplicaciones web a medida</h3><p>Interfaces con React y Next.js y lógica de aplicación para organizar procesos. JornadApp muestra mi trabajo con registros, horarios y estimaciones.</p><a href="/aplicaciones-web-a-medida/">Ver el servicio de aplicaciones a medida →</a></article>
-        <article><h3>Sistemas de gestión para negocios</h3><p>Clientes, presupuestos, trabajos y seguimiento de cobros según el alcance acordado. TrabajoClaro es mi beta propia para explorar estas necesidades.</p><a href="#trabajoclaro">Conocer TrabajoClaro →</a></article>
+  return (
+    <section
+      id="services"
+      className="section services-section"
+      aria-labelledby="services-title"
+    >
+      <div className="container">
+        <div className="commercial-heading">
+          <h2 id="services-title">
+            Qué podemos desarrollar
+            <br />
+            para tu negocio.
+          </h2>
+          <p>
+            Una presencia clara para tus clientes o una herramienta para
+            organizar lo que pasa puertas adentro.
+          </p>
+        </div>
+        <div className="service-offers">
+          <article>
+            <h3>Una web para presentar tus servicios</h3>
+            <p>
+              Contá qué ofrecés, mostrá tu trabajo y facilitá que te consulten
+              desde cualquier dispositivo.
+            </p>
+            <a href="/desarrollo-web-mendoza/">
+              Diseño y desarrollo web en Mendoza <ArrowUpRight size={17} />
+            </a>
+          </article>
+          <article>
+            <h3>Una aplicación para organizar tu trabajo</h3>
+            <p>
+              Relacioná clientes, presupuestos, trabajos o registros en un
+              recorrido pensado para tu proceso.
+            </p>
+            <a href="/aplicaciones-web-a-medida/">
+              Aplicaciones y sistemas a medida <ArrowUpRight size={17} />
+            </a>
+          </article>
+        </div>
       </div>
-      <a className="inline-link" href={contactLinks.email}>Contame qué necesitás desarrollar →</a>
-    </div>
-  </section>;
+    </section>
+  );
 }

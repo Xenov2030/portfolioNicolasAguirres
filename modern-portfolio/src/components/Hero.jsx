@@ -1,104 +1,62 @@
-import StackExperience from "./StackExperience";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Code2,
-  Sparkles,
-  Layers,
-  Accessibility,
-} from "lucide-react";
-import { profile } from "../data/portfolio";
-const skills = [
-  {
-    Icon: Code2,
-    title: "Interfaces con carácter",
-    text: "React, JavaScript y diseño responsive",
-  },
-  {
-    Icon: Layers,
-    title: "Ideas que se conectan",
-    text: "Aplicaciones full stack y bases de datos",
-  },
-  {
-    Icon: Accessibility,
-    title: "Diseño para las personas",
-    text: "Claridad, navegación y accesibilidad",
-  },
-  {
-    Icon: Sparkles,
-    title: "Curiosidad aumentada",
-    text: "IA como herramienta para crear y aprender",
-  },
-];
+import { ArrowDown, MessageCircle } from "lucide-react";
+import { projects } from "../data/portfolio";
+import { contactLinks } from "../data/contact";
+
 export default function Hero() {
+  const preview = projects.find(project => project.id === "musashi").gallery[0];
   return (
-    <section id="home" className="cosmic-hero" aria-labelledby="hero-title">
-      <div className="container">
-        <span className="cosmic-pill">
-          NICOLAS AGUIRRES · FULL STACK WEB DEVELOPER
-        </span>
-        <h1 id="hero-title">
-          Nicolas Aguirres.
-          <br />
-          <em>Desarrollador web</em> full stack.
-        </h1>
-        <p className="cosmic-intro">
-          Desarrollo sitios y aplicaciones web para negocios desde Mendoza, Argentina.
-          Interfaces con React y Next.js, sistemas a medida y una experiencia pensada para el celular.
-        </p>
-        <div
-          className="recruiter-actions"
-          aria-label="Proyectos y oportunidades laborales"
-        >
-          <a href="#contact">
-            Consultar por un proyecto <ArrowUpRight size={15} />
-          </a>
-          <a href="#projects">Ver proyectos <ArrowDown size={15} /></a>
-          <a href={profile.cv} download>
-            Descargar CV · Español <ArrowDown size={15} />
-          </a>
-          <a href={profile.cvEn} download lang="en">
-            Download CV · English <ArrowDown size={15} />
-          </a>
-          <a href="#contact">
-            Proponer una oportunidad laboral <ArrowUpRight size={15} />
-          </a>
-        </div>
-        <StackExperience />
-        <div className="cosmic-bento">
-          <article className="cosmic-profile">
-            <div className="cosmic-avatar">
-              <img
-                src="/assets/nicolas-aguirres.jpg"
-                alt="Retrato de Nicolas Aguirres"
-                width="400"
-                height="400"
-                fetchPriority="high"
-              />
-            </div>
-            <h2>Nicolas Aguirres</h2>
-            <p>Desarrollador web full stack</p>
-            <span>De la primera idea al último deploy.</span>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer">
-              Explorar mi GitHub <ArrowUpRight size={16} />
+    <section id="home" className="commercial-hero" aria-labelledby="hero-title">
+      <div className="container hero-layout">
+        <div className="hero-copy">
+          <h1 id="hero-title">
+            Nicolas Aguirres.{" "}
+            <span>
+              Desarrollador web{" "}
+              <br />
+              en Mendoza.
+            </span>
+          </h1>
+          <p>
+            Creo páginas para presentar tu negocio y recibir consultas, y
+            aplicaciones para organizar tu trabajo. Desde Mendoza, Argentina,
+            para proyectos locales y remotos.
+          </p>
+          <div className="hero-actions" aria-label="Acciones principales">
+            <a
+              className="button-primary"
+              href={contactLinks.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={19} aria-hidden="true" />
+              Consultar mi proyecto
             </a>
-          </article>
-          <div className="cosmic-skills">
-            {skills.map(({ Icon, title, text }) => (
-              <article className="cosmic-skill" key={title}>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </div>
-                <span className="cosmic-icon">
-                  <Icon size={29} strokeWidth={1.4} />
-                </span>
-              </article>
-            ))}
+            <a className="button-text" href="#projects">
+              Ver trabajos <ArrowDown size={18} aria-hidden="true" />
+            </a>
           </div>
         </div>
-        <a className="cosmic-scroll" href="#projects">
-          DESCUBRÍ MIS PROYECTOS <ArrowDown size={16} />
+        <a
+          className="work-preview"
+          href="#musashi"
+          aria-label="Conocer el proyecto Musashi"
+        >
+          <img
+            src={preview.src}
+            srcSet={preview.srcSet}
+            sizes="(max-width: 700px) calc(100vw - 40px), 44vw"
+            width="1440"
+            height="900"
+            alt="Sitio de Musashi: presentación de la cafetería en Mendoza"
+            fetchPriority="high"
+          />
+          <span>
+            <strong>Musashi</strong>
+            <span>
+              Una web para descubrir una cafetería.
+              <ArrowDown size={16} aria-hidden="true" />
+            </span>
+          </span>
         </a>
       </div>
     </section>

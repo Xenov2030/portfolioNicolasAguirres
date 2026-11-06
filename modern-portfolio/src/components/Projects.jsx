@@ -1,160 +1,131 @@
-import ProjectGallery from "./ProjectGallery";
-import { Github } from "./SocialIcons";
 import { useState } from "react";
-import { ArrowUpRight, Layers, Dices, Sparkles } from "lucide-react";
-import { projects, profile } from "../data/portfolio";
+import { ArrowUpRight } from "lucide-react";
+import ProjectGallery from "./ProjectGallery";
+import { projects } from "../data/portfolio";
 
 function ProjectLinks({ project }) {
   return (
-    <div className="project-links">
+    <div className="work-links">
       {project.demo && (
-        <a
-          href={project.demo || project.repo}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Ver sitio de ${project.title}`}
-        >
-          Ver sitio <ArrowUpRight size={16} />
+        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+          {project.id === "musashi" ? "Visitar la web" : "Probar el proyecto"}
+          <ArrowUpRight size={16} />
         </a>
       )}
-      <a
-        href={project.repo}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Ver código de ${project.title} en GitHub`}
-      >
-        <Github size={16} /> {project.demo ? "Código" : "Explorar el código"}
-        {!project.demo && <ArrowUpRight size={16} />}
-      </a>
+      {project.repo && (
+        <a href={project.repo} target="_blank" rel="noopener noreferrer">
+          Ver código
+          <ArrowUpRight size={16} />
+        </a>
+      )}
     </div>
   );
 }
-
+function Work({ project, secondary = false }) {
+  return (
+    <article
+      id={project.id}
+      className={`work-item${secondary ? " work-secondary" : ""}`}
+      data-project
+    >
+      <ProjectGallery project={project} />
+      <div className="work-copy">
+        <span className="work-state">{project.label}</span>
+        <h3>{project.title}</h3>
+        <p>{project.summary || project.description}</p>
+        <p className="work-role">
+          {project.role || "Diseño e implementación de la interfaz web."}
+        </p>
+        {project.features && (
+          <ul className="work-features">
+            {project.features.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        )}
+        {project.tryNote && <p className="work-note">{project.tryNote}</p>}
+        <ProjectLinks project={project} />
+        <details className="project-case" id={`${project.id}-detalles`}>
+          <summary>Ver ficha de {project.title}</summary>
+          <div>
+            <h4>Desarrollo y alcance</h4>
+            <p>{project.detail || project.description}</p>
+            <h4>Tecnologías</h4>
+            <p>{project.tech.join(" · ")}</p>
+            {project.limits && (
+              <>
+                <h4>Estado y límites</h4>
+                <p>{project.limits}</p>
+              </>
+            )}
+            {project.captureNote && (
+              <p className="capture-note">{project.captureNote}</p>
+            )}
+          </div>
+        </details>
+      </div>
+    </article>
+  );
+}
 export default function Projects() {
   const [filter, setFilter] = useState("Todos");
-  const visible = projects.filter(
-    (project) => filter === "Todos" || project.category === filter,
+  const chosen = projects.filter(
+    (p) => p.primary && (filter === "Todos" || p.category === filter),
+  );
+  const rest = projects.filter(
+    (p) => !p.primary && (filter === "Todos" || p.category === filter),
   );
   return (
     <section
       id="projects"
-      className="section projects-section"
+      className="section work-section"
       aria-labelledby="projects-title"
     >
       <div className="container">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow section-index">
-              01 / TRABAJO SELECCIONADO
-            </span>
-            <h2 id="projects-title">
-              Menos palabras.
-              <br />
-              <span className="muted">Más proyectos.</span>
-            </h2>
-          </div>
-          <p>
-            Productos propios, proyectos de práctica y sitios de muestra.
+        <div className="commercial-heading">
+          <h2 id="projects-title">
+            Trabajo que podés
             <br />
-            El estado y alcance de cada trabajo se indican por separado.
+            ver y explorar.
+          </h2>
+          <p>
+            Sitios para negocios y productos propios. Cada ficha explica qué
+            desarrollé y qué se puede probar.
           </p>
         </div>
-        <div className="projects-toolbar">
-          <div
-            className="filter-group"
-            role="group"
-            aria-label="Filtrar proyectos"
-          >
-            {["Todos", "Aplicaciones", "Sitios web"].map((category) => (
-              <button
-                key={category}
-                type="button"
-                aria-pressed={filter === category}
-                onClick={() => setFilter(category)}
-              >
-                {category}
-                <span>
-                  {category === "Todos"
-                    ? projects.length
-                    : projects.filter((p) => p.category === category).length}
-                </span>
-              </button>
-            ))}
-          </div>
-          <span className="project-count" role="status" aria-live="polite">
-            {visible.length} proyectos para explorar
-          </span>
-        </div>
-        <div className="project-grid">
-          {visible.map((project) =>
-            project.featured ? (
-              <article id={project.id} className="featured-project" key={project.id}>
-                {project.gallery ? <ProjectGallery project={project} /> : <div className="forge-art" aria-hidden="true">
-                  <div className="forge-grid" />
-                  <span className="forge-top">
-                    <Sparkles size={12} /> DONDE EMPIEZA LA AVENTURA
-                  </span>
-                  <div className="forge-emblem">
-                    <Dices size={72} strokeWidth={1} />
-                  </div>
-                  <div className="forge-wordmark">
-                    {project.title}
-                  </div>
-                  <span className="forge-bottom">
-                    CONSTRUYE MUNDOS. CREA HISTORIAS.
-                  </span>
-                </div>}
-                <div className="featured-copy">
-                  <div className="project-label">
-                    <Layers size={14} /> {project.label}
-                    <span className="project-badge">DESTACADO</span>
-                  </div>
-                  <h3>
-                    {project.title}
-                    <span>{project.tagline}</span>
-                  </h3>
-                  <p>{project.description}</p>
-                  <p className="project-detail">{project.detail}</p>
-                  <p className="project-detail">{project.limits}</p>
-                  <div className="tech-tags">
-                    {project.tech.map((tech) => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                  <ProjectLinks project={project} />
-                </div>
-              </article>
-            ) : (
-              <article id={project.id} className="project-card" key={project.id}>
-                <ProjectGallery project={project} />
-                <div className="project-card-copy">
-                  <span className="project-label">{project.label}</span>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="tech-tags">
-                    {project.tech.map((tech) => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                  <ProjectLinks project={project} />
-                </div>
-              </article>
-            ),
-          )}
-        </div>
-        <a
-          className="github-more"
-          href={`${profile.github}?tab=repositories`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+          className="work-filters"
+          role="group"
+          aria-label="Filtrar proyectos"
         >
-          <Github size={20} />
-          <span>
-            El proceso también se comparte.
-            <b>Más código, ideas y experimentos en GitHub.</b>
-          </span>
-          <ArrowUpRight size={21} />
-        </a>
+          {["Todos", "Aplicaciones", "Sitios web"].map((category) => (
+            <button
+              type="button"
+              key={category}
+              aria-pressed={filter === category}
+              onClick={() => setFilter(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        <div className="selected-work">
+          {chosen.map((p) => (
+            <Work key={p.id} project={p} />
+          ))}
+        </div>
+        {rest.length > 0 && (
+          <details className="more-work">
+            <summary>
+              Más proyectos y exploración técnica <span>({rest.length})</span>
+            </summary>
+            <div>
+              {rest.map((p) => (
+                <Work key={p.id} project={p} secondary />
+              ))}
+            </div>
+          </details>
+        )}
       </div>
     </section>
   );

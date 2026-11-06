@@ -44,13 +44,17 @@ for (const page of pages) {
       "Aetherfall",
       "CampaignForge",
       'id="services"',
-      "Una web que represente tu negocio.",
+      "Consultar mi proyecto",
+      "Ver trabajos",
+      "Musashi",
     ])
       assert(html.includes(text), `Home missing ${text}`);
-    assert.equal(
-      (html.match(/class="(?:featured-project|project-card)"/g) || []).length,
-      7,
-    );
+    assert.equal((html.match(/data-project=/g) || []).length, 8);
+    const actions = html.match(/class="hero-actions"[^>]*>(.*?)<\/div>/s)?.[1];
+    assert.equal((actions?.match(/<a /g) || []).length, 2, "Two primary hero actions");
+    const order = ["projects", "services", "process", "about", "skills", "contact"].map(id => html.indexOf(`id="${id}"`));
+    assert(order.every((offset, i) => offset > 0 && (i === 0 || offset > order[i-1])), "Commercial section order");
+    assert(html.includes('id="opportunities"'), "Secondary recruiter information remains available");
     assert(
       !html.includes("data-playback"),
       "Keep project playback buttons removed",
@@ -97,6 +101,7 @@ assert(
     `Sitemap: ${origin}/sitemap.xml`,
   ),
 );
+assert.equal(await readFile(new URL("google4b22b9fa65bb2325.html", dist), "utf8"), "google-site-verification: google4b22b9fa65bb2325.html", "Keep Google verification file unchanged");
 const notFound = await readFile(new URL("404.html", dist), "utf8");
 assert(notFound.includes('content="noindex"'));
 assert(!notFound.includes('rel="canonical"'));

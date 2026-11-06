@@ -26,9 +26,6 @@ export default function Contact() {
       aria-labelledby="contact-title"
     >
       <div className="container">
-        <span className="eyebrow">
-          <span className="status-dot" /> CONECTEMOS IDEAS
-        </span>
         <div className="contact-heading contact-heading-whatsapp">
           <h2 id="contact-title">
             Tu próxima idea

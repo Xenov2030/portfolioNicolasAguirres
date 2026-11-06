@@ -1,12 +1,19 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Expand } from "lucide-react";
+
 export default function ProjectGallery({ project }) {
-  const slides = project.gallery || [{ src: project.image, alt: project.alt }];
+  const slides = project.gallery || [
+    { src: project.image, alt: project.alt, width: 1440, height: 900 },
+  ];
   const [index, setIndex] = useState(0);
-  const start = useRef(null);
-  const container = useRef(null);
+  const [auto, setAuto] = useState(true);
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(true);
+  const [focused, setFocused] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const container = useRef(null);
+  const start = useRef(null);
+  const slide = slides[index];
   useEffect(() => {
     const media = matchMedia("(prefers-reduced-motion: reduce)");
     const change = () => setReduced(media.matches);
@@ -23,96 +30,115 @@ export default function ProjectGallery({ project }) {
     };
   }, []);
   useEffect(() => {
-    if (!visible || reduced || slides.length < 2) return;
-    let disposed = false;
+    if (!auto || !visible || reduced || focused || hovered || slides.length < 2)
+      return;
+    let cancelled = false;
     const timer = setInterval(async () => {
       if (document.hidden) return;
       const next = (index + 1) % slides.length;
-      const image = new Image();
-      image.src = slides[next].src;
+      const img = new Image();
+      img.src = slides[next].src;
       try {
-        await image.decode();
-        if (!disposed) setIndex(next);
+        await img.decode();
+        if (!cancelled) setIndex(next);
       } catch {}
-    }, 4500);
+    }, 5000);
     return () => {
-      disposed = true;
+      cancelled = true;
       clearInterval(timer);
     };
-  }, [index, visible, reduced, slides]);
-  const move = (delta) =>
+  }, [auto, visible, reduced, focused, hovered, index, slides]);
+  function move(delta) {
+    setAuto(false);
     setIndex((i) => (i + delta + slides.length) % slides.length);
+  }
   return (
     <div
-      className={`project-image project-gallery project-image-${project.id}`}
       ref={container}
+      className="work-gallery"
       role="region"
       aria-label={`Galería de ${project.title}`}
       aria-roledescription="carrusel"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false);
+      }}
       onKeyDown={(e) => {
-        if (e.key === "ArrowRight") {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
           e.preventDefault();
-          move(1);
-        }
-        if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          move(-1);
+          move(e.key === "ArrowRight" ? 1 : -1);
         }
       }}
       onTouchStart={(e) => {
-        start.current = e.touches[0].clientX;
+        start.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }}
+      onTouchCancel={() => {
+        start.current = null;
       }}
       onTouchEnd={(e) => {
-        if (start.current !== null) {
-          const dx = e.changedTouches[0].clientX - start.current;
-          if (Math.abs(dx) > 50) move(dx < 0 ? 1 : -1);
+        if (start.current) {
+          const dx = e.changedTouches[0].clientX - start.current.x;
+          const dy = e.changedTouches[0].clientY - start.current.y;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy))
+            move(dx < 0 ? 1 : -1);
           start.current = null;
         }
       }}
     >
-      <div className="image-window">
-        <div className="mini-toolbar">
-          <i />
-          <i />
-          <i />
-        </div>
-        <div className="gallery-frames">
-          {slides.map((slide, i) => (
-            <img
-              key={slide.src}
-              src={slide.src}
-              alt={i === index ? slide.alt : ""}
-              aria-hidden={i !== index}
-              className={
-                i === index ? "gallery-frame is-current" : "gallery-frame"
-              }
-              loading="lazy"
-              width={slide.width || 1440}
-              height={slide.height || 820}
-            />
-          ))}
-        </div>
-      </div>
-      <a className="capture-link" href={slides[index].src} target="_blank" rel="noopener noreferrer">Abrir captura de {project.title} ↗</a>
+      <a
+        className="gallery-image-link"
+        href={slide.src}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Ampliar captura de ${project.title}: ${slide.alt} (nueva pestaña)`}
+      >
+        <img
+          src={slide.src}
+          srcSet={slide.srcSet}
+          sizes={slide.sizes}
+          alt={slide.alt}
+          width={slide.width || 1440}
+          height={slide.height || 900}
+          loading="lazy"
+        />
+        <span>
+          <Expand size={16} aria-hidden="true" />
+          Ampliar captura
+        </span>
+      </a>
       {slides.length > 1 && (
-        <div className="gallery-controls keyboard-only-controls">
-          <button
-            type="button"
-            onClick={() => move(-1)}
-            aria-label={`Imagen anterior de ${project.title}`}
-          >
-            <ChevronLeft size={19} />
-          </button>
-          <span role="status" aria-live={reduced ? "polite" : "off"}>
-            {index + 1} / {slides.length}
-          </span>
-          <button
-            type="button"
-            onClick={() => move(1)}
-            aria-label={`Imagen siguiente de ${project.title}`}
-          >
-            <ChevronRight size={19} />
-          </button>
+        <div className="gallery-toolbar">
+          <div className="gallery-navigation">
+            <button
+              type="button"
+              onClick={() => move(-1)}
+              aria-label={`Imagen anterior de ${project.title}`}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <span role="status" aria-live={auto && !reduced ? "off" : "polite"}>
+              {index + 1} / {slides.length}
+            </span>
+            <button
+              type="button"
+              onClick={() => move(1)}
+              aria-label={`Imagen siguiente de ${project.title}`}
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+          <label className="gallery-auto">
+            <input
+              type="checkbox"
+              checked={auto && !reduced}
+              disabled={reduced}
+              onChange={(e) => setAuto(e.target.checked)}
+              aria-label={`Avance automático de ${project.title}`}
+            />
+            {reduced ? "Avance manual" : "Avance automático"}
+          </label>
         </div>
       )}
     </div>

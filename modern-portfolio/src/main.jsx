@@ -15,8 +15,4 @@ const app = (
 if (root.hasChildNodes()) ReactDOM.hydrateRoot(root, app);
 else ReactDOM.createRoot(root).render(app);
 
-import "./cosmic.css";
-
-import "./motion.css";
-
-import "./experience.css";
+import "./commercial.css";
