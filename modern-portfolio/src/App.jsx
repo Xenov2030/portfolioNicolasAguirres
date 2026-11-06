@@ -1,3 +1,7 @@
+import {
+  PortfolioMotionProvider,
+  usePortfolioMotion,
+} from "./components/PortfolioMotion";
 import ServicePage from "./components/ServicePage";
 import { getService } from "./data/services";
 import Process from "./components/Process";
@@ -11,6 +15,14 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App({ path = "/" }) {
+  return (
+    <PortfolioMotionProvider>
+      <Portfolio path={path} />
+    </PortfolioMotionProvider>
+  );
+}
+function Portfolio({ path }) {
+  const { continuous } = usePortfolioMotion();
   const service = getService(path);
   const isHome = path === "/";
   return (
@@ -21,6 +33,7 @@ export default function App({ path = "/" }) {
       <Navbar isSubpage={!isHome} />
       <main
         id="main"
+        data-continuous={continuous ? "on" : "off"}
         className={isHome ? "home-scene" : undefined}
         tabIndex={-1}
       >

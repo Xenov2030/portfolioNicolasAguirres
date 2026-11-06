@@ -1,3 +1,4 @@
+import { MotionControl, usePortfolioMotion } from "./PortfolioMotion";
 import { useState, useRef, useEffect } from "react";
 import { ArrowDown, ArrowUpRight, MessageCircle } from "lucide-react";
 import { projects } from "../data/portfolio";
@@ -10,6 +11,17 @@ const selection = ["musashi", "trabajoclaro", "jornadapp"].map((id) =>
 export default function Hero() {
   const [active, setActive] = useState(0);
   const [pointerChange, setPointerChange] = useState(false);
+  const { enabled, reduced } = usePortfolioMotion();
+  const scene = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.1 },
+    );
+    observer.observe(scene.current);
+    return () => observer.disconnect();
+  }, []);
   const stage = useRef(null);
   const project = selection[active];
   const preview = project.preview || project.gallery[0];
@@ -24,7 +36,7 @@ export default function Hero() {
       node.style.transform = "";
     };
     const move = (event) => {
-      if (!media.matches) return;
+      if (!media.matches || !enabled) return;
       const bounds = node.parentElement.getBoundingClientRect();
       const x = (event.clientX - bounds.left) / bounds.width - 0.5;
       const y = (event.clientY - bounds.top) / bounds.height - 0.5;
@@ -43,10 +55,12 @@ export default function Hero() {
       parent.removeEventListener("pointerleave", reset);
       media.removeEventListener("change", reset);
     };
-  }, [active]);
+  }, [active, enabled]);
   return (
     <section
       id="home"
+      ref={scene}
+      data-scene-visible={visible ? "true" : "false"}
       className="commercial-hero scene-hero workshop-hero"
       data-assembly={pointerChange ? "on" : "off"}
       aria-labelledby="hero-title"
@@ -103,32 +117,38 @@ export default function Hero() {
           >
             <path d="M55 10 C42 92 170 4 222 61 S370 136 510 98" />
             <path d="m498 86 14 12-18 7" />
-          </svg>
-          <a
-            ref={stage}
-            className="stage-preview"
-            key={project.id}
-            href={`#${project.id}`}
-            aria-label={`Conocer el proyecto ${project.title}`}
-          >
-            <img
-              src={preview.src}
-              srcSet={preview.srcSet}
-              sizes="(max-width: 700px) calc(100vw - 40px), 54vw"
-              width={preview.width || 1440}
-              height={preview.height || 900}
-              alt={
-                active === 0
-                  ? "Musashi: presentación de la cafetería en Mendoza"
-                  : project.alt
-              }
-              fetchPriority="high"
+            <path
+              className="idea-flow"
+              d="M55 10 C42 92 170 4 222 61 S370 136 510 98"
             />
-            <span className="stage-project-name">
-              {project.title}
-              <ArrowUpRight size={22} aria-hidden="true" />
-            </span>
-          </a>
+          </svg>
+          <div className="stage-float">
+            <a
+              ref={stage}
+              className="stage-preview"
+              key={project.id}
+              href={`#${project.id}`}
+              aria-label={`Conocer el proyecto ${project.title}`}
+            >
+              <img
+                src={preview.src}
+                srcSet={preview.srcSet}
+                sizes="(max-width: 700px) calc(100vw - 40px), 54vw"
+                width={preview.width || 1440}
+                height={preview.height || 900}
+                alt={
+                  active === 0
+                    ? "Musashi: presentación de la cafetería en Mendoza"
+                    : project.alt
+                }
+                fetchPriority="high"
+              />
+              <span className="stage-project-name">
+                {project.title}
+                <ArrowUpRight size={22} aria-hidden="true" />
+              </span>
+            </a>
+          </div>
           <img
             className="stage-mobile-proof"
             src={project.gallery[1].src}
@@ -149,7 +169,7 @@ export default function Hero() {
                 type="button"
                 aria-pressed={active === i}
                 onClick={(event) => {
-                  setPointerChange(event.detail > 0);
+                  setPointerChange(event.detail > 0 && enabled && !reduced);
                   setActive(i);
                 }}
               >
@@ -163,6 +183,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="container hero-footnote">
+        <MotionControl />
         <span>
           Imaginación para encontrar la idea. Desarrollo para hacerla funcionar.
         </span>

@@ -1,0 +1,9 @@
+{
+  "float": "actual transform changes",
+  "trace": "stroke progresses and survives project selection",
+  "pause": "time frozen and choice persists after reload",
+  "focus": "hero and gallery stop under keyboard focus",
+  "offscreen": "hero pauses when scrolled away",
+  "reducedMotion": "hero/gallery loops removed; control disabled",
+  "context": "Chromium desktop, computed animation states and sampled transforms; no physical-device FPS guarantee"
+}

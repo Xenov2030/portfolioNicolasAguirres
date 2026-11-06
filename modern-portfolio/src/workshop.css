@@ -590,7 +590,7 @@
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .workshop-hero[data-assembly="on"] .idea-connection path {
+  .workshop-hero[data-assembly="on"] .idea-connection path:not(.idea-flow) {
     stroke-dasharray: 760;
     animation: idea-draw 380ms var(--scene-ease) both;
   }
