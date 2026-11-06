@@ -25,7 +25,7 @@ function Work({ project, secondary = false }) {
   return (
     <article
       id={project.id}
-      className={`work-item${secondary ? " work-secondary" : ""}`}
+      className={`work-item work-${project.id}${secondary ? " work-secondary" : ""}`}
       data-project
     >
       <ProjectGallery project={project} />
@@ -84,8 +84,9 @@ export default function Projects() {
       <div className="container">
         <div className="commercial-heading">
           <h2 id="projects-title">
-            Una cafetería, presupuestos
-            <br />y jornadas de trabajo.
+            Tres proyectos.
+            <br />
+            Tres formas de resolver.
           </h2>
           <p>
             Sitios para negocios y productos propios. Cada ficha explica qué

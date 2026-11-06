@@ -1,0 +1,556 @@
+/* NA / mesa de proyectos. Los artefactos reales llevan el protagonismo. */
+:root {
+  --scene-violet: #b995f5;
+  --scene-ink: #17101f;
+  --scene-ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.scene-hero {
+  background: #101014;
+  padding: 64px 0 0;
+  overflow: clip;
+}
+.scene-hero .hero-layout {
+  grid-template-columns: 1fr 1.05fr;
+  gap: 64px;
+  min-height: 530px;
+}
+.scene-hero .hero-copy h1 {
+  font-size: clamp(58px, 7.1vw, 96px);
+  font-weight: 500;
+  line-height: 0.98;
+  margin: 0 0 28px;
+  letter-spacing: -0.04em;
+}
+.scene-hero .hero-copy h1 .signature-surname {
+  display: inline;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: inherit;
+  color: var(--paper);
+  margin: 0;
+}
+.scene-hero .hero-copy h1 .signature-dot {
+  display: inline;
+  font-size: 1em;
+  color: var(--scene-violet);
+  font-weight: inherit;
+}
+.scene-hero .hero-copy .hero-specialty {
+  color: var(--scene-violet);
+  font:
+    600 19px/1.5 "Manrope",
+    sans-serif;
+  margin-bottom: 12px;
+}
+.scene-hero .hero-copy > p {
+  max-width: 40ch;
+  font-size: 17px;
+}
+.scene-hero .button-primary {
+  background: var(--scene-violet);
+  border-radius: 3px;
+  padding: 17px 20px;
+}
+.scene-hero .hero-actions {
+  gap: 26px;
+  margin-top: 28px;
+}
+.project-stage {
+  position: relative;
+  min-width: 0;
+  padding: 60px 30px 24px;
+  background: var(--scene-violet);
+  color: var(--scene-ink);
+  isolation: isolate;
+}
+.stage-preview {
+  display: block;
+  position: relative;
+  color: var(--paper);
+  background: #141219;
+  box-shadow: 0 20px 40px #28153e33;
+  transition: transform 200ms var(--scene-ease);
+}
+.stage-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.6;
+  object-fit: contain;
+  object-position: center;
+}
+.stage-project-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  font:
+    600 16px/1.5 "Manrope",
+    sans-serif;
+  border-top: 1px solid #ffffff24;
+}
+.stage-selector {
+  position: relative;
+  display: flex;
+  gap: 0;
+  margin-top: 28px;
+  border-bottom: 1px solid #34204255;
+}
+.stage-selector button {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 12px 3px;
+  min-height: 48px;
+  color: #342044;
+  font-size: 13px;
+  font-weight: 600;
+}
+.stage-selector button[aria-pressed="true"] {
+  border-bottom-color: #261432;
+  color: #160b20;
+}
+.stage-selector button:hover {
+  background: #ffffff22;
+}
+.stage-description {
+  font-size: 13px;
+  line-height: 1.65;
+  min-height: 4.95em;
+  margin: 16px 0 0;
+  color: #392346;
+}
+.project-stage :focus-visible {
+  outline-color: #21132f;
+}
+.hero-footnote {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 34px;
+  padding-bottom: 24px;
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--text-soft);
+  border-top: 1px solid var(--rule);
+}
+.hero-footnote a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+.hero-footnote > span {
+  align-self: center;
+}
+.home-scene .work-section {
+  background: #080809;
+  padding: 100px 0 80px;
+}
+.home-scene .work-section > .container > .commercial-heading {
+  align-items: start;
+  margin-bottom: 38px;
+}
+.home-scene .commercial-heading h2 {
+  font-size: clamp(36px, 4.8vw, 64px);
+  max-width: 19ch;
+}
+.home-scene .work-section .commercial-heading > p {
+  max-width: 28ch;
+  padding-top: 12px;
+}
+.home-scene .work-filters {
+  margin-bottom: 44px;
+}
+.home-scene .work-filters button {
+  border-radius: 2px;
+}
+.home-scene .selected-work {
+  display: grid;
+  gap: 64px;
+}
+.home-scene .selected-work > .work-item {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  gap: 52px;
+  align-items: center;
+}
+.home-scene .selected-work .work-copy h3 {
+  font-size: clamp(36px, 4.5vw, 58px);
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+.home-scene .selected-work .work-copy > p {
+  font-size: 16px;
+}
+.home-scene .selected-work .gallery-image-link {
+  border-radius: 2px;
+}
+.home-scene .work-musashi {
+  grid-template-columns: 1.25fr 1fr;
+}
+.home-scene .work-musashi .work-gallery {
+  background: #201a25;
+  padding: 28px;
+}
+.home-scene .work-musashi .gallery-image-link {
+  border: 0;
+}
+.home-scene .work-musashi .gallery-image-link img {
+  aspect-ratio: 1.18;
+}
+.home-scene .work-trabajoclaro {
+  grid-template-columns: 0.9fr 1.25fr;
+  background: #d0b8f3;
+  color: #201329;
+  padding: 44px !important;
+}
+.home-scene .work-trabajoclaro > .work-gallery {
+  order: 2;
+  padding-top: 28px;
+}
+.home-scene .work-trabajoclaro > .work-copy {
+  order: 1;
+}
+.home-scene .work-trabajoclaro .work-copy > p,
+.home-scene .work-trabajoclaro .work-features,
+.home-scene .work-trabajoclaro .work-state,
+.home-scene .work-trabajoclaro .work-note,
+.home-scene .work-trabajoclaro .work-links a,
+.home-scene .work-trabajoclaro .project-case summary,
+.home-scene .work-trabajoclaro .project-case p,
+.home-scene .work-trabajoclaro .project-case h4,
+.home-scene .work-trabajoclaro .gallery-auto {
+  color: #342044 !important;
+}
+.home-scene .work-trabajoclaro .work-copy h3 {
+  color: #201329;
+}
+.home-scene .work-trabajoclaro .project-case {
+  border-color: #34204444;
+}
+.home-scene .work-trabajoclaro .gallery-navigation button {
+  color: #201329;
+  border-color: #34204466;
+}
+.home-scene .work-trabajoclaro .gallery-navigation button:hover {
+  background: #e6d7fa;
+}
+.home-scene .work-trabajoclaro :focus-visible {
+  outline-color: #342044;
+}
+.home-scene .work-jornadapp {
+  grid-template-columns: 1.25fr 1fr;
+  padding-top: 36px !important;
+}
+.home-scene .work-jornadapp .work-gallery {
+  padding: 24px;
+  border: 1px solid #554274;
+  background: #131020;
+}
+.home-scene .work-jornadapp .gallery-image-link {
+  border: 0;
+}
+.home-scene .more-work {
+  margin-top: 64px;
+}
+.home-scene .services-section {
+  background: #f1edf6;
+  color: #201829;
+  padding: 92px 0;
+}
+.home-scene .services-section .commercial-heading {
+  align-items: start;
+}
+.home-scene .services-section .commercial-heading p,
+.home-scene .service-offers p {
+  color: #51425e;
+}
+.home-scene .service-offers {
+  gap: 72px;
+}
+.home-scene .service-offers article {
+  border-top: 1px solid #6d5b7d66;
+  padding-top: 30px;
+}
+.home-scene .service-offers h3 {
+  font-size: clamp(26px, 3vw, 36px);
+  max-width: 20ch;
+}
+.home-scene .service-offers a {
+  color: #503170;
+  font-weight: 600;
+}
+.home-scene .services-section :focus-visible {
+  outline-color: #503170;
+}
+.home-scene .process-section {
+  background: #17121e;
+  padding: 88px 0;
+}
+.home-scene .process-section > .container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+}
+.home-scene .process-section .commercial-heading {
+  display: block;
+  margin: 0;
+}
+.home-scene .process-section .commercial-heading h2 {
+  font-size: clamp(34px, 4vw, 50px);
+  margin-bottom: 24px;
+}
+.home-scene .process-list {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.home-scene .process-list li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  column-gap: 20px;
+  padding: 22px 0;
+}
+.home-scene .process-list li:before {
+  grid-column: 1;
+  grid-row: 1/3;
+  padding-top: 5px;
+}
+.home-scene .process-list h3 {
+  grid-column: 2;
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+.home-scene .process-list p {
+  grid-column: 2;
+  margin: 0;
+  font-size: 15px;
+}
+.home-scene .about-section {
+  padding: 110px 0;
+}
+.home-scene .about-layout {
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 90px;
+  align-items: start;
+}
+.home-scene .profile-photo {
+  position: sticky;
+  top: 125px;
+  padding: 24px 24px 0 0;
+  background: #b995f5;
+}
+.home-scene .profile-photo figcaption {
+  background: #080809;
+  margin: 0;
+  padding: 14px 0;
+}
+.home-scene .profile-photo img {
+  border-radius: 2px;
+  box-shadow: none;
+}
+.home-scene .about-copy h2 {
+  font-size: clamp(34px, 4vw, 52px);
+}
+.home-scene .capabilities-section {
+  padding: 64px 0 80px;
+  background: #080809;
+  border-top: 1px solid #332a3e;
+}
+.home-scene .capabilities-section .commercial-heading h2 {
+  font-size: clamp(30px, 3vw, 40px);
+}
+.home-scene .contact-section {
+  background: #b995f5;
+}
+.home-scene .contact-heading h2 {
+  font-size: clamp(44px, 6.4vw, 84px);
+  max-width: 18ch;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .scene-hero .button-primary {
+    transition:
+      transform 160ms var(--scene-ease),
+      background-color 160ms ease;
+  }
+  .scene-hero .button-primary:hover {
+    transform: translateY(-2px);
+    background: #d3b8ff;
+  }
+  .scene-hero .button-primary:active {
+    transform: translateY(1px);
+  }
+  .home-scene .gallery-image-link img {
+    transition: transform 240ms var(--scene-ease);
+  }
+  .home-scene .gallery-image-link:hover img {
+    transform: scale(1.015);
+  }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .scene-hero .hero-layout {
+    gap: 30px;
+  }
+  .scene-hero .hero-copy h1 {
+    font-size: clamp(58px, 8vw, 78px);
+  }
+  .project-stage {
+    padding: 40px 18px 18px;
+  }
+  .stage-selector button {
+    font-size: 11px;
+  }
+  .home-scene .selected-work > .work-item {
+    gap: 30px;
+  }
+  .home-scene .work-trabajoclaro {
+    padding: 28px !important;
+  }
+  .home-scene .process-section > .container {
+    gap: 40px;
+  }
+  .home-scene .about-layout {
+    gap: 52px;
+  }
+}
+@media (max-width: 700px) {
+  .scene-hero {
+    padding-top: 38px;
+  }
+  .scene-hero .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+  .scene-hero .hero-copy h1 {
+    font-size: clamp(56px, 15.4vw, 86px);
+    margin-bottom: 22px;
+  }
+  .scene-hero .hero-copy .hero-specialty {
+    font-size: 17px;
+  }
+  .scene-hero .hero-copy > p {
+    font-size: 16px;
+  }
+  .scene-hero .hero-actions {
+    gap: 16px;
+  }
+  .scene-hero .button-primary {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+  .scene-hero .button-text {
+    font-size: 14px;
+  }
+  .project-stage {
+    padding: 32px 18px 18px;
+  }
+  .stage-selector {
+    margin-top: 18px;
+  }
+  .stage-selector button {
+    font-size: 12px;
+  }
+  .stage-description {
+    min-height: 4.95em;
+  }
+  .hero-footnote {
+    margin-top: 30px;
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-footnote > span {
+    align-self: start;
+  }
+  .home-scene .work-section {
+    padding: 64px 0;
+  }
+  .home-scene .commercial-heading h2 {
+    font-size: clamp(34px, 8.6vw, 48px);
+  }
+  .home-scene .selected-work {
+    gap: 48px;
+  }
+  .home-scene .selected-work > .work-item {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .home-scene .work-musashi .work-gallery {
+    padding: 18px;
+  }
+  .home-scene .work-musashi .gallery-image-link img {
+    aspect-ratio: 1.4;
+  }
+  .home-scene .work-trabajoclaro {
+    padding: 24px 20px !important;
+  }
+  .home-scene .work-trabajoclaro > .work-gallery {
+    order: 0;
+    padding: 0;
+  }
+  .home-scene .work-trabajoclaro > .work-copy {
+    order: 1;
+  }
+  .home-scene .selected-work .work-copy h3 {
+    font-size: 38px;
+  }
+  .home-scene .work-jornadapp .work-gallery {
+    padding: 16px;
+  }
+  .home-scene .services-section {
+    padding: 64px 0;
+  }
+  .home-scene .service-offers {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .home-scene .process-section > .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .home-scene .about-section {
+    padding: 72px 0;
+  }
+  .home-scene .about-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .home-scene .profile-photo {
+    position: static;
+    max-width: 300px;
+    padding: 18px 18px 0 0;
+  }
+  .home-scene .profile-photo img {
+    box-shadow: none;
+  }
+  .home-scene .contact-heading h2 {
+    font-size: clamp(40px, 10vw, 58px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-preview {
+    transition: none;
+    transform: none !important;
+  }
+}
+
+.cta-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2px;
+}
+.cta-copy small {
+  font-size: 11px;
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .home-scene .work-jornadapp > .work-copy {
+    order: 0;
+  }
+  .home-scene .work-jornadapp > .work-gallery {
+    order: 1;
+  }
+}

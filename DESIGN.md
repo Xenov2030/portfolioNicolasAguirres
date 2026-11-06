@@ -33,3 +33,13 @@ Las reglas heredadas de `index.css` y `editorial.css` se conservan para las supe
 La portada conserva la presentación de Musashi; su ficha muestra ahora la carta con un filtro activo, evitando repetir la misma evidencia. Los títulos de trabajos nombran los proyectos por su contexto y el perfil explica recorridos reales de TrabajoClaro, JornadApp y Musashi. Los detalles públicos hablan en primera persona; la trazabilidad de la revisión queda en documentación.
 
 La única microanimación añadida desplaza flechas al pasar el puntero (180 ms); no afecta la carga ni oculta contenido. Solo funciona con puntero fino y sin preferencia de movimiento reducido. El violeta mantiene el contraste medido existente.
+
+## Dirección vigente: mesa de proyectos
+
+La evolución visual reemplaza el ritmo sobrio uniforme por una firma tipográfica de dos líneas, una vitrina interactiva manual y composiciones diferenciadas para los tres trabajos. Esta sección prevalece sobre los criterios de composición anteriores; conserva NA, negro/violeta, Manrope, dos acciones comerciales y la evidencia real.
+
+Tokens de la escena en `src/scene.css`: violeta `#b995f5`, tinta sobre violeta `#17101f`, banda de TrabajoClaro `#d0b8f3`, superficie clara de servicios `#f1edf6`, tinta de servicios `#201829`. El marco del retrato es una superficie real; no una sombra dura. El cuerpo y las páginas de servicios existentes se conservan.
+
+El selector no es un carrusel automático. Las capturas cambian solo al pedirlo. La reacción al puntero usa transformación acotada y se desactiva con movimiento reducido. No se oculta contenido durante la carga ni al hacer scroll. El proceso cambia a una secuencia vertical; el panel de capacidades reduce escala.
+
+Ver `docs/identidad-escena-na.md` para alcance, skills aplicadas y validación. Los checkers de las skills siguen sin estar disponibles; no se les atribuyen resultados.

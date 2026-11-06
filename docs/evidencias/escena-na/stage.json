@@ -1,0 +1,35 @@
+[
+  {
+    "width": 320,
+    "selectors": "3 views correct",
+    "stageHeightStable": true,
+    "reducedMotion": "no pointer movement"
+  },
+  {
+    "width": 390,
+    "selectors": "3 views correct",
+    "stageHeightStable": true,
+    "reducedMotion": "no pointer movement"
+  },
+  {
+    "width": 768,
+    "selectors": "3 views correct",
+    "stageHeightStable": true,
+    "reducedMotion": "no pointer movement"
+  },
+  {
+    "width": 1024,
+    "selectors": "3 views correct",
+    "stageHeightStable": true,
+    "reducedMotion": "no pointer movement"
+  },
+  {
+    "width": 1440,
+    "selectors": "3 views correct",
+    "stageHeightStable": true,
+    "reducedMotion": "no pointer movement"
+  },
+  {
+    "pointer": "bounded transform and reset verified"
+  }
+]
