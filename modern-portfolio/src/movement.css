@@ -1,0 +1,170 @@
+/* Movimiento continuo del taller: los artefactos se desplazan, la lectura permanece estable. */
+.motion-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: #d4c1e8;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.motion-control input {
+  width: 18px;
+  height: 18px;
+  accent-color: #b995f5;
+}
+.workshop-hero .hero-footnote {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+.workshop-hero .hero-footnote > span {
+  max-width: 45ch;
+}
+.stage-float {
+  position: relative;
+  transform-origin: 50% 50%;
+}
+.idea-flow {
+  opacity: 0;
+}
+@keyframes workshop-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes workshop-phone {
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+@keyframes workshop-gallery {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes workshop-signal {
+  from {
+    stroke-dashoffset: 660;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .stage-float {
+    animation: workshop-float 7s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation-play-state: paused;
+  }
+  .workshop-hero .stage-mobile-proof {
+    animation: workshop-phone 7s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation-play-state: paused;
+  }
+  .workshop-hero .idea-connection .idea-flow {
+    opacity: 1;
+    stroke: #e5cfff;
+    stroke-width: 4;
+    stroke-dasharray: 24 636;
+    animation: workshop-signal 4.8s linear infinite;
+    animation-play-state: paused;
+  }
+  .home-scene .selected-work .work-gallery > .gallery-image-link {
+    animation: workshop-gallery 8s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation-play-state: paused;
+  }
+  .home-scene .work-trabajoclaro .work-gallery > .gallery-image-link {
+    animation-delay: -2s;
+  }
+  .home-scene .work-jornadapp .work-gallery > .gallery-image-link {
+    animation-delay: -4s;
+  }
+  .home-scene[data-continuous="on"]
+    .workshop-hero[data-scene-visible="true"]
+    .stage-float,
+  .home-scene[data-continuous="on"]
+    .workshop-hero[data-scene-visible="true"]
+    .stage-mobile-proof,
+  .home-scene[data-continuous="on"]
+    .workshop-hero[data-scene-visible="true"]
+    .idea-flow,
+  .home-scene[data-continuous="on"]
+    .selected-work
+    .work-gallery[data-motion-visible="true"]
+    > .gallery-image-link {
+    animation-play-state: running;
+  }
+  .home-scene .stage-float:focus-within {
+    animation-play-state: paused !important;
+  }
+  .home-scene[data-continuous="off"] .stage-preview {
+    animation: none !important;
+    transition: none !important;
+  }
+  .home-scene[data-continuous="off"] .idea-flow {
+    opacity: 0;
+  }
+  .home-scene[data-continuous="off"] .rhythm-cursor,
+  .home-scene[data-continuous="off"] .hour-column {
+    transition: none !important;
+  }
+  .home-scene[data-continuous="off"] .hour-column,
+  .home-scene[data-continuous="off"] .gallery-image-link img {
+    transform: none !important;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .home-scene .stage-float:hover {
+    animation-play-state: paused !important;
+  }
+}
+@media (max-width: 700px) {
+  .workshop-hero .hero-footnote {
+    align-items: start;
+    gap: 8px;
+  }
+  @keyframes workshop-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+  @keyframes workshop-phone {
+    0%,
+    100% {
+      transform: translateY(-3px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-float,
+  .stage-mobile-proof,
+  .idea-flow,
+  .home-scene .work-gallery > .gallery-image-link {
+    animation: none !important;
+    transform: none;
+  }
+  .idea-flow {
+    display: none;
+  }
+}
+
+.home-scene[data-continuous="off"] .idea-connection path:not(.idea-flow) { animation: none !important; stroke-dasharray: none !important; }

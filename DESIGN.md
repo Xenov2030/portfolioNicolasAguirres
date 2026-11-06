@@ -53,3 +53,9 @@ Esta dirección, definida expresamente por Nicolas, prevalece sobre las composic
 El trazo explicativo dura 380 ms y el revelado 260 ms con comienzo a los 340 ms. Solo se activa tras seleccionar con puntero; teclado y reduced motion son instantáneos. El cursor temporal usa transformación de 240 ms. Nada importante espera una animación inicial ni el scroll.
 
 Ver PRODUCT.md y docs/taller-digital-na.md para personalidad, alcance y pruebas. Las capacidades y el contacto conservan el funcionamiento previo.
+
+## Movimiento continuo solicitado
+
+La versión aprobada suma flotación de artefactos y un pulso sobre la conexión de portada. Textos, controles y datos permanecen estables. `movement.css` concentra los bucles; `PortfolioMotion.jsx` administra preferencia, movimiento reducido y visibilidad de página. El checkbox «Animaciones activas» persiste la elección y pausa también el avance automático. Las galerías y escenas fuera de vista no se animan.
+
+La flotación principal dura 7 s, hasta 12 px en escritorio / 7 px en móvil; la de galerías 8 s / 7 px; el pulso 4,8 s. Transformaciones y dibujo explicativo se aplican a elementos separados. Ver docs/movimiento-continuo-na.md para pruebas y límites.

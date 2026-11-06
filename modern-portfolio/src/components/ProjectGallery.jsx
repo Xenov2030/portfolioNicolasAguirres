@@ -1,7 +1,9 @@
+import { usePortfolioMotion } from "./PortfolioMotion";
 import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Expand } from "lucide-react";
 
 export default function ProjectGallery({ project }) {
+  const { enabled, pageVisible } = usePortfolioMotion();
   const slides = project.gallery || [
     { src: project.image, alt: project.alt, width: 1440, height: 900 },
   ];
@@ -30,7 +32,16 @@ export default function ProjectGallery({ project }) {
     };
   }, []);
   useEffect(() => {
-    if (!auto || !visible || reduced || focused || hovered || slides.length < 2)
+    if (
+      !enabled ||
+      !pageVisible ||
+      !auto ||
+      !visible ||
+      reduced ||
+      focused ||
+      hovered ||
+      slides.length < 2
+    )
       return;
     let cancelled = false;
     const timer = setInterval(async () => {
@@ -47,7 +58,17 @@ export default function ProjectGallery({ project }) {
       cancelled = true;
       clearInterval(timer);
     };
-  }, [auto, visible, reduced, focused, hovered, index, slides]);
+  }, [
+    auto,
+    visible,
+    reduced,
+    focused,
+    hovered,
+    index,
+    slides,
+    enabled,
+    pageVisible,
+  ]);
   function move(delta) {
     setAuto(false);
     setIndex((i) => (i + delta + slides.length) % slides.length);
@@ -55,6 +76,7 @@ export default function ProjectGallery({ project }) {
   return (
     <div
       ref={container}
+      data-motion-visible={visible && !focused && !hovered ? "true" : "false"}
       className="work-gallery"
       role="region"
       aria-label={`Galería de ${project.title}`}
@@ -118,7 +140,10 @@ export default function ProjectGallery({ project }) {
             >
               <ChevronLeft size={20} />
             </button>
-            <span role="status" aria-live={auto && !reduced ? "off" : "polite"}>
+            <span
+              role="status"
+              aria-live={auto && !reduced && enabled ? "off" : "polite"}
+            >
               {index + 1} / {slides.length}
             </span>
             <button
@@ -132,12 +157,16 @@ export default function ProjectGallery({ project }) {
           <label className="gallery-auto">
             <input
               type="checkbox"
-              checked={auto && !reduced}
-              disabled={reduced}
+              checked={auto && !reduced && enabled}
+              disabled={reduced || !enabled}
               onChange={(e) => setAuto(e.target.checked)}
               aria-label={`Avance automático de ${project.title}`}
             />
-            {reduced ? "Avance manual" : "Avance automático"}
+            {reduced
+              ? "Avance manual"
+              : !enabled
+                ? "Avance pausado"
+                : "Avance automático"}
           </label>
         </div>
       )}
