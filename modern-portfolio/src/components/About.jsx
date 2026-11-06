@@ -22,20 +22,23 @@ export default function About() {
         </figure>
         <div className="about-copy">
           <h2 id="about-title">
-            Una persona detrás
-            <br />
-            de tu próximo proyecto.
+            Del presupuesto al cobro. Del registro al resumen.
           </h2>
           <p>
-            Me interesa entender cómo funciona tu negocio y construir algo que
-            te resulte útil. Trabajo en sitios y aplicaciones web con una
-            navegación clara, una identidad propia y atención al uso desde el
-            celular.
+            Soy Nicolas Aguirres, desarrollador web en Mendoza. Me interesa
+            conectar las partes de un trabajo: qué necesita una persona, qué
+            información tiene y cuál es su próximo paso.
           </p>
           <p>
-            Mi camino en desarrollo combina los fundamentos de la web con
-            proyectos propios en los que sigo aprendiendo y comprobando lo que
-            construyo.
+            En TrabajoClaro conecté clientes, presupuestos, trabajos y saldos
+            para seguir un encargo. En JornadApp reuní jornadas e ingresos
+            estimados en un resumen que permite revisar los registros. En
+            Musashi, el recorrido presenta el local y acerca su carta.
+          </p>
+          <p>
+            Esos proyectos muestran cómo encaro una idea: definir un recorrido
+            concreto, construirlo y revisar si se entiende al usarlo desde el
+            celular.
           </p>
           <a
             className="inline-link"

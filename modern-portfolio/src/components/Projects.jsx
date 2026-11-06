@@ -84,9 +84,8 @@ export default function Projects() {
       <div className="container">
         <div className="commercial-heading">
           <h2 id="projects-title">
-            Trabajo que podés
-            <br />
-            ver y explorar.
+            Una cafetería, presupuestos
+            <br />y jornadas de trabajo.
           </h2>
           <p>
             Sitios para negocios y productos propios. Cada ficha explica qué
